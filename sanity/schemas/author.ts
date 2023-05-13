@@ -1,4 +1,3 @@
-
 const author = {
   name: 'author',
   title: 'Author',

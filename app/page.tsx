@@ -1,7 +1,7 @@
 export default function Home() {
   return (
-    <main className="">
-      <h1>Hope you don&apos;t forget it</h1>
+    <main className="text-8xl font-extrabold">
+      <h1>Moises Ortega</h1>
     </main>
   )
 }
