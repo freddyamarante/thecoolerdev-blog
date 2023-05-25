@@ -13,7 +13,9 @@ export const Button = ({
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'text-blue-500 font-semibold' : 'text-red-500'
+  const mode = primary
+    ? 'text-blue-500 bg-red-500 dark:bg-gray-900 font-semibold'
+    : 'text-red-500'
   return (
     <button
       type="button"

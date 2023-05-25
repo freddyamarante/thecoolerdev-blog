@@ -11,6 +11,7 @@ const config: StorybookConfig = {
         postCss: true,
       },
     },
+    "storybook-tailwind-dark-mode"
   ],
   framework: {
     name: "@storybook/nextjs",

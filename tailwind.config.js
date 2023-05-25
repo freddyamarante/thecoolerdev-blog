@@ -7,4 +7,5 @@ module.exports = {
     './stories/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   plugins: [],
+  darkMode: 'class',
 }
