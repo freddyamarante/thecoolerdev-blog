@@ -15,12 +15,10 @@
     "@types/node": "20.1.0",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
-    "autoprefixer": "10.4.14",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.1",
     "next": "13.4.1",
     "next-sanity": "^4.3.2",
-    "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sanity": "^3.10.0",
@@ -31,11 +29,14 @@
     "@storybook/addon-essentials": "^7.0.11",
     "@storybook/addon-interactions": "^7.0.11",
     "@storybook/addon-links": "^7.0.11",
+    "@storybook/addon-styling": "^1.0.8",
     "@storybook/blocks": "^7.0.11",
     "@storybook/nextjs": "^7.0.11",
     "@storybook/react": "^7.0.11",
     "@storybook/testing-library": "^0.0.14-next.2",
+    "autoprefixer": "^10.4.14",
     "eslint-plugin-storybook": "^0.6.12",
+    "postcss": "^8.4.23",
     "storybook": "^7.0.11"
   }
 }
