@@ -1,5 +1,6 @@
 import './tailwind.css'
 import { Roboto } from 'next/font/google'
+
 import Providers from './providers'
 
 const roboto = Roboto({
