@@ -13,15 +13,11 @@ export const Button = ({
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary
-    ? 'text-blue-500 bg-red-500 dark:bg-gray-900 font-semibold'
-    : 'text-red-500'
   return (
     <button
       type="button"
-      className={`${mode}`}
+      className="rounded-3xl text-md flex items-center justify-center px-8 py-4 font-bold uppercase leading-none text-neutral-800 border-2 border-neutral-800 bg-neutral-50 mx-auto text-border-black"
       {...props}
-      onClick={() => alert('something')}
     >
       {label}
     </button>
