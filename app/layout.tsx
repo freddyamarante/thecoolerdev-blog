@@ -1,9 +1,9 @@
 import 'styles/globals.css'
-import { Roboto } from 'next/font/google'
+import { IBM_Plex_Sans } from 'next/font/google'
 
 import Providers from './providers'
 
-const roboto = Roboto({
+const IBMPlexSans = IBM_Plex_Sans({
   weight: ['300', '400', '700', '900'],
   subsets: ['latin'],
 })
@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={roboto.className}>
+      <body className={IBMPlexSans.className}>
         <Providers>{children}</Providers>
       </body>
     </html>
