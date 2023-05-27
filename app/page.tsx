@@ -9,7 +9,12 @@ export default function Home() {
       <main className="text-8xl font-extrabold">
         <h1>Moises Ortega</h1>
       </main>
-      <Button primary label="Just a regular button" onClick={saySomething} />
+      <Button
+        primary
+        size="large"
+        label="Just a regular button"
+        onClick={saySomething}
+      />
     </>
   )
 }
