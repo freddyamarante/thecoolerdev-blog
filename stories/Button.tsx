@@ -16,23 +16,23 @@ export const Button = ({
 
   switch (size) {
     case 'extralarge':
-      sizeClasses = 'text-2xl px-8 pt-4 pb-5'
+      sizeClasses = 'text-2xl'
       break
     case 'large':
-      sizeClasses = 'text-xl px-8 pt-4 pb-5'
+      sizeClasses = 'text-xl'
       break
     case 'medium':
-      sizeClasses = 'text-md px-8 py-4'
+      sizeClasses = 'text-md'
       break
     case 'small':
-      sizeClasses = 'text-sm px-8 py-4'
+      sizeClasses = 'text-sm'
       break
   }
 
   return (
     <button
       type="button"
-      className={`flex rounded-full items-center justify-center font-semibold uppercase leading-none border-2 text-neutral-800 border-neutral-800 mx-auto ${mode} ${sizeClasses}`}
+      className={`flex rounded-full px-8 py-4 items-center justify-center font-semibold uppercase leading-none border-2 text-neutral-800 border-neutral-800 mx-auto ${mode} ${sizeClasses}`}
       {...props}
     >
       {label}
