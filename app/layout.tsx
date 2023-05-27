@@ -4,7 +4,7 @@ import { IBM_Plex_Sans } from 'next/font/google'
 import Providers from './providers'
 
 const IBMPlexSans = IBM_Plex_Sans({
-  weight: ['300', '400', '700', '900'],
+  weight: ['100', '200', '300', '400', '700'],
   subsets: ['latin'],
 })
 
