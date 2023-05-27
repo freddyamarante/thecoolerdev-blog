@@ -1,4 +1,4 @@
-import './tailwind.css'
+import 'styles/globals.css'
 import { Roboto } from 'next/font/google'
 
 import Providers from './providers'
