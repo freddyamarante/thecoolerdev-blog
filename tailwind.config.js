@@ -15,8 +15,7 @@ module.exports = {
           dark: '#09090c',
         },
         cloud: {
-          light: '#f2f5f8',
-          DEFAULT: '#cad6e2',
+          DEFAULT: '#f2f5f8',
           dark: '#243342',
         },
         cobalt: {
@@ -33,5 +32,5 @@ module.exports = {
     },
   },
   plugins: [],
-  darkMode: 'class',
+  darkMode: ['class', '[data-theme="dark"]'],
 }
