@@ -9,7 +9,7 @@ export default function Home() {
       <main className="text-8xl font-extrabold">
         <h1>Moises Ortega</h1>
       </main>
-      <Button label="Dark mode toggler" onClick={saySomething} />
+      <Button primary label="Just a regular button" onClick={saySomething} />
     </>
   )
 }
