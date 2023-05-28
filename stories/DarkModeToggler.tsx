@@ -1,5 +1,6 @@
 'use client'
 import { useTheme } from 'next-themes'
+import { Moon, Sun } from './resources/Icons'
 
 const DarkModeToggler = () => {
   const { systemTheme, theme, setTheme } = useTheme()
@@ -14,9 +15,9 @@ const DarkModeToggler = () => {
     <button
       type="button"
       onClick={toggleDarkMode}
-      className="flex items-center justify-center h-56 w-56 p-4 font-bold dark:bg-cloud bg-night dark:text-night text-cloud"
+      className="flex items-center justify-center h-8 w-8 rounded-full font-bold dark:bg-cloud bg-night dark:text-night text-cloud"
     >
-      {currentTheme === 'dark' ? 'D' : 'L'}
+      {currentTheme === 'dark' ? <Moon /> : <Sun />}
     </button>
   )
 }
