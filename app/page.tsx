@@ -1,7 +1,7 @@
 'use client'
 
-import { Button } from '@/stories/Button'
-import DarkModeToggler from '@/stories/DarkModeToggler'
+import { Button } from '@/stories/components/Button'
+import DarkModeToggler from '@/stories/components/DarkModeToggler'
 
 export default function Home() {
   const saySomething = () => console.log('ayo')

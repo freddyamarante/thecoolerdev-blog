@@ -32,7 +32,7 @@ export const Button = ({
   return (
     <button
       type="button"
-      className={`flex rounded-full px-8 py-4 items-center justify-center font-semibold uppercase leading-none border-2 text-neutral-800 border-neutral-800 mx-auto ${mode} ${sizeClasses}`}
+      className={`flex rounded-full px-8 py-4 items-center justify-center font-semibold uppercase leading-none border-2 text-night-dark border-night-dark mx-auto ${mode} ${sizeClasses}`}
       {...props}
     >
       {label}

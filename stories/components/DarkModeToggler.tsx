@@ -1,6 +1,6 @@
 'use client'
 import { useTheme } from 'next-themes'
-import { Moon, Sun } from './resources/Icons'
+import { Moon, Sun } from '../resources/Icons'
 
 const DarkModeToggler = () => {
   const { systemTheme, theme, setTheme } = useTheme()
