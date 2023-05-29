@@ -13,6 +13,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.18",
+    "@portabletext/react": "^3.0.0",
     "@sanity/vision": "^3.10.0",
     "@types/node": "20.1.0",
     "@types/react": "18.2.6",
