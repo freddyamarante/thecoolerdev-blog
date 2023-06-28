@@ -9,25 +9,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        night: {
-          light: '#2c2e3a',
-          DEFAULT: '#15161c',
-          dark: '#09090c',
-        },
+        night: '#242423',
         cloud: {
-          DEFAULT: '#f2f5f8',
-          dark: '#243342',
+          DEFAULT: '#e8eddf',
+          dark: '#cfdbd5',
         },
-        cobalt: {
-          light: '9dbcfb',
-          DEFAULT: '#4d86f9',
-          dark: '#042a77',
-        },
-        orange: {
-          light: '#f67a28',
-          DEFAULT: '#f56e14',
-          dark: '#622a04',
-        },
+        taxi: '#f5cb5c',
       },
     },
   },
