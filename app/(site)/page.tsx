@@ -9,7 +9,7 @@ export default async function Home() {
           <h1 className="text-night dark:text-cloud">The Cooler Dev</h1>
         </main>
         <DarkModeToggler />
-        <GrainyBackground />
+        <GrainyBackground backgroundColor="#ff0000" gradientColor="#0000ff" />
       </div>
     </>
   )

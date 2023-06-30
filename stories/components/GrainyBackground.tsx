@@ -2,9 +2,11 @@
 
 import { useEffect, useRef } from 'react'
 
-import '../resources/gradients.css'
-
-export const GrainyBackground = ({ ...props }) => {
+export const GrainyBackground = ({
+  backgroundColor = '#f5cb5c',
+  gradientColor = '#343432',
+  ...props
+}) => {
   const mainRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -34,6 +36,18 @@ export const GrainyBackground = ({ ...props }) => {
       className="h-screen w-screen gradient-animated"
       data-scroll-container
       {...props}
-    ></div>
+    >
+      <style jsx>
+        {`
+          .gradient-animated {
+            background: radial-gradient(
+              150% 100% at var(--mouse-x) var(--mouse-y),
+              ${backgroundColor} 0%,
+              ${gradientColor} 100%
+            );
+          }
+        `}
+      </style>
+    </div>
   )
 }
