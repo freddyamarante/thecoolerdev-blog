@@ -4,6 +4,6 @@
 
 @layer base{
   body {
-      @apply dark:bg-night bg-cloud
+    @apply bg-cloud dark:bg-night
   }
 }

@@ -1,4 +1,5 @@
 import 'styles/globals.css'
+import '@/styles/gradients.css'
 import { IBM_Plex_Sans } from 'next/font/google'
 
 import Providers from './providers'
@@ -21,7 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={IBMPlexSans.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <div className="absolute gradient top-0 left-0 h-full w-full pointer-events-none opacity-50"></div>
+          {children}
+        </Providers>
       </body>
     </html>
   )
