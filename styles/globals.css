@@ -7,3 +7,9 @@
     @apply bg-cloud dark:bg-night
   }
 }
+
+.grain-background {
+  background-image: url("/noise.avif");
+  mix-blend-mode: overlay;
+  height: 12328px;
+}

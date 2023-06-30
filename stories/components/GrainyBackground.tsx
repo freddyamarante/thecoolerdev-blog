@@ -2,11 +2,10 @@
 
 import { useEffect, useRef } from 'react'
 
-import '@/styles/gradients.css'
+import '../resources/gradients.css'
 
 export const GrainyBackground = ({ ...props }) => {
   const mainRef = useRef<HTMLDivElement>(null)
-  const toRef = useRef(null)
 
   useEffect(() => {
     const moveGradient = (event: MouseEvent) => {
@@ -14,7 +13,7 @@ export const GrainyBackground = ({ ...props }) => {
       const winHeight = window.innerHeight
 
       const mouseX = Math.round((event.pageX / winWidth) * 100)
-      const mouseY = Math.round((event.pageY / winHeight) * 100)
+      const mouseY = Math.round((event.pageY / winHeight) * 100) - 7.5
 
       if (mainRef.current) {
         mainRef.current.style.setProperty('--mouse-x', mouseX.toString() + '%')

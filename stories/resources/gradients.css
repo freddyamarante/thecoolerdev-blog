@@ -1,9 +1,3 @@
-.gradient {
-  background-image: url("/noise.avif");
-  mix-blend-mode: overlay;
-  height: 12328px;
-}
-
 .gradient-animated {
   background: radial-gradient(150% 100% at var(--mouse-x) var(--mouse-y), #343432 0%, #F5CB5C 100%);
 }
