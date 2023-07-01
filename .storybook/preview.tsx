@@ -20,7 +20,7 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <div>
+      <div className="dark:bg-night bg-cloud">
         <div className="absolute grain-background top-0 left-0 h-full w-full pointer-events-none opacity-50"></div>
         <Story />
       </div>

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 
-interface GrainyBackgroundProps {
+interface GradientBackgroundProps {
   backgroundColor?: string
   gradientColor?: string
   children?: React.ReactNode
@@ -10,14 +10,14 @@ interface GrainyBackgroundProps {
   className?: React.ComponentProps<'div'>['className']
 }
 
-export const GrainyBackground = ({
+export const GradientBackground = ({
   backgroundColor = '#f5cb5c',
   gradientColor = '#343432',
   size = 'medium',
   className,
   children,
   ...props
-}: GrainyBackgroundProps) => {
+}: GradientBackgroundProps) => {
   const mainRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
