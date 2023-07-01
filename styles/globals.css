@@ -9,7 +9,6 @@
 }
 
 .grain-background {
-  /* background-image: url("/noise.avif"); */
+  background-image: url("./noise.avif");
   mix-blend-mode: overlay;
-  height: 12328px;
 }

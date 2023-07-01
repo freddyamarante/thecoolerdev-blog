@@ -1,4 +1,4 @@
-import 'styles/globals.css'
+import '@/styles/globals.css'
 
 import { IBM_Plex_Sans } from 'next/font/google'
 
@@ -22,10 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={IBMPlexSans.className}>
-        <Providers>
-          <div className="absolute grain-background top-0 left-0 h-full w-full pointer-events-none opacity-50"></div>
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   )
