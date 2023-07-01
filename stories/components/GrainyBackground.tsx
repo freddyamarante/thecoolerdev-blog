@@ -6,12 +6,14 @@ interface GrainyBackgroundProps {
   backgroundColor?: string
   gradientColor?: string
   children?: React.ReactNode
+  size?: 'small' | 'medium' | 'large' | 'extralarge'
   className?: React.ComponentProps<'div'>['className']
 }
 
 export const GrainyBackground = ({
   backgroundColor = '#f5cb5c',
   gradientColor = '#343432',
+  size = 'medium',
   className,
   children,
   ...props
@@ -21,11 +23,16 @@ export const GrainyBackground = ({
   useEffect(() => {
     const moveGradient = (event: MouseEvent) => {
       if (mainRef.current) {
-        const divWidth = mainRef.current.clientWidth
-        const divHeight = mainRef.current.clientHeight
+        const containerRect = mainRef.current.getBoundingClientRect()
+        const containerWidth = containerRect.width
+        const containerHeight = containerRect.height
 
-        const mouseX = Math.round((event.pageX / divWidth) * 100)
-        const mouseY = Math.round((event.pageY / divHeight) * 100)
+        const mouseX = Math.round(
+          ((event.clientX - containerRect.left) / containerWidth) * 100
+        )
+        const mouseY = Math.round(
+          ((event.clientY - containerRect.top) / containerHeight) * 100
+        )
 
         mainRef.current.style.setProperty('--mouse-x', mouseX.toString() + '%')
         mainRef.current.style.setProperty('--mouse-y', mouseY.toString() + '%')
@@ -39,6 +46,23 @@ export const GrainyBackground = ({
     }
   }, [mainRef])
 
+  let gradientSize: number
+
+  switch (size) {
+    case 'extralarge':
+      gradientSize = 200
+      break
+    case 'large':
+      gradientSize = 150
+      break
+    case 'medium':
+      gradientSize = 120
+      break
+    case 'small':
+      gradientSize = 100
+      break
+  }
+
   return (
     <div
       ref={mainRef}
@@ -51,7 +75,7 @@ export const GrainyBackground = ({
         {`
           .gradient-animated {
             background: radial-gradient(
-              120% 120% at var(--mouse-x) var(--mouse-y),
+              ${gradientSize}% ${gradientSize}% at var(--mouse-x) var(--mouse-y),
               ${gradientColor} 0%,
               ${backgroundColor} 100%
             );
