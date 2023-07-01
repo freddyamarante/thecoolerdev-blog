@@ -4,9 +4,9 @@ import { GrainyBackground } from '@/stories/components/GrainyBackground'
 export default async function Home() {
   return (
     <>
-      <div className="flex justify-center flex-col h-screen">
-        <GrainyBackground></GrainyBackground>
-      </div>
+      <GrainyBackground className="flex flex-col justify-center h-screen">
+        <div>hola mis panas</div>
+      </GrainyBackground>
     </>
   )
 }

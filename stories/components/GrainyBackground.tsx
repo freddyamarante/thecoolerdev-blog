@@ -6,11 +6,13 @@ interface GrainyBackgroundProps {
   backgroundColor?: string
   gradientColor?: string
   children?: React.ReactNode
+  className?: React.ComponentProps<'div'>['className']
 }
 
 export const GrainyBackground = ({
   backgroundColor = '#f5cb5c',
   gradientColor = '#343432',
+  className,
   children,
   ...props
 }: GrainyBackgroundProps) => {
@@ -40,7 +42,7 @@ export const GrainyBackground = ({
   return (
     <div
       ref={mainRef}
-      className="h-screen gradient-animated"
+      className={`gradient-animated ${className}`}
       data-scroll-container
       {...props}
     >
