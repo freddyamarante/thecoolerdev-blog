@@ -2,22 +2,29 @@
 
 import { useEffect, useRef } from 'react'
 
+interface GrainyBackgroundProps {
+  backgroundColor?: string
+  gradientColor?: string
+  children?: React.ReactNode
+}
+
 export const GrainyBackground = ({
   backgroundColor = '#f5cb5c',
   gradientColor = '#343432',
+  children,
   ...props
-}) => {
+}: GrainyBackgroundProps) => {
   const mainRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const moveGradient = (event: MouseEvent) => {
-      const winWidth = window.innerWidth
-      const winHeight = window.innerHeight
-
-      const mouseX = Math.round((event.pageX / winWidth) * 100)
-      const mouseY = Math.round((event.pageY / winHeight) * 100) - 7.5
-
       if (mainRef.current) {
+        const divWidth = mainRef.current.clientWidth
+        const divHeight = mainRef.current.clientHeight
+
+        const mouseX = Math.round((event.pageX / divWidth) * 100)
+        const mouseY = Math.round((event.pageY / divHeight) * 100)
+
         mainRef.current.style.setProperty('--mouse-x', mouseX.toString() + '%')
         mainRef.current.style.setProperty('--mouse-y', mouseY.toString() + '%')
       }
@@ -33,17 +40,18 @@ export const GrainyBackground = ({
   return (
     <div
       ref={mainRef}
-      className="h-screen w-screen gradient-animated"
+      className="h-screen gradient-animated"
       data-scroll-container
       {...props}
     >
+      {children}
       <style jsx>
         {`
           .gradient-animated {
             background: radial-gradient(
-              150% 100% at var(--mouse-x) var(--mouse-y),
-              ${backgroundColor} 0%,
-              ${gradientColor} 100%
+              120% 120% at var(--mouse-x) var(--mouse-y),
+              ${gradientColor} 0%,
+              ${backgroundColor} 100%
             );
           }
         `}
