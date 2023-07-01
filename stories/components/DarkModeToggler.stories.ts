@@ -12,3 +12,21 @@ export default meta
 type Story = StoryObj<typeof DarkModeToggler>
 
 export const Default: Story = {}
+
+export const Extralarge: Story = {
+  args: {
+    size: 'extralarge',
+  },
+};
+
+export const Large: Story = {
+  args: {
+    size: 'large',
+  },
+};
+
+export const Small: Story = {
+  args: {
+    size: 'small',
+  },
+};
