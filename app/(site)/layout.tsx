@@ -3,7 +3,7 @@ import '@/styles/globals.css'
 import { IBM_Plex_Sans } from 'next/font/google'
 
 import Providers from './providers'
-import { GrainOverlay } from '@/stories/components/GrainOverlay'
+import GrainOverlay from '@/stories/components/GrainOverlay'
 
 const IBMPlexSans = IBM_Plex_Sans({
   weight: ['100', '200', '300', '400', '700'],

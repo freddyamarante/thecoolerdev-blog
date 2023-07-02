@@ -85,3 +85,5 @@ export const GradientBackground = ({
     </div>
   )
 }
+
+export default GradientBackground
