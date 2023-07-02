@@ -6,9 +6,6 @@ import '@/styles/globals.css'
 export default async function Home() {
   return (
     <>
-      <div
-        className={`absolute grain-background top-0 left-0 h-[12000px] w-full pointer-events-none opacity-50`}
-      ></div>
       <GradientBackground className="flex flex-col justify-center h-screen"></GradientBackground>
       <div className="h-screen flex justify-center items-center gap-x-6">
         <GradientBackground

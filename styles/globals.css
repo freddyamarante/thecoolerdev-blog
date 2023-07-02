@@ -11,5 +11,4 @@
 .grain-background {
   background-image: url("./noise.avif");
   mix-blend-mode: overlay;
-  height: 100%;
 }
