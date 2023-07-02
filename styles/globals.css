@@ -10,5 +10,6 @@
 
 .grain-background {
   background-image: url("./noise.avif");
+  opacity: 0.75;
   mix-blend-mode: overlay;
 }
