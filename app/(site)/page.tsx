@@ -11,7 +11,7 @@ export default async function Home() {
         size="small"
         className="flex flex-col justify-center h-screen"
       >
-        <Experience />
+        <Experience className="absolute h-full w-full top-0 left-0" />
       </GradientBackground>
     </>
   )

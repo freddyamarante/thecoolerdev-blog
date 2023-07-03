@@ -1,7 +1,8 @@
 'use client'
 
-import { CameraShake } from '@react-three/drei'
+import { CameraShake, Float, RoundedBox } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
+import { useMemo } from 'react'
 
 const cameraConfig = {
   maxYaw: 0.005,
@@ -14,18 +15,35 @@ const cameraConfig = {
   decayRate: 0.65,
 }
 
-const Experience = () => {
+interface ExperienceProps {
+  className?: React.ComponentProps<'div'>['className']
+}
+
+const Experience = ({ className }: ExperienceProps) => {
   return (
-    <>
+    <div className={className}>
       <Canvas>
         <CameraShake {...cameraConfig} />
-        <ambientLight intensity={0.2} />
-        <mesh rotation={[0, 0, Math.PI / 2 + 0.5]}>
-          <boxGeometry />
-          <meshStandardMaterial />
-        </mesh>
+        <ambientLight intensity={0.38} color="#f5cb5c" />
+        <directionalLight intensity={5} color="#f5cb5c" />
+        <directionalLight
+          position={[0, -5, 2]}
+          intensity={0.5}
+          color="#E8EDDF"
+        />
+
+        <Float rotationIntensity={10}>
+          <RoundedBox
+            args={[2, 2, 2]} // Width, height, depth. Default is [1, 1, 1]
+            radius={0.2} // Radius of the rounded corners. Default is 0.05
+            smoothness={4} // The number of curve segments. Default is 4
+            creaseAngle={0.4} // Smooth normals everywhere except faces that meet at an angle greater than the crease angle
+          >
+            <meshPhongMaterial color="#242423" />
+          </RoundedBox>
+        </Float>
       </Canvas>
-    </>
+    </div>
   )
 }
 
