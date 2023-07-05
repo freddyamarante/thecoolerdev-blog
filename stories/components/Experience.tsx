@@ -1,8 +1,14 @@
 'use client'
 
-import { CameraShake, Float, RoundedBox } from '@react-three/drei'
+import {
+  CameraShake,
+  Float,
+  Torus,
+  RoundedBox,
+  Sphere,
+  Cone,
+} from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import { useMemo } from 'react'
 
 const cameraConfig = {
   maxYaw: 0.005,
@@ -32,15 +38,33 @@ const Experience = ({ className }: ExperienceProps) => {
           color="#E8EDDF"
         />
 
-        <Float rotationIntensity={10}>
+        <Float rotationIntensity={2} position={[0, 0, 0]}>
           <RoundedBox
-            args={[2, 2, 2]} // Width, height, depth. Default is [1, 1, 1]
-            radius={0.2} // Radius of the rounded corners. Default is 0.05
-            smoothness={4} // The number of curve segments. Default is 4
-            creaseAngle={0.4} // Smooth normals everywhere except faces that meet at an angle greater than the crease angle
+            args={[2, 2, 2]}
+            radius={0.2}
+            smoothness={4}
+            creaseAngle={0.4}
           >
             <meshPhongMaterial color="#242423" />
           </RoundedBox>
+        </Float>
+
+        <Float rotationIntensity={2} position={[3, 0, 0]}>
+          <Torus args={[1, 0.6, 16]}>
+            <meshPhongMaterial color="#242423" />
+          </Torus>
+        </Float>
+
+        <Float rotationIntensity={2} position={[-3, 0, 0]}>
+          <Sphere args={[1.1]}>
+            <meshPhongMaterial color="#242423" />
+          </Sphere>
+        </Float>
+
+        <Float rotationIntensity={2} position={[0, 3, 0]}>
+          <Cone args={[1, 1.5]}>
+            <meshPhongMaterial color="#242423" />
+          </Cone>
         </Float>
       </Canvas>
     </div>
