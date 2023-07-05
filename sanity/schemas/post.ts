@@ -18,12 +18,6 @@ const post = {
       },
     },
     {
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: {type: 'author'},
-    },
-    {
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
@@ -37,10 +31,10 @@ const post = {
       type: 'datetime',
     },
     {
-      name: 'categories',
-      title: 'Categories',
+      name: 'tagsArray',
+      title: 'Tags',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
+      of: [{type: 'reference', to: {type: 'tags'}}],
     },
     {
       name: 'body',
