@@ -1,5 +1,6 @@
 import blockContent from './blockContent'
 import post from './post'
 import tags from './tags'
+import landingPage from './landingPage'
 
-export const schemaTypes = [post, blockContent, tags]
+export const schemaTypes = [landingPage, post, blockContent, tags]
