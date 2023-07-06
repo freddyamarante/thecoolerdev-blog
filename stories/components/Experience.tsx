@@ -1,5 +1,6 @@
 'use client'
 
+import { getPosts } from '@/sanity/sanity-utils'
 import {
   Float,
   Torus,
@@ -8,12 +9,17 @@ import {
   Dodecahedron,
 } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
+import { useEffect } from 'react'
 
 interface ExperienceProps {
   className?: React.ComponentProps<'div'>['className']
 }
 
 const Experience = ({ className }: ExperienceProps) => {
+  const data = getPosts()
+  useEffect(() => {
+    console.log(data[0])
+  })
   return (
     <div className={className}>
       <Canvas>

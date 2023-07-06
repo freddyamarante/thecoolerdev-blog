@@ -3,11 +3,8 @@ import Experience from '@/stories/components/Experience'
 
 import '@/styles/globals.css'
 import GrainOverlay from '@/stories/components/GrainOverlay'
-import { getLandingPage, getPosts } from '@/sanity/sanity-utils'
 
 export default async function Home() {
-  const data = await getPosts()
-
   return (
     <>
       <GrainOverlay zIndex="z-10" />

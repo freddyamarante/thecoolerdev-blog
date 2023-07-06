@@ -1,5 +1,3 @@
-import { Image } from 'sanity'
-
 export type LandingPage = {
   _id: string
   status: {
@@ -33,7 +31,7 @@ export type LandingPage = {
     steps: {
       title: string
       description: string
-      image: Image
+      image: string
     }[]
   }
   pricing: {
@@ -51,7 +49,7 @@ export type LandingPage = {
     title: string
     project: {
       title: string
-      image: Image
+      image: string
       description: string
       url: string
       github: string
