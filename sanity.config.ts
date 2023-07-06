@@ -1,6 +1,7 @@
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import { schemaTypes } from './sanity/schemas'
+import { visionTool } from '@sanity/vision'
 
 const config = defineConfig({
   title: 'thecoolerdev-blog-studio',
@@ -9,7 +10,7 @@ const config = defineConfig({
   dataset: 'production',
 
   basePath: '/admin',
-  plugins: [deskTool()],
+  plugins: [deskTool(), visionTool()],
 
   apiVersion: '2023-05-06',
   schema: {

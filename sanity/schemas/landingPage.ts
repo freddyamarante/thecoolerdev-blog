@@ -67,7 +67,7 @@ const landingPage = {
       fields: [
         {
           name: 'title',
-          title: 'title',
+          title: 'Title',
           type: 'string',
         },
         {
@@ -91,7 +91,7 @@ const landingPage = {
                 {
                   name: 'description',
                   title: 'Description',
-                  type: 'text',
+                  type: 'string',
                 },
                 {
                   name: 'body',

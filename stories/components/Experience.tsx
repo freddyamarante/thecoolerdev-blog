@@ -1,6 +1,6 @@
 'use client'
 
-import { getPosts } from '@/sanity/sanity-utils'
+import { getLandingPage, getPosts } from '@/sanity/sanity-utils'
 import {
   Float,
   Torus,
@@ -16,9 +16,11 @@ interface ExperienceProps {
 }
 
 const Experience = ({ className }: ExperienceProps) => {
-  const data = getPosts()
+  const posts = getPosts()
+  const landingPage = getLandingPage()
   useEffect(() => {
-    console.log(data[0])
+    console.log(posts)
+    console.log(landingPage)
   })
   return (
     <div className={className}>

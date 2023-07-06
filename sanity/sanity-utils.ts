@@ -33,29 +33,22 @@ export async function getPosts(): Promise<Post[]> {
   return data
 }
 
-// export async function getLandingPage(): Promise<LandingPage> {
-//   return await client
-//     .fetch(
-//       groq`
-//       *[_type == "landingPage"][0]{
-//         _id,
-//         status,
-//         hero,
-//         aboutMe,
-//         process,
-//         pricing,
-//         projects,
-//         blog,
-//         contact
-//       }
-//     `
-//     )
-//     .then((data) => {
-//       console.log(data)
-//       return data
-//     })
-//     .catch((error) => {
-//       console.log('Error', error)
-//       return error
-//     })
-// }
+export async function getLandingPage(): Promise<LandingPage> {
+  const data = await client.fetch(
+    groq`
+      *[_type == "landingPage"][0]{
+        _id,
+        status,
+        hero,
+        aboutMe,
+        process,
+        pricing,
+        projects,
+        blog,
+        contact
+      }
+    `
+  )
+
+  return data
+}
