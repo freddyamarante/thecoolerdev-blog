@@ -1,41 +1,62 @@
+import { ArrowRight } from '../resources/Icons'
+
 interface ButtonProps {
-  primary?: boolean
+  mode?: 'primary' | 'contrast' | 'simple'
   size?: 'small' | 'medium' | 'large' | 'extralarge'
   label: string
   onClick?: () => void
 }
 
 export const Button = ({
-  primary = false,
-  size = 'medium',
+  mode = 'primary',
+  size = 'large',
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'bg-cobalt' : `bg-orange`
+  let modeClasses: string = mode
+
+  switch (mode) {
+    case 'primary':
+      modeClasses = 'bg-taxi text-night'
+      break
+    case 'contrast':
+      modeClasses = 'bg-night text-white'
+      break
+    case 'simple':
+      modeClasses = 'bg-transparent text-black border-2 border-night'
+      break
+  }
+
   let sizeClasses: string = size
+  let iconSize: number = 0
 
   switch (size) {
     case 'extralarge':
       sizeClasses = 'text-2xl'
+      iconSize = 20
       break
     case 'large':
       sizeClasses = 'text-xl'
+      iconSize = 18
       break
     case 'medium':
       sizeClasses = 'text-md'
+      iconSize = 14
       break
     case 'small':
       sizeClasses = 'text-sm'
+      iconSize = 10
       break
   }
 
   return (
     <button
       type="button"
-      className={`flex rounded-full px-8 py-4 items-center justify-center font-semibold uppercase leading-none border-2 text-night-dark border-night-dark mx-auto ${mode} ${sizeClasses}`}
+      className={`flex flex-row rounded-lg p-2 justify-center items-center leading-none gap-1 ${modeClasses} ${sizeClasses}`}
       {...props}
     >
       {label}
+      <ArrowRight size={iconSize} />
     </button>
   )
 }
