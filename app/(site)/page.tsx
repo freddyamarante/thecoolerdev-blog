@@ -1,8 +1,8 @@
 import GradientBackground from '@/stories/components/GradientBackground'
-import Experience from '@/stories/components/Experience'
+import Experience from '@/stories/resources/Experience'
 
 import '@/styles/globals.css'
-import GrainOverlay from '@/stories/components/GrainOverlay'
+import GrainOverlay from '@/stories/resources/GrainOverlay'
 
 export default async function Home() {
   return (
