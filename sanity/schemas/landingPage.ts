@@ -110,10 +110,10 @@ const landingPage = {
         },
       ],
     },
-    // Process
+    // Toolkit
     {
-      name: 'process',
-      title: 'Process',
+      name: 'toolkit',
+      title: 'Toolkit',
       type: 'object',
       fields: [
         {
@@ -134,7 +134,50 @@ const landingPage = {
         {
           name: 'subBody',
           title: 'Sub-body',
+          type: 'text',
+        },
+        {
+          name: 'button',
+          title: 'Button',
           type: 'string',
+        },
+        {
+          name: 'tools',
+          title: 'Tools',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                { name: 'title', title: 'Title', type: 'string' },
+                { name: 'description', title: 'Description', type: 'text' },
+                { name: 'image', title: 'Image', type: 'image' },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    // Process
+    {
+      name: 'process',
+      title: 'Process',
+      type: 'object',
+      fields: [
+        {
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+        },
+        {
+          name: 'subtitle',
+          title: 'Subtitle',
+          type: 'string',
+        },
+        {
+          name: 'body',
+          title: 'Body',
+          type: 'text',
         },
         {
           name: 'button',
@@ -190,7 +233,7 @@ const landingPage = {
                 {
                   name: 'price',
                   title: 'Price',
-                  type: 'string',
+                  type: 'number',
                 },
                 {
                   name: 'included',
@@ -232,7 +275,7 @@ const landingPage = {
         },
         {
           name: 'project',
-          title: 'project',
+          title: 'Project',
           type: 'array',
           of: [
             {

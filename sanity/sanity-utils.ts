@@ -40,6 +40,7 @@ export async function getLandingPage(): Promise<LandingPage> {
         status,
         hero,
         aboutMe,
+        toolkit,
         process,
         pricing,
         projects,

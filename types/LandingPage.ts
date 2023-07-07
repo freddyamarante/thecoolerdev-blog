@@ -22,11 +22,21 @@ export type LandingPage = {
     }[]
     skills: string[]
   }
-  process: {
+  toolkit: {
     title: string
     body: string
     subtitle: string
     subBody: string
+    tools: {
+      title: string
+      description: string
+      image: string
+    }[]
+  }
+  process: {
+    title: string
+    subtitle: string
+    body: string
     button: string
     steps: {
       title: string
@@ -39,7 +49,7 @@ export type LandingPage = {
     prices: {
       title: string
       description: string
-      price: string
+      price: number
       included: string[]
       highlight: boolean
     }[]
@@ -47,6 +57,7 @@ export type LandingPage = {
   }
   projects: {
     title: string
+    description: string
     project: {
       title: string
       image: string
