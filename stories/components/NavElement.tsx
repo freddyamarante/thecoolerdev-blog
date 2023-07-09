@@ -6,7 +6,7 @@ interface NavElementProps {
 const NavElement = ({ label = 'element', active = false }: NavElementProps) => {
   return (
     <div
-      className={`flex justify-center items-center text-xl leading-none py-1 px-2 rounded-xl ${
+      className={`flex justify-center items-center text-md md:text-lg lg:text-xl leading-none py-1 px-2 rounded-xl ${
         active ? 'bg-cloud text-night' : 'text-white'
       }`}
     >

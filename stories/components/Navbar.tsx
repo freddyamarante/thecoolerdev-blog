@@ -17,7 +17,7 @@ const Navbar = ({ elements }: NavbarProps) => {
   return (
     <nav className="flex justify-between bg-night w-full rounded-3xl p-3">
       <Status />
-      <div className="flex gap-5">{listElements}</div>
+      <div className="hidden md:flex gap-5">{listElements}</div>
     </nav>
   )
 }
