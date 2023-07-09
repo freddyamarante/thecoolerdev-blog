@@ -3,6 +3,7 @@ import groq from 'groq'
 
 import { Post } from '@/types/Post'
 import { LandingPage } from '@/types/LandingPage'
+import { Status } from 'sanity'
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET
@@ -27,6 +28,16 @@ export async function getPosts(): Promise<Post[]> {
       tags[]->,
       body
     }`
+  )
+
+  return data
+}
+
+export async function getStatus(): Promise<Status> {
+  const data = await client.fetch(
+    groq`
+      *[_type == "status"]
+    `
   )
 
   return data

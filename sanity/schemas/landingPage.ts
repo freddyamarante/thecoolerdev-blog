@@ -3,24 +3,6 @@ const landingPage = {
   title: 'Landing Page',
   type: 'document',
   fields: [
-    // Navbar
-    {
-      name: 'status',
-      title: 'Status',
-      type: 'object',
-      fields: [
-        {
-          name: 'name',
-          title: 'Name',
-          type: 'string',
-        },
-        {
-          name: 'active',
-          title: 'Active',
-          type: 'boolean',
-        },
-      ],
-    },
     // Hero
     {
       name: 'hero',

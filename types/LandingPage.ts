@@ -1,9 +1,5 @@
 export type LandingPage = {
   _id: string
-  status: {
-    name: string
-    active: boolean
-  }
   hero: {
     title: string
     highlight: string
