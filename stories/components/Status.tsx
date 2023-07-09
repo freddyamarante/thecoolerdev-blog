@@ -22,7 +22,7 @@ const Status = ({ name, active, image }: StatusProps) => {
           height={600}
         />
       </div>
-      <div className="flex flex-col gap-1">
+      <div className="hidden md:flex flex-col gap-1">
         <div className="text-xl font-bold leading-none">{name}</div>
         <div className="flex gap-2 items-center">
           <div
