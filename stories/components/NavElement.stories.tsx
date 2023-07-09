@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import Status from './Status'
+import NavElement from './NavElement'
 
-const meta: Meta<typeof Status> = {
-  title: 'Navbar/Status',
-  component: Status,
+const meta: Meta<typeof NavElement> = {
+  title: 'Navbar/NavElement',
+  component: NavElement,
   decorators: [
     (Story) => (
       <div className="flex justify-center bg-night py-8">
@@ -16,18 +16,18 @@ const meta: Meta<typeof Status> = {
 }
 
 export default meta
-type Story = StoryObj<typeof Status>
+type Story = StoryObj<typeof NavElement>
 
 export const Active: Story = {
   args: {
-    name: 'Freddy Amarante',
+    label: 'Element',
     active: true,
   },
 }
 
 export const Inactive: Story = {
   args: {
-    name: 'Freddy Amarante',
+    label: 'Element',
     active: false,
   },
 }

@@ -12,7 +12,7 @@ const defaultImage =
 const Status = ({ name, active, image }: StatusProps) => {
   const message = active ? 'currently available!' : 'not available right now'
   return (
-    <div className="flex flex-row justify-center items-center gap-4 text-white">
+    <div className="flex flex-row items-center gap-4 text-white">
       <div className="w-12 h-12">
         <Image
           src={image ? image : defaultImage} // Replace with your desired Unsplash image URL
