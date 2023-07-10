@@ -11,4 +11,10 @@ const meta: Meta<typeof Service> = {
 export default meta
 type Story = StoryObj<typeof Service>
 
-export const Default: Story = {}
+export const Default: Story = {
+  args: {
+    title: 'Service #1',
+    description: 'Description of service one',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  },
+}
