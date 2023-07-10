@@ -1,4 +1,4 @@
-import { ArrowRight } from '../resources/Icons'
+import { ArrowRight } from './resources/Icons'
 
 interface ButtonProps {
   mode?: 'primary' | 'contrast' | 'simple'

@@ -1,7 +1,8 @@
+import { Disclosure } from '@headlessui/react'
+
 import NavElement from './NavElement'
 import Status from './Status'
 import { Bars3, XMark } from '../resources/Icons'
-import { Disclosure } from '@headlessui/react'
 
 interface NavbarProps {
   elements?: string[]
