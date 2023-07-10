@@ -7,7 +7,7 @@ interface ButtonProps {
   onClick?: () => void
 }
 
-export const Button = ({
+const Button = ({
   mode = 'primary',
   size = 'large',
   label,
@@ -60,3 +60,5 @@ export const Button = ({
     </button>
   )
 }
+
+export default Button

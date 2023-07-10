@@ -10,7 +10,7 @@ interface GradientBackgroundProps {
   className?: React.ComponentProps<'div'>['className']
 }
 
-export const GradientBackground = ({
+const GradientBackground = ({
   backgroundColor = '#f5cb5c',
   gradientColor = '#343432',
   size = 'medium',

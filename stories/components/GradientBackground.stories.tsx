@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { GradientBackground } from './GradientBackground'
+import GradientBackground from './GradientBackground'
 
 type Story = StoryObj<typeof GradientBackground>
 
