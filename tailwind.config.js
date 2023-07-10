@@ -9,7 +9,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        night: '#242423',
+        night: {
+          light: '#343432',
+          DEFAULT: '#242423',
+          dark: '#1f1f1e',
+        },
         cloud: {
           DEFAULT: '#e8eddf',
           dark: '#cfdbd5',
