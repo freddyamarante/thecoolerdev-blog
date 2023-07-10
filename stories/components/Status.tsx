@@ -19,10 +19,10 @@ const Status = ({
     <div className="flex flex-row items-center gap-4 text-white">
       <div className="w-12 h-12">
         <Image
-          src={image ? image : defaultImage} // Replace with your desired Unsplash image URL
+          src={image ? image : defaultImage}
           alt={name}
-          className="w-full h-full object-center object-cover rounded-xl"
-          width={600} // Set the desired width of the image
+          className="w-full h-full object-center object-cover rounded-2xl"
+          width={600}
           height={600}
         />
       </div>

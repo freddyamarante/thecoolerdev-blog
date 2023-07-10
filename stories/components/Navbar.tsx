@@ -17,14 +17,14 @@ const Navbar = ({ elements }: NavbarProps) => {
   }
 
   return (
-    <Disclosure as="nav" className="bg-night w-full rounded-3xl px-3">
+    <Disclosure as="nav" className="bg-night w-full rounded-xl px-3">
       {({ open }) => (
         <div className="flex flex-col justify-start">
           <div className="flex flex-row justify-between">
             <Status />
 
             {/* Mobile navigation elements */}
-            <Disclosure.Button className="flex md:hidden rounded-xl p-2 my-3 text-white hover:bg-dark-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <Disclosure.Button className="flex md:hidden rounded-2xl p-2 my-3 text-white hover:bg-dark-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <span className="sr-only">Open main menu</span>
               {open ? (
                 <XMark aria-hidden="true" />
