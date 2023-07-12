@@ -37,7 +37,6 @@ export type LandingPage = {
     steps: {
       title: string
       description: string
-      image: string
     }[]
   }
   pricing: {

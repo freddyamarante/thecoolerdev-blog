@@ -28,7 +28,7 @@ const Navbar = ({ name, active, image, elements }: NavbarProps) => {
             <Status name={name} active={active} image={image} />
 
             {/* Mobile navigation elements */}
-            <Disclosure.Button className="flex md:hidden rounded-2xl p-2 my-3 text-white hover:bg-dark-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <Disclosure.Button className="flex md:hidden rounded-2xl p-2 my-3 text-white hover:bg-night-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <span className="sr-only">Open main menu</span>
               {open ? (
                 <XMark aria-hidden="true" />
