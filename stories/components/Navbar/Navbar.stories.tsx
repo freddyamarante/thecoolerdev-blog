@@ -20,6 +20,8 @@ type Story = StoryObj<typeof Navbar>
 
 export const Default: Story = {
   args: {
+    name: 'Freddy Amarante',
+    active: true,
     elements: ['Who am I', 'Process', 'Projects', 'Blog', 'Contact'],
   },
 }

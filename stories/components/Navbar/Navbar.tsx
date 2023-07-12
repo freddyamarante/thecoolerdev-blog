@@ -5,10 +5,13 @@ import Status from './Status'
 import { Bars3, XMark } from '../resources/Icons'
 
 interface NavbarProps {
+  name: string
+  active: boolean
+  image: string
   elements?: string[]
 }
 
-const Navbar = ({ elements }: NavbarProps) => {
+const Navbar = ({ name, active, image, elements }: NavbarProps) => {
   let listElements: JSX.Element[]
 
   if (elements) {
@@ -22,7 +25,7 @@ const Navbar = ({ elements }: NavbarProps) => {
       {({ open }) => (
         <div className="flex flex-col justify-start">
           <div className="flex flex-row justify-between">
-            <Status />
+            <Status name={name} active={active} image={image} />
 
             {/* Mobile navigation elements */}
             <Disclosure.Button className="flex md:hidden rounded-2xl p-2 my-3 text-white hover:bg-dark-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
