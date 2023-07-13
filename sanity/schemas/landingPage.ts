@@ -90,6 +90,11 @@ const landingPage = {
           type: 'array',
           of: [{ type: 'string' }],
         },
+        {
+          name: 'calibration',
+          title: 'Calibration',
+          type: 'number',
+        },
       ],
     },
     // Toolkit

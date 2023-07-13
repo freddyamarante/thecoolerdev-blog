@@ -17,6 +17,7 @@ export type LandingPage = {
       body: string
     }[]
     skills: string[]
+    calibration: number
   }
   toolkit: {
     title: string
