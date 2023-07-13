@@ -14,7 +14,6 @@ export default meta
 export const Default: Story = {
   args: {
     className: 'w-full h-full',
-    size: 'medium',
   },
   decorators: [
     (Story) => (
@@ -23,24 +22,4 @@ export const Default: Story = {
       </div>
     ),
   ],
-}
-export const Extralarge: Story = {
-  args: {
-    className: 'w-96 h-96',
-    size: 'extralarge',
-  },
-}
-
-export const Large: Story = {
-  args: {
-    className: 'w-96 h-96',
-    size: 'large',
-  },
-}
-
-export const Small: Story = {
-  args: {
-    className: 'w-96 h-96',
-    size: 'small',
-  },
 }

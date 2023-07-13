@@ -8,10 +8,7 @@ export default async function Home() {
   return (
     <>
       <GrainOverlay zIndex="z-10" />
-      <GradientBackground
-        size="small"
-        className="flex flex-col justify-center h-screen"
-      >
+      <GradientBackground className="flex flex-col justify-center h-screen">
         <Experience className="absolute h-full w-full top-0 left-0" />
         <h1 className="font-semibold text-8xl text-center text-cloud z-10">
           La madre del topo
