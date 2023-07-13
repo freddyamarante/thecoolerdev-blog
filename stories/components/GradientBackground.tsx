@@ -6,14 +6,18 @@ interface GradientBackgroundProps {
   backgroundColor?: string
   gradientColor?: string
   children?: React.ReactNode
-  size?: 'small' | 'medium' | 'large' | 'extralarge'
+  height?: number
+  width?: number
+  radius?: number
   className?: React.ComponentProps<'div'>['className']
 }
 
 const GradientBackground = ({
   backgroundColor = '#f5cb5c',
   gradientColor = '#343432',
-  size = 'medium',
+  height = 120,
+  width = 120,
+  radius = 100,
   className,
   children,
   ...props
@@ -46,23 +50,6 @@ const GradientBackground = ({
     }
   }, [mainRef])
 
-  let gradientSize: number
-
-  switch (size) {
-    case 'extralarge':
-      gradientSize = 200
-      break
-    case 'large':
-      gradientSize = 150
-      break
-    case 'medium':
-      gradientSize = 120
-      break
-    case 'small':
-      gradientSize = 100
-      break
-  }
-
   return (
     <div
       ref={mainRef}
@@ -75,9 +62,9 @@ const GradientBackground = ({
         {`
           .gradient-animated {
             background: radial-gradient(
-              ${gradientSize}% ${gradientSize}% at var(--mouse-x) var(--mouse-y),
+              ${width}% ${height}% at var(--mouse-x) var(--mouse-y),
               ${gradientColor} 0%,
-              ${backgroundColor} 100%
+              ${backgroundColor} ${radius}%
             );
           }
         `}

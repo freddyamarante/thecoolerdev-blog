@@ -11,6 +11,19 @@ const meta: Meta<typeof GradientBackground> = {
 }
 export default meta
 
+export const Default: Story = {
+  args: {
+    className: 'w-full h-full',
+    size: 'medium',
+  },
+  decorators: [
+    (Story) => (
+      <div className="w-full h-48">
+        <Story />
+      </div>
+    ),
+  ],
+}
 export const Extralarge: Story = {
   args: {
     className: 'w-96 h-96',
