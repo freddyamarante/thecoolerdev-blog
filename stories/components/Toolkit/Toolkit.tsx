@@ -1,8 +1,11 @@
+'use client'
+
 import { motion } from 'framer-motion'
+import { useRef, useLayoutEffect, useState } from 'react'
+
+import GradientBackground from '../GradientBackground'
 import Button from '../Button'
 import Tool from './Tool'
-
-import { useRef, useLayoutEffect, useState } from 'react'
 
 interface ToolkitProps {
   subtitle?: string
@@ -54,12 +57,18 @@ const Toolkit = ({
   }, [])
 
   return (
-    <div
+    <GradientBackground
+      backgroundColor="#242423"
+      gradientColor="#0A0A0A"
+      width={40}
+      height={60}
       className="w-full px-8 lg:px-12 py-8 lg:py-16 rounded-xl bg-night text-white"
-      ref={containerRef}
       key={windowWidth.toString()}
     >
-      <div className="flex flex-col lg:flex-row items-center">
+      <div
+        className="flex flex-col lg:flex-row items-center"
+        ref={containerRef}
+      >
         <div
           className="flex flex-col gap-8 pr-4 flex-shrink-0 basis-2/5"
           ref={infoRef}
@@ -76,7 +85,7 @@ const Toolkit = ({
           <div className="relative top-0 overflow-hidden" ref={boxRef}>
             <motion.div
               drag="x"
-              dragConstraints={{ left: -boxWidth + offset - 96, right: 0 }}
+              dragConstraints={{ left: -boxWidth + offset, right: 0 }}
               className="flex items-center gap-8 ml-20 text-night"
             >
               {tools.map((tool, index) => (
@@ -113,7 +122,7 @@ const Toolkit = ({
           </motion.div>
         </div>
       </div>
-    </div>
+    </GradientBackground>
   )
 }
 

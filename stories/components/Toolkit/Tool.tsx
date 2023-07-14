@@ -18,7 +18,7 @@ const Tool = ({ title = 'Framework', description, image }: ToolProps) => {
       </div>
       <div className="w-32 h-32 ml-8 flex-shrink-0">
         <Image
-          src={image ? image : defaultImage}
+          src={image}
           alt={title}
           className="w-full h-full object-center object-cover"
           width={600}
