@@ -15,7 +15,7 @@ export default async function Home() {
           La madre del topo
         </h1>
       </GradientBackground>
-      <div className="p-32">
+      <div className="lg:px-12 px-4 py-8">
         <Toolkit
           subtitle="My toolkit"
           subBody="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."

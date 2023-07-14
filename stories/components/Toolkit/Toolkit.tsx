@@ -24,14 +24,15 @@ const Toolkit = ({
   button = 'Learn more',
   tools = [],
 }: ToolkitProps) => {
+  // Container refs for sizes
   const containerRef = useRef<HTMLDivElement>(null)
   const infoRef = useRef<HTMLDivElement>(null)
   const boxRef = useRef<HTMLDivElement>(null)
 
-  const mobileRef = useRef<HTMLDivElement>(null)
-
+  // For calculating the size of the drag constraints
   const [boxWidth, setBoxWidth] = useState<number>(0)
   const [offset, setOffset] = useState<number>(0)
+
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth)
 
   useLayoutEffect(() => {
@@ -45,7 +46,7 @@ const Toolkit = ({
             infoRef.current.getBoundingClientRect().width
         )
 
-      setWindowWidth(window.innerWidth)
+      setWindowWidth(window.innerWidth) // Force re-render on window resize
     }
 
     handleResize()
@@ -100,10 +101,7 @@ const Toolkit = ({
         </div>
 
         {/* Mobile carousel */}
-        <div
-          className="relative flex lg:hidden top-0 overflow-hidden mt-12"
-          ref={mobileRef}
-        >
+        <div className="relative flex lg:hidden top-0 overflow-hidden mt-12">
           <motion.div
             drag="x"
             dragConstraints={{
