@@ -42,19 +42,8 @@ const GradientBackground = ({
           ((event.clientY - containerRect.top) / containerHeight) * 100
         )
 
-        const transitionDelay = 175 // Adjust the delay time (in milliseconds) as desired
-
-        // Apply the transition effect with a delay
-        setTimeout(() => {
-          mainRef.current?.style.setProperty(
-            '--mouse-x',
-            mouseX.toString() + '%'
-          )
-          mainRef.current?.style.setProperty(
-            '--mouse-y',
-            mouseY.toString() + '%'
-          )
-        }, transitionDelay)
+        mainRef.current?.style.setProperty('--mouse-x', mouseX.toString() + '%')
+        mainRef.current?.style.setProperty('--mouse-y', mouseY.toString() + '%')
       }
     }
 
