@@ -42,21 +42,19 @@ const GradientBackground = ({
           ((event.clientY - containerRect.top) / containerHeight) * 100
         )
 
-        // Ease-in
-        const easingAmount = 0.1
-        const currentX =
-          parseFloat(mainRef.current?.style.getPropertyValue('--mouse-x')) || 50
-        const currentY =
-          parseFloat(mainRef.current?.style.getPropertyValue('--mouse-y')) || 50
+        const transitionDelay = 175 // Adjust the delay time (in milliseconds) as desired
 
-        const targetX = mouseX
-        const targetY = mouseY
-
-        const newX = currentX + (targetX - currentX) * easingAmount
-        const newY = currentY + (targetY - currentY) * easingAmount
-
-        mainRef.current?.style.setProperty('--mouse-x', newX.toString() + '%')
-        mainRef.current?.style.setProperty('--mouse-y', newY.toString() + '%')
+        // Apply the transition effect with a delay
+        setTimeout(() => {
+          mainRef.current?.style.setProperty(
+            '--mouse-x',
+            mouseX.toString() + '%'
+          )
+          mainRef.current?.style.setProperty(
+            '--mouse-y',
+            mouseY.toString() + '%'
+          )
+        }, transitionDelay)
       }
     }
 

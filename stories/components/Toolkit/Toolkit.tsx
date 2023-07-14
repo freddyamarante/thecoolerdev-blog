@@ -61,8 +61,8 @@ const Toolkit = ({
     <GradientBackground
       backgroundColor="#242423"
       gradientColor="#0A0A0A"
-      width={40}
-      height={60}
+      width={100}
+      height={80}
       className="w-full px-8 lg:px-12 py-8 lg:py-16 rounded-xl bg-night text-white"
       key={windowWidth.toString()}
     >

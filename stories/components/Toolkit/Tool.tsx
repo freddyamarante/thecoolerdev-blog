@@ -11,7 +11,7 @@ const defaultImage =
 
 const Tool = ({ title = 'Framework', description, image }: ToolProps) => {
   return (
-    <div className="relative flex flex-row w-[400px] lg:w-[440px] h-[210px] px-8 justify-center items-center rounded-2xl bg-cloud-dark z-10">
+    <div className="relative flex flex-row w-[400px] lg:w-[440px] h-[260px] px-8 justify-center items-center rounded-2xl bg-cloud-dark z-10">
       <div className="flex flex-col gap-2 grow-0">
         <span className="text-3xl font-bold">{title}</span>
         <span className="text-xl">{description}</span>
