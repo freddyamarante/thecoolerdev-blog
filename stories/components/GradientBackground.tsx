@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { motion, useMotionValue } from 'framer-motion'
 
 interface GradientBackgroundProps {
   backgroundColor?: string
@@ -25,6 +26,9 @@ const GradientBackground = ({
   const mainRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    mainRef.current?.style.setProperty('--mouse-x', '50%')
+    mainRef.current?.style.setProperty('--mouse-y', '50%')
+
     const moveGradient = (event: MouseEvent) => {
       if (mainRef.current) {
         const containerRect = mainRef.current.getBoundingClientRect()
@@ -38,8 +42,21 @@ const GradientBackground = ({
           ((event.clientY - containerRect.top) / containerHeight) * 100
         )
 
-        mainRef.current.style.setProperty('--mouse-x', mouseX.toString() + '%')
-        mainRef.current.style.setProperty('--mouse-y', mouseY.toString() + '%')
+        // Ease-in
+        const easingAmount = 0.1
+        const currentX =
+          parseFloat(mainRef.current?.style.getPropertyValue('--mouse-x')) || 50
+        const currentY =
+          parseFloat(mainRef.current?.style.getPropertyValue('--mouse-y')) || 50
+
+        const targetX = mouseX
+        const targetY = mouseY
+
+        const newX = currentX + (targetX - currentX) * easingAmount
+        const newY = currentY + (targetY - currentY) * easingAmount
+
+        mainRef.current?.style.setProperty('--mouse-x', newX.toString() + '%')
+        mainRef.current?.style.setProperty('--mouse-y', newY.toString() + '%')
       }
     }
 
