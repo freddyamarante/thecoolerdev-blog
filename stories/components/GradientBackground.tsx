@@ -35,19 +35,31 @@ const GradientBackground = ({
         const containerWidth = containerRect.width
         const containerHeight = containerRect.height
 
-        const mouseX = Math.round(
-          ((event.clientX - containerRect.left) / containerWidth) * 100
-        )
-        const mouseY = Math.round(
-          ((event.clientY - containerRect.top) / containerHeight) * 100
-        )
+        let mouseX = 50
+        let mouseY = 50
+
+        const windowWidth = window.innerWidth
+        if (windowWidth >= 1024) {
+          mouseX = Math.round(
+            ((event.clientX - containerRect.left) / containerWidth) * 100
+          )
+          mouseY = Math.round(
+            ((event.clientY - containerRect.top) / containerHeight) * 100
+          )
+        }
 
         mainRef.current?.style.setProperty('--mouse-x', mouseX.toString() + '%')
         mainRef.current?.style.setProperty('--mouse-y', mouseY.toString() + '%')
       }
     }
 
-    document.addEventListener('mousemove', moveGradient)
+    const windowWidth = window.innerWidth
+    if (windowWidth >= 1024) {
+      document.addEventListener('mousemove', moveGradient)
+    } else {
+      mainRef.current?.style.setProperty('--mouse-x', '50%')
+      mainRef.current?.style.setProperty('--mouse-y', '50%')
+    }
 
     return () => {
       document.removeEventListener('mousemove', moveGradient)
