@@ -25,6 +25,7 @@ export type LandingPage = {
     body: string
     subtitle: string
     subBody: string
+    button: string
     tools: {
       title: string
       description: string

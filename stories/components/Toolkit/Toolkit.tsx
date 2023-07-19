@@ -63,7 +63,7 @@ const Toolkit = ({
       gradientColor="#0A0A0A"
       width={100}
       height={80}
-      className="w-full px-8 lg:px-12 py-8 lg:py-16 rounded-xl bg-night text-white"
+      className="w-full px-8 lg:px-12 py-8 lg:py-16 rounded-2xl bg-night text-white"
       key={windowWidth.toString()}
     >
       <div

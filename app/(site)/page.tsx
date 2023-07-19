@@ -97,7 +97,12 @@ export default async function Home() {
         </div>
 
         {/* Toolkit */}
-        {/* <Toolkit /> */}
+        <Toolkit
+          subtitle={data.toolkit.subtitle}
+          subBody={data.toolkit.subBody}
+          button={data.toolkit.button}
+          tools={data.toolkit.tools}
+        />
       </main>
     </div>
   )
