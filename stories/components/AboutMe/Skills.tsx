@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'framer-motion'
 
 interface SkillsProps {
@@ -30,6 +32,16 @@ const Skills = ({ skills, calibration = -1665 }: SkillsProps) => {
         {skills.map((skill, index) => (
           <div
             key={index}
+            className="flex items-center text-center text-4xl font-bold leading-normal"
+          >
+            <span>{skill}</span>
+            <span className="mx-2">/</span>
+          </div>
+        ))}
+        {skills.map((skill, index) => (
+          <div
+            key={index}
+            aria-hidden="true"
             className="flex items-center text-center text-4xl font-bold leading-normal"
           >
             <span>{skill}</span>

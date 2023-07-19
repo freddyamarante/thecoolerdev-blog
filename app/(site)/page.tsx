@@ -9,6 +9,8 @@ import { getLandingPage, getStatus } from '@/sanity/sanity-utils'
 import Button from '@/stories/components/Button'
 import Image from 'next/image'
 import Service from '@/stories/components/AboutMe/Service'
+import Skills from '@/stories/components/AboutMe/Skills'
+import Toolkit from '@/stories/components/Toolkit/Toolkit'
 
 export default async function Home() {
   const status = await getStatus()
@@ -61,7 +63,7 @@ export default async function Home() {
               src={data.aboutMe.image}
               alt={data.aboutMe.title}
               width={550}
-              height={860}
+              height={775}
               className="w-full h-full object-center object-cover rounded-2xl"
             />
           </div>
@@ -85,6 +87,17 @@ export default async function Home() {
             </div>
           </div>
         </section>
+        <div className="my-14">
+          {data && (
+            <Skills
+              skills={data.aboutMe.skills}
+              calibration={data.aboutMe.calibration}
+            />
+          )}
+        </div>
+
+        {/* Toolkit */}
+        <Toolkit />
       </main>
     </div>
   )
