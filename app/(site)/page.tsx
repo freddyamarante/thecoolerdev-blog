@@ -1,53 +1,30 @@
+import '@/styles/globals.css'
+
 import GradientBackground from '@/stories/components/GradientBackground'
 import Experience from '@/stories/components/resources/Experience'
-
-import '@/styles/globals.css'
 import GrainOverlay from '@/stories/components/resources/GrainOverlay'
-import Toolkit from '@/stories/components/Toolkit/Toolkit'
+import Navbar from '@/stories/components/Navbar/Navbar'
+
+import { getLandingPage, getStatus } from '@/sanity/sanity-utils'
 
 export default async function Home() {
+  const status = await getStatus()
+  const data = await getLandingPage()
+
   return (
-    <div className="overflow-hidden">
+    <div className="flex flex-col mx-12 overflow-hidden">
       <GrainOverlay zIndex="z-10" />
-      <GradientBackground className="flex flex-col justify-center h-screen">
-        <Experience className="absolute h-full w-full top-0 left-0" />
-        <h1 className="font-semibold text-8xl text-center text-cloud z-10">
-          La madre del topo
-        </h1>
-      </GradientBackground>
-      <div className="lg:px-12 px-4 py-8">
-        <Toolkit
-          subtitle="My toolkit"
-          subBody="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          button="Learn more"
-          tools={[
-            {
-              title: 'JavaScript',
-              description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              image: null,
-            },
-            {
-              title: 'React',
-              description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              image: null,
-            },
-            {
-              title: 'Tailwind',
-              description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              image: null,
-            },
-            {
-              title: 'TypeScript',
-              description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              image: null,
-            },
-          ]}
+      <div className="fixed w-full px-12 pt-6 left-0 z-50">
+        <Navbar
+          name={status.name}
+          active
+          image={status.image}
+          elements={['Who am I', 'Process', 'Projects', 'Blog', 'Contact']}
         />
       </div>
+      <GradientBackground className="absolute w-screen left-0 flex flex-col justify-center h-screen">
+        <Experience className="absolute h-full w-full top-0 left-0 " />
+      </GradientBackground>
     </div>
   )
 }
