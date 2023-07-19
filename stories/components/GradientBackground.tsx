@@ -14,10 +14,10 @@ interface GradientBackgroundProps {
 }
 
 const GradientBackground = ({
-  backgroundColor = '#f5cb5c',
-  gradientColor = '#343432',
-  height = 120,
-  width = 120,
+  backgroundColor = '#535350',
+  gradientColor = '#f5cb5c',
+  height = 150,
+  width = 150,
   radius = 100,
   className,
   children,
