@@ -53,13 +53,63 @@ export async function getLandingPage(): Promise<LandingPage> {
     groq`
       *[_type == "landingPage"][0]{
         _id,
-        status,
         hero,
-        aboutMe,
-        toolkit,
-        process,
-        pricing,
-        projects,
+        aboutMe {
+          title,
+          body,
+          "image": image.asset->url,
+          services[] {
+            title,
+            description,
+            body,
+          },
+          skills,
+          calibration,
+        },
+        toolkit {
+          title,
+          body,
+          subtitle,
+          subBody,
+          button,
+          tools[] {
+            title,
+            description,
+            "image": image.asset->url,
+          },
+        },
+        process {
+          title,
+          subtitle,
+          body,
+          button,
+          steps[] {
+            title,
+            description,
+          },
+        },
+        pricing {
+          title,
+          prices[] {
+            title,
+            description,
+            price,
+            included[],
+            highlight,
+          },
+          disclaimer,
+        },
+        projects {
+          title,
+          description,
+          project[] {
+            title,
+            "image": image.asset->url,
+            description,
+            url,
+            github,
+          },
+        },
         blog,
         contact
       }

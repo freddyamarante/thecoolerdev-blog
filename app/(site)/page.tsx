@@ -8,6 +8,7 @@ import Navbar from '@/stories/components/Navbar/Navbar'
 import { getLandingPage, getStatus } from '@/sanity/sanity-utils'
 import Button from '@/stories/components/Button'
 import Image from 'next/image'
+import Service from '@/stories/components/AboutMe/Service'
 
 export default async function Home() {
   const status = await getStatus()
@@ -16,7 +17,7 @@ export default async function Home() {
   return (
     <div className="overflow-hidden">
       <GrainOverlay zIndex="z-10" />
-      <div className="fixed w-full px-16 pt-6 left-0 z-50">
+      <div className="fixed w-full px-10 pt-6 left-0 z-50">
         <Navbar
           name={status.name}
           active
@@ -52,15 +53,36 @@ export default async function Home() {
         {data.hero.dividerText}
       </div>
 
-      <main className="flex flex-col mx-12">
+      <main className="relative flex flex-col mx-10">
         {/* About me */}
-        <section className="flex flex-row justify-center content-center mt-14">
-          <div className="w-96 h-96">
+        <section className="flex flex-row gap-16 justify-between mt-20">
+          <div className="w-[560px] h-fit flex-shrink-0">
             <Image
               src={data.aboutMe.image}
               alt={data.aboutMe.title}
+              width={550}
+              height={860}
               className="w-full h-full object-center object-cover rounded-2xl"
             />
+          </div>
+          <div className="relative flex flex-col justify-center gap-16 z-10">
+            <div className="flex flex-col gap-3 text-start pr-32">
+              <h2 className="flex flex-col text-6xl font-bold ">
+                {data.aboutMe.title}
+              </h2>
+              <p className="text-3xl font-normal">{data.aboutMe.body}</p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-x-14 gap-y-12">
+              {data.aboutMe.services.map((service, index) => (
+                <Service
+                  title={service.title}
+                  key={index}
+                  description={service.description}
+                  body={service.body}
+                />
+              ))}
+            </div>
           </div>
         </section>
       </main>
