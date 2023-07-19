@@ -75,7 +75,7 @@ export default async function Home() {
               <p className="text-3xl font-normal">{data.aboutMe.body}</p>
             </div>
 
-            <div className="grid grid-cols-2 gap-x-14 gap-y-12">
+            <div className="grid grid-cols-2 gap-x-2 gap-y-12">
               {data.aboutMe.services.map((service, index) => (
                 <Service
                   title={service.title}
@@ -97,7 +97,7 @@ export default async function Home() {
         </div>
 
         {/* Toolkit */}
-        <Toolkit />
+        {/* <Toolkit /> */}
       </main>
     </div>
   )
