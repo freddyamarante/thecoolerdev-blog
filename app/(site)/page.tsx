@@ -7,13 +7,14 @@ import Navbar from '@/stories/components/Navbar/Navbar'
 
 import { getLandingPage, getStatus } from '@/sanity/sanity-utils'
 import Button from '@/stories/components/Button'
+import Image from 'next/image'
 
 export default async function Home() {
   const status = await getStatus()
   const data = await getLandingPage()
 
   return (
-    <div className="flex flex-col mx-12 overflow-hidden">
+    <div className="overflow-hidden">
       <GrainOverlay zIndex="z-10" />
       <div className="fixed w-full px-16 pt-6 left-0 z-50">
         <Navbar
@@ -23,8 +24,8 @@ export default async function Home() {
           elements={['Who am I', 'Process', 'Projects', 'Blog', 'Contact']}
         />
       </div>
-      <GradientBackground className="absolute w-screen left-0 flex flex-col justify-center content-center h-screen">
-        <Experience className="absolute h-full w-full top-0 left-0 " />
+      <GradientBackground className="w-screen left-0 flex flex-col justify-center content-center h-screen">
+        <Experience className="absolute h-full w-full top-0 left-0" />
         <div className="flex flex-col mx-64 gap-1 text-center z-10">
           <h1 className="font-black text-8xl leading-none">
             {data.hero.title}{' '}
@@ -32,7 +33,6 @@ export default async function Home() {
               {data.hero.highlight}
             </span>
           </h1>
-          <p className="font-normal text-2xl px-16">{data.hero.dividerText}</p>
           <div className="flex gap-6 justify-center mt-6">
             <Button
               label={data.hero.callToAction}
@@ -47,6 +47,23 @@ export default async function Home() {
           </div>
         </div>
       </GradientBackground>
+      {/* Divider */}
+      <div className="text-5xl font-bold bg-night text-white py-6 rounded-b-[80px] text-center">
+        {data.hero.dividerText}
+      </div>
+
+      <main className="flex flex-col mx-12">
+        {/* About me */}
+        <section className="flex flex-row justify-center content-center mt-14">
+          <div className="w-96 h-96">
+            <Image
+              src={data.aboutMe.image}
+              alt={data.aboutMe.title}
+              className="w-full h-full object-center object-cover rounded-2xl"
+            />
+          </div>
+        </section>
+      </main>
     </div>
   )
 }

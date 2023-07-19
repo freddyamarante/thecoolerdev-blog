@@ -58,6 +58,11 @@ const landingPage = {
           type: 'text',
         },
         {
+          name: 'image',
+          title: 'Image',
+          type: 'image',
+        },
+        {
           name: 'services',
           title: 'Services',
           type: 'array',

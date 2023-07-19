@@ -11,6 +11,7 @@ export type LandingPage = {
   aboutMe: {
     title: string
     body: string
+    image: string
     services: {
       title: string
       description: string
