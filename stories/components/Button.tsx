@@ -20,10 +20,10 @@ const Button = ({
       modeClasses = 'bg-taxi text-night'
       break
     case 'contrast':
-      modeClasses = 'bg-night text-white'
+      modeClasses = 'bg-night-dark text-white'
       break
     case 'simple':
-      modeClasses = 'bg-transparent text-black border-2 border-night'
+      modeClasses = 'bg-transparent text-night-dark border-2 border-night'
       break
   }
 
@@ -32,7 +32,7 @@ const Button = ({
 
   switch (size) {
     case 'extralarge':
-      sizeClasses = 'text-2xl'
+      sizeClasses = 'text-3xl'
       iconSize = 20
       break
     case 'large':
@@ -52,7 +52,7 @@ const Button = ({
   return (
     <button
       type="button"
-      className={`flex flex-row rounded-lg p-2 justify-center items-center leading-none gap-1 ${modeClasses} ${sizeClasses}`}
+      className={`flex flex-row rounded-lg p-3 justify-center items-center leading-none gap-1 ${modeClasses} ${sizeClasses}`}
       {...props}
     >
       {label}
