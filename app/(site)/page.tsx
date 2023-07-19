@@ -11,6 +11,8 @@ export default async function Home() {
   const status = await getStatus()
   const data = await getLandingPage()
 
+  console.log(data)
+
   return (
     <div className="flex flex-col mx-12 overflow-hidden">
       <GrainOverlay zIndex="z-10" />
@@ -22,8 +24,13 @@ export default async function Home() {
           elements={['Who am I', 'Process', 'Projects', 'Blog', 'Contact']}
         />
       </div>
-      <GradientBackground className="absolute w-screen left-0 flex flex-col justify-center h-screen">
+      <GradientBackground className="absolute w-screen left-0 flex flex-col justify-center content-center h-screen">
         <Experience className="absolute h-full w-full top-0 left-0 " />
+        <div className="flex flex-col gap-1 text-center z-10">
+          <h1 className="font-black text-8xl">
+            {data.hero.title} <span>{data.hero.highlight}</span>
+          </h1>
+        </div>
       </GradientBackground>
     </div>
   )

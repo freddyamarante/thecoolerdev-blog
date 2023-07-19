@@ -12,7 +12,7 @@ module.exports = {
         night: {
           light: '#343432',
           DEFAULT: '#242423',
-          dark: '#1f1f1e',
+          dark: '#0a0a0a',
         },
         cloud: {
           DEFAULT: '#e8eddf',
