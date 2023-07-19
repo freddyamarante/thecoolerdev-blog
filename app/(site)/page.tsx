@@ -24,8 +24,14 @@ export default async function Home() {
       </div>
       <GradientBackground className="absolute w-screen left-0 flex flex-col justify-center content-center h-screen">
         <Experience className="absolute h-full w-full top-0 left-0 " />
-        <div className="flex flex-col gap-1 text-center z-10">
-          <h1 className="font-black text-8xl">{data.hero.highlight}</h1>
+        <div className="flex flex-col px-12 gap-1 text-center z-10">
+          <h1 className="font-black text-8xl">
+            {data.hero.title}{' '}
+            <span className="text-border text-transparent">
+              {data.hero.highlight}
+            </span>
+          </h1>
+          {/* <p className="font-black text-8xl">{data.hero.subtitle}</p> */}
         </div>
       </GradientBackground>
     </div>

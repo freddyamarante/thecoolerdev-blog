@@ -1,10 +1,10 @@
 import '@/styles/globals.css'
 
-import { Inter } from 'next/font/google'
+import { IBM_Plex_Sans } from 'next/font/google'
 
 import Providers from './providers'
 
-const inter = Inter({
+const IBMPlexSans = IBM_Plex_Sans({
   weight: ['100', '200', '300', '400', '700'],
   subsets: ['latin'],
 })
@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} text-night-dark`}>
+      <body className={`${IBMPlexSans.className} text-night-dark`}>
         <Providers>{children}</Providers>
       </body>
     </html>
