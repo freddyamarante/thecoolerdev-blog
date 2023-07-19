@@ -1,6 +1,5 @@
 'use client'
 
-import { getLandingPage, getPosts } from '@/sanity/sanity-utils'
 import {
   Float,
   Torus,
@@ -9,19 +8,12 @@ import {
   Dodecahedron,
 } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import { useEffect } from 'react'
 
 interface ExperienceProps {
   className?: React.ComponentProps<'div'>['className']
 }
 
 const Experience = ({ className }: ExperienceProps) => {
-  const posts = getPosts()
-  const landingPage = getLandingPage()
-  useEffect(() => {
-    console.log(posts)
-    console.log(landingPage)
-  })
   return (
     <div className={className}>
       <Canvas>
