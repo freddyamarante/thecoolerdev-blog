@@ -11,8 +11,6 @@ export default async function Home() {
   const status = await getStatus()
   const data = await getLandingPage()
 
-  console.log(data.hero.highlight)
-
   return (
     <div className="flex flex-col mx-12 overflow-hidden">
       <GrainOverlay zIndex="z-10" />

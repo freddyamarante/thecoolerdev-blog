@@ -15,7 +15,7 @@ const landingPage = {
           type: 'string',
         },
         {
-          name: 'hightlight',
+          name: 'highlight',
           title: 'Highlight',
           type: 'string',
         },
