@@ -55,10 +55,10 @@ export default async function Home() {
         {data.hero.dividerText}
       </div>
 
-      <main className="relative flex flex-col mx-10">
+      <main className="relative flex flex-col mx-2 sm:mx-6 lg:mx-10">
         {/* About me */}
-        <section className="flex flex-row gap-16 justify-between mt-20">
-          <div className="w-[560px] h-fit flex-shrink-0">
+        <section className="flex flex-col lg:flex-row gap-16 justify-center items-center mt-20">
+          <div className="w-full lg:w-[560px] h-[660px] lg:h-fit flex-shrink-0">
             <Image
               src={data.aboutMe.image}
               alt={data.aboutMe.title}
@@ -68,14 +68,16 @@ export default async function Home() {
             />
           </div>
           <div className="relative flex flex-col justify-center gap-16 z-10">
-            <div className="flex flex-col gap-3 text-start pr-32">
-              <h2 className="flex flex-col text-6xl font-bold ">
+            <div className="flex flex-col gap-3 text-start lg:pr-32">
+              <h2 className="flex flex-col text-4xl sm:text-6xl font-bold ">
                 {data.aboutMe.title}
               </h2>
-              <p className="text-3xl font-normal">{data.aboutMe.body}</p>
+              <p className="text-xl sm:text-3xl font-normal">
+                {data.aboutMe.body}
+              </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-x-2 gap-y-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 gap-y-12">
               {data.aboutMe.services.map((service, index) => (
                 <Service
                   title={service.title}
