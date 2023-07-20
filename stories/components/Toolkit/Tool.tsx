@@ -6,8 +6,7 @@ interface ToolProps {
   image?: string
 }
 
-const defaultImage =
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png'
+const defaultImage = '/javascriptImage.png'
 
 const Tool = ({ title = 'Framework', description, image }: ToolProps) => {
   return (
@@ -16,11 +15,11 @@ const Tool = ({ title = 'Framework', description, image }: ToolProps) => {
         <span className="text-3xl font-bold">{title}</span>
         <span className="text-xl">{description}</span>
       </div>
-      <div className="w-32 h-32 ml-8 flex-shrink-0">
+      <div className="flex w-32 h-32 ml-8 flex-shrink-0 items-center">
         <Image
-          src={image}
+          src={image ? image : defaultImage}
           alt={title}
-          className="w-full h-full object-center object-cover"
+          className="w-fit h-fit object-center object-cover"
           width={600}
           height={600}
         />

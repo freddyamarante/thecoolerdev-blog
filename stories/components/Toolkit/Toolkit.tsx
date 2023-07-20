@@ -83,7 +83,7 @@ const Toolkit = ({
 
         {/* Desktop carousel */}
         <div className="hidden lg:flex">
-          <div className="relative top-0 overflow-hidden" ref={boxRef}>
+          <div className="relative overflow-x-hidden" ref={boxRef}>
             <motion.div
               drag="x"
               dragConstraints={{ left: -boxWidth + offset, right: 0 }}
@@ -93,6 +93,7 @@ const Toolkit = ({
                 <Tool
                   title={tool.title}
                   description={tool.description}
+                  image={tool.image ? tool.image : undefined}
                   key={index}
                 />
               ))}

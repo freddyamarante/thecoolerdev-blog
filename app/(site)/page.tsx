@@ -93,6 +93,8 @@ export default async function Home() {
             </div>
           </div>
         </section>
+
+        {/* Skills divider */}
         <div className="my-6 lg:my-14">
           {data && (
             <Skills
@@ -118,6 +120,9 @@ export default async function Home() {
           button={data.toolkit.button}
           tools={data.toolkit.tools}
         />
+
+        {/*  */}
+        <section></section>
       </main>
     </div>
   )
