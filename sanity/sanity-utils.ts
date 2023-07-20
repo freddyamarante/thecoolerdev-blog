@@ -80,7 +80,6 @@ export async function getLandingPage(): Promise<LandingPage> {
         },
         process {
           title,
-          subtitle,
           body,
           button,
           steps[] {

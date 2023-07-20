@@ -158,12 +158,7 @@ const landingPage = {
       fields: [
         {
           name: 'title',
-          title: 'Title',
-          type: 'string',
-        },
-        {
-          name: 'subtitle',
-          title: 'Subtitle',
+          title: 'title',
           type: 'string',
         },
         {

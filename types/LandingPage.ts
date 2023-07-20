@@ -34,7 +34,6 @@ export type LandingPage = {
   }
   process: {
     title: string
-    subtitle: string
     body: string
     button: string
     steps: {
