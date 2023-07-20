@@ -5,7 +5,6 @@ import { Disclosure } from '@headlessui/react'
 import NavElement from './NavElement'
 import Status from './Status'
 import { Bars3, XMark } from '../resources/Icons'
-import GrainOverlay from '../resources/GrainOverlay'
 
 interface NavbarProps {
   name: string
@@ -24,7 +23,7 @@ const Navbar = ({ name, active, image, elements }: NavbarProps) => {
   }
 
   return (
-    <Disclosure as="nav" className="bg-night w-full rounded-xl px-3">
+    <Disclosure as="nav" className="bg-night w-full rounded-2xl px-3">
       {({ open }) => (
         <>
           <div className="flex flex-col justify-start">
