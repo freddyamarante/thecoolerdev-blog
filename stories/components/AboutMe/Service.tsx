@@ -6,8 +6,8 @@ interface ServiceProps {
 
 const Service = ({ title, description, body }: ServiceProps) => {
   return (
-    <div className="flex flex-col max-w-md gap-4">
-      <div className="text-white bg-night text-xl px-4 py-1 rounded-3xl leading-0 w-fit">
+    <div className="flex flex-col w-full sm:max-w-md gap-4">
+      <div className="text-white bg-night text-xl px-4 py-1 rounded-3xl leading-0 w-full sm:w-fit">
         {title}
       </div>
       <div className="text-3xl font-bold leading-none">{description}</div>

@@ -19,6 +19,8 @@ export default async function Home() {
   return (
     <div className="overflow-hidden">
       <GrainOverlay zIndex="z-10" />
+
+      {/* Navbar */}
       <div className="fixed w-full px-2 sm:px-6 lg:px-10 pt-6 left-0 z-50">
         <Navbar
           name={status.name}
@@ -27,6 +29,7 @@ export default async function Home() {
           elements={['Who am I', 'Process', 'Projects', 'Blog', 'Contact']}
         />
       </div>
+
       <GradientBackground className="w-screen left-0 flex flex-col justify-center content-center h-screen">
         <Experience className="absolute h-full w-full top-0 left-0" />
         <div className="flex flex-col mx-2 lg:mx-16 xl:mx-64 gap-1 text-center z-10">
@@ -50,6 +53,7 @@ export default async function Home() {
           </div>
         </div>
       </GradientBackground>
+
       {/* Divider */}
       <div className="text-2xl sm:text-3xl lg:text-5xl font-bold bg-night text-white py-6 rounded-b-[45px] lg:rounded-b-[80px] text-center">
         {data.hero.dividerText}
@@ -57,8 +61,8 @@ export default async function Home() {
 
       <main className="relative flex flex-col mx-2 sm:mx-6 lg:mx-10">
         {/* About me */}
-        <section className="flex flex-col lg:flex-row gap-8 lg:gap-16 justify-center items-center mt-6 lg:mt-20">
-          <div className="w-full lg:w-[560px] h-[380px] md:h-[560px] lg:h-fit flex-shrink-0">
+        <section className="flex flex-col xl:flex-row gap-8 lg:gap-16 justify-center items-center mt-6 lg:mt-20">
+          <div className="w-full xl:basis-1/3 h-[480px] xl:h-full flex-shrink-0">
             <Image
               src={data.aboutMe.image}
               alt={data.aboutMe.title}
@@ -67,12 +71,12 @@ export default async function Home() {
               className="w-full h-full object-center object-cover rounded-2xl"
             />
           </div>
-          <div className="relative flex flex-col justify-center gap-8 lg:gap-16 z-10">
+          <div className="relative flex flex-col lg:basis-2/3 justify-center gap-8 lg:gap-16 z-10">
             <div className="flex flex-col gap-3 text-start lg:pr-32">
-              <h2 className="text-4xl sm:text-6xl font-bold ">
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold">
                 {data.aboutMe.title}
               </h2>
-              <p className="text-xl sm:text-3xl font-normal">
+              <p className="text-xl lg:text-2xl xl:text-3xl font-normal">
                 {data.aboutMe.body}
               </p>
             </div>
