@@ -57,7 +57,7 @@ export default async function Home() {
 
       <main className="relative flex flex-col mx-2 sm:mx-6 lg:mx-10">
         {/* About me */}
-        <section className="flex flex-col lg:flex-row gap-4 lg:gap-16 justify-center items-center mt-6 lg:mt-20">
+        <section className="flex flex-col lg:flex-row gap-8 lg:gap-16 justify-center items-center mt-6 lg:mt-20">
           <div className="w-full lg:w-[560px] h-[380px] md:h-[560px] lg:h-fit flex-shrink-0">
             <Image
               src={data.aboutMe.image}
@@ -67,9 +67,9 @@ export default async function Home() {
               className="w-full h-full object-center object-cover rounded-2xl"
             />
           </div>
-          <div className="relative flex flex-col justify-center gap-4 lg:gap-16 z-10">
+          <div className="relative flex flex-col justify-center gap-8 lg:gap-16 z-10">
             <div className="flex flex-col gap-3 text-start lg:pr-32">
-              <h2 className="flex flex-col text-4xl sm:text-6xl font-bold ">
+              <h2 className="text-4xl sm:text-6xl font-bold ">
                 {data.aboutMe.title}
               </h2>
               <p className="text-xl sm:text-3xl font-normal">
@@ -77,7 +77,7 @@ export default async function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 gap-y-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 gap-y-8 lg:gap-y-12">
               {data.aboutMe.services.map((service, index) => (
                 <Service
                   title={service.title}
@@ -99,6 +99,15 @@ export default async function Home() {
         </div>
 
         {/* Toolkit */}
+        <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6 z-10 mb-6 lg:mb-14">
+          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold basis-1/3">
+            {data.toolkit.title}
+          </h2>
+          <p className="text-xl lg:text-2xl xl:text-3xl basis-2/3">
+            {data.toolkit.body}
+          </p>
+        </div>
+
         <Toolkit
           subtitle={data.toolkit.subtitle}
           subBody={data.toolkit.subBody}
