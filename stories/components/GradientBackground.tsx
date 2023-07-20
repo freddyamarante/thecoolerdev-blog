@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { motion, useMotionValue } from 'framer-motion'
 
 interface GradientBackgroundProps {
   backgroundColor?: string
@@ -16,8 +15,8 @@ interface GradientBackgroundProps {
 const GradientBackground = ({
   backgroundColor = '#535350',
   gradientColor = '#f5cb5c',
-  height = 150,
-  width = 150,
+  height = 200,
+  width = 200,
   radius = 100,
   className,
   children,
