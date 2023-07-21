@@ -37,7 +37,7 @@ const Step = ({
         </div>
 
         {isOpen && (
-          <div className="relative px-4 py-6 rounded-2xl text-white z-10">
+          <div className="relative px-4 py-6 rounded-2xl text-white text-2xl z-10">
             {description}
           </div>
         )}
