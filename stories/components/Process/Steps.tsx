@@ -28,7 +28,7 @@ const Steps = ({ steps }: StepsProps) => {
             number={index}
             title={step.title}
             description={step.description}
-            isOpen={index == openStepIndex}
+            isOpen={index === openStepIndex}
             onToggle={() => handleStepToggle(index)}
           />
         ))}

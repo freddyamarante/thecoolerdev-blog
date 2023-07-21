@@ -1,4 +1,9 @@
+'use client'
+
 import { ChevronDown, ChevronUp } from '../resources/Icons'
+
+import { motion, AnimatePresence } from 'framer-motion'
+import { useState } from 'react'
 
 interface StepProps {
   number?: number
@@ -36,11 +41,24 @@ const Step = ({
           </div>
         </div>
 
-        {isOpen && (
-          <div className="relative px-4 py-6 rounded-2xl text-white text-2xl z-10">
-            {description}
-          </div>
-        )}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ height: 0 }}
+              animate={{ height: 'auto' }}
+              exit={{ height: 0 }}
+              transition={{
+                duration: 0.15,
+                ease: 'easeInOut',
+              }}
+              className="overflow-hidden"
+            >
+              <div className="relative px-4 py-6 rounded-2xl text-white text-2xl z-10">
+                {description}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   )
