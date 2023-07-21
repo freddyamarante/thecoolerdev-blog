@@ -11,6 +11,7 @@ import Image from 'next/image'
 import Service from '@/stories/components/AboutMe/Service'
 import Skills from '@/stories/components/AboutMe/Skills'
 import Toolkit from '@/stories/components/Toolkit/Toolkit'
+import Steps from '@/stories/components/Process/Steps'
 
 export default async function Home() {
   const status = await getStatus()
@@ -125,7 +126,7 @@ export default async function Home() {
         <section className="flex flex-row gap-16 mt-6 lg:mt-14">
           <GradientBackground
             radius={500}
-            className="flex flex-col bg-taxi p-12 rounded-2xl basis-1/3 h-full"
+            className="flex flex-col flex-grow-0 bg-taxi p-12 rounded-2xl basis-1/4"
           >
             <div className="flex flex-col gap-8">
               <h2 className="font-bold text-4xl">{data.process.title}</h2>
@@ -135,7 +136,9 @@ export default async function Home() {
               <Button mode="contrast" label={data.process.button} />
             </div>
           </GradientBackground>
-          <div className="basis-2/3"></div>
+          <div className="basis-3/4">
+            <Steps steps={data.process.steps} />
+          </div>
         </section>
       </main>
     </div>
