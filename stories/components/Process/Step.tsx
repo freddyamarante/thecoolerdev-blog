@@ -22,7 +22,7 @@ const Step = ({
         onClick={onToggle}
       >
         <div className="flex flex-row justify-between items-center w-full">
-          <div className="flex flex-row text-4xl font-medium text-white leading-none gap-x-9">
+          <div className="relative flex flex-row text-4xl font-medium text-white leading-none gap-x-9 z-10">
             <div>{`0${(number + 1).toString()}`}</div>
             <div>{title}</div>
           </div>
@@ -37,7 +37,9 @@ const Step = ({
         </div>
 
         {isOpen && (
-          <div className="px-4 py-6 rounded-2xl text-white">{description}</div>
+          <div className="relative px-4 py-6 rounded-2xl text-white z-10">
+            {description}
+          </div>
         )}
       </div>
     </div>

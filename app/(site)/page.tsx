@@ -128,7 +128,7 @@ export default async function Home() {
             radius={500}
             className="flex flex-col flex-grow-0 bg-taxi p-12 rounded-2xl basis-1/4"
           >
-            <div className="flex flex-col gap-8">
+            <div className="relative flex flex-col gap-8 z-10">
               <h2 className="font-bold text-4xl">{data.process.title}</h2>
               <p className="text-2xl">{data.process.body}</p>
             </div>

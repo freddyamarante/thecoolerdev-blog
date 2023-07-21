@@ -32,7 +32,7 @@ const Skills = ({ skills, calibration = -1665 }: SkillsProps) => {
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="flex items-center text-center text-4xl font-bold leading-normal"
+            className="relative flex items-center text-center text-4xl font-bold leading-normal z-10"
           >
             <span>{skill}</span>
             <span className="mx-2">/</span>
@@ -42,7 +42,7 @@ const Skills = ({ skills, calibration = -1665 }: SkillsProps) => {
           <div
             key={index}
             aria-hidden="true"
-            className="flex items-center text-center text-4xl font-bold leading-normal"
+            className="relative flex items-center text-center text-4xl font-bold leading-normal z-10"
           >
             <span>{skill}</span>
             <span className="mx-2">/</span>
@@ -52,7 +52,7 @@ const Skills = ({ skills, calibration = -1665 }: SkillsProps) => {
           <div
             key={index}
             aria-hidden="true"
-            className="flex items-center text-center text-4xl font-bold leading-normal"
+            className="relative flex items-center text-center text-4xl font-bold leading-normal z-10"
           >
             <span>{skill}</span>
             <span className="mx-2">/</span>
