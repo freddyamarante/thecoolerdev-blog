@@ -82,7 +82,7 @@ const Toolkit = ({
         </div>
 
         {/* Desktop carousel */}
-        <div className="hidden lg:flex">
+        <div className="hidden lg:flex cursor-grab">
           <div className="relative overflow-x-hidden" ref={boxRef}>
             <motion.div
               drag="x"
