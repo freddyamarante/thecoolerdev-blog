@@ -17,7 +17,7 @@ const Button = ({
 
   switch (mode) {
     case 'primary':
-      modeClasses = 'bg-taxi text-night'
+      modeClasses = 'bg-taxi text-night-dark'
       break
     case 'contrast':
       modeClasses = 'bg-night-dark text-white'
