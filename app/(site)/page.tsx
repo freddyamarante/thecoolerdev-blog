@@ -123,9 +123,9 @@ export default async function Home() {
         />
 
         {/* Process */}
-        <section className="flex flex-col lg:flex-row gap-4 md:gap-7 xl:gap-16 mt-10 lg:mt-14">
+        <section className="flex flex-col lg:flex-row gap-4 md:gap-7 xl:gap-10 my-10 lg:mt-14">
           <GradientBackground
-            radius={400}
+            radius={300}
             className="flex flex-col justify-center bg-taxi h-fit xl:h-auto px-8 lg:px-12 py-10 lg:py-12 xl:py-0  rounded-2xl basis-1/3"
           >
             <div className="relative flex flex-col gap-8 z-10">
@@ -139,6 +139,16 @@ export default async function Home() {
           <div className="basis-2/3 basis">
             <Steps steps={data.process.steps} />
           </div>
+        </section>
+
+        {/* Pricing */}
+        <section className="flex flex-col h-screen mt-10 lg:mt-4 border-y-[45px] lg:border-y-[80px] border-night rounded-[45px] lg:rounded-[80px]">
+          <GradientBackground
+            radius={200}
+            className="flex justify-center items-center w-full h-screen"
+          >
+            {/* Pricing cards */}
+          </GradientBackground>
         </section>
       </main>
     </div>
