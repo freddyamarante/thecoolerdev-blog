@@ -62,7 +62,7 @@ export default async function Home() {
 
       <main className="relative flex flex-col mx-2 sm:mx-6 lg:mx-10">
         {/* About me */}
-        <section className="flex flex-col xl:flex-row gap-8 lg:gap-16 justify-center items-center mt-6 lg:mt-20">
+        <section className="flex flex-col xl:flex-row gap-10 lg:gap-16 justify-center items-center mt-10 lg:mt-20">
           <div className="w-full xl:basis-1/3 h-[480px] xl:h-full flex-shrink-0">
             <Image
               src={data.aboutMe.image}
@@ -72,7 +72,7 @@ export default async function Home() {
               className="w-full h-full object-center object-cover rounded-2xl"
             />
           </div>
-          <div className="relative flex flex-col lg:basis-2/3 justify-center gap-8 lg:gap-16 z-10">
+          <div className="relative flex flex-col lg:basis-2/3 justify-center gap-10 lg:gap-16 z-10">
             <div className="flex flex-col gap-3 text-start lg:pr-32">
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold">
                 {data.aboutMe.title}
@@ -96,7 +96,7 @@ export default async function Home() {
         </section>
 
         {/* Skills divider */}
-        <div className="my-6 lg:my-14">
+        <div className="my-10 lg:my-14">
           {data && (
             <Skills
               skills={data.aboutMe.skills}
@@ -106,7 +106,7 @@ export default async function Home() {
         </div>
 
         {/* Toolkit */}
-        <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6 z-10 mb-6 lg:mb-14">
+        <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6 z-10 mb-10 lg:mb-14">
           <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold basis-1/3">
             {data.toolkit.title}
           </h2>
@@ -123,20 +123,20 @@ export default async function Home() {
         />
 
         {/* Process */}
-        <section className="flex flex-row gap-16 mt-6 lg:mt-14">
+        <section className="flex flex-col lg:flex-row gap-10 lg:gap-16 mt-10 lg:mt-14">
           <GradientBackground
-            radius={500}
-            className="flex flex-col flex-grow-0 bg-taxi p-12 rounded-2xl basis-1/4"
+            radius={400}
+            className="flex flex-col justify-center bg-taxi h-fit px-8 lg:px-12 py-10 lg:py-12 xl:py-24  rounded-2xl basis-1/3"
           >
             <div className="relative flex flex-col gap-8 z-10">
               <h2 className="font-bold text-4xl">{data.process.title}</h2>
               <p className="text-2xl">{data.process.body}</p>
             </div>
-            <div className="flex justify-start mt-16">
+            <div className="flex justify-start mt-12">
               <Button mode="contrast" label={data.process.button} />
             </div>
           </GradientBackground>
-          <div className="basis-3/4">
+          <div className="basis-2/3 basis">
             <Steps steps={data.process.steps} />
           </div>
         </section>

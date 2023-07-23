@@ -32,7 +32,7 @@ const Button = ({
 
   switch (size) {
     case 'extralarge':
-      sizeClasses = 'text-lg sm:text-xl md:text-2xl lg:text-3xl'
+      sizeClasses = 'text-xl md:text-2xl lg:text-3xl'
       iconSize = 20
       break
     case 'large':
