@@ -20,7 +20,7 @@ const Steps = ({ steps }: StepsProps) => {
   }
 
   return (
-    <div className="flex flex-col gap-7 w-full">
+    <div className="flex flex-col gap-4 lg:gap-7 w-full">
       {steps &&
         steps.map((step, index) => (
           <Step
