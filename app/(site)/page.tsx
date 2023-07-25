@@ -144,27 +144,30 @@ export default async function Home() {
 
         {/* Pricing */}
         <section className="flex flex-col h-screen mt-4 lg:mt-10 border-y-[45px] lg:border-y-[80px] border-night rounded-[45px] lg:rounded-[80px]">
-          <GradientBackground
-            radius={200}
-            className="flex flex-col justify-center items-center w-full h-screen"
-          >
-            <h2 className="text-4xl font-bold text-center">
-              {data.pricing.title}
-            </h2>
-            {data.pricing.prices && (
-              <div className="flex gap-x-4 mt-12">
-                {data.pricing.prices.map((element) => (
-                  <PricingCard
-                    key={element.title}
-                    title={element.title}
-                    price={element.price}
-                    description={element.description}
-                    included={element.included}
-                    highlight={element.highlight}
-                  />
-                ))}
-              </div>
-            )}
+          <GradientBackground className="flex justify-center items-center w-full h-screen">
+            <div className="flex flex-col justify-center px-80">
+              <h2 className="text-4xl font-bold text-center basis-1/4">
+                {data.pricing.title}
+              </h2>
+              {data.pricing.prices && (
+                <div className="flex gap-x-4 mt-12 basis-2/4 ">
+                  {data.pricing.prices.map((element) => (
+                    <div key={element.title} className="basis-1/2 h-auto">
+                      <PricingCard
+                        title={element.title}
+                        price={element.price}
+                        description={element.description}
+                        included={element.included}
+                        highlight={element.highlight}
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+              <span className="text-xl text-center basis-1/4">
+                {data.pricing.disclaimer}
+              </span>
+            </div>
           </GradientBackground>
         </section>
       </main>
