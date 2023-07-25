@@ -12,6 +12,7 @@ import Service from '@/stories/components/AboutMe/Service'
 import Skills from '@/stories/components/AboutMe/Skills'
 import Toolkit from '@/stories/components/Toolkit/Toolkit'
 import Steps from '@/stories/components/Process/Steps'
+import PricingCard from '@/stories/components/Pricing/PricingCard'
 
 export default async function Home() {
   const status = await getStatus()
@@ -145,9 +146,25 @@ export default async function Home() {
         <section className="flex flex-col h-screen mt-4 lg:mt-10 border-y-[45px] lg:border-y-[80px] border-night rounded-[45px] lg:rounded-[80px]">
           <GradientBackground
             radius={200}
-            className="flex justify-center items-center w-full h-screen"
+            className="flex flex-col justify-center items-center w-full h-screen"
           >
-            {/* Pricing cards */}
+            <h2 className="text-4xl font-bold text-center">
+              {data.pricing.title}
+            </h2>
+            {data.pricing.prices && (
+              <div className="flex gap-x-4 mt-12">
+                {data.pricing.prices.map((element) => (
+                  <PricingCard
+                    key={element.title}
+                    title={element.title}
+                    price={element.price}
+                    description={element.description}
+                    included={element.included}
+                    highlight={element.highlight}
+                  />
+                ))}
+              </div>
+            )}
           </GradientBackground>
         </section>
       </main>
