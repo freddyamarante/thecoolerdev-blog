@@ -23,6 +23,7 @@ export const Normal: Story = {
     title: 'Bigger Projects',
     description: 'A simple website to promote your business',
     price: 299,
+    button: 'Book a call',
     included: [
       'Fully customizable storefront for Shopify',
       'Web applications for your business',
@@ -37,9 +38,10 @@ export const Normal: Story = {
 
 export const Highlight: Story = {
   args: {
-    title: 'Bigger Projects',
+    title: 'Landing Page',
     description: 'A simple website to promote your business',
     price: 299,
+    button: 'Book a call',
     included: [
       'Fully customizable storefront for Shopify',
       'Web applications for your business',

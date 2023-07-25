@@ -47,6 +47,7 @@ export type LandingPage = {
       title: string
       description: string
       price: number
+      button: string
       included: string[]
       highlight: boolean
     }[]

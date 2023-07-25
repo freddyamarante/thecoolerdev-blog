@@ -63,13 +63,13 @@ export default async function Home() {
       <main className="relative flex flex-col mx-2 sm:mx-6 lg:mx-10">
         {/* About me */}
         <section className="flex flex-col xl:flex-row gap-10 lg:gap-16 justify-center items-center mt-10 lg:mt-20">
-          <div className="w-full xl:basis-1/3 h-[480px] xl:h-full flex-shrink-0">
+          <div className="w-full xl:basis-1/3 h-[480px] xl:h-full flex-shrink-0 ">
             <Image
               src={data.aboutMe.image}
               alt={data.aboutMe.title}
               width={550}
               height={775}
-              className="w-full h-full object-center object-cover rounded-2xl"
+              className="w-full h-full object-center object-cover rounded-2xl ring-2 lg:ring-0 ring-night"
             />
           </div>
           <div className="relative flex flex-col lg:basis-2/3 justify-center gap-10 lg:gap-16 z-10">
@@ -123,7 +123,7 @@ export default async function Home() {
         />
 
         {/* Process */}
-        <section className="flex flex-col lg:flex-row gap-4 md:gap-7 xl:gap-10 mt-10 lg:mt-14">
+        <section className="flex flex-col lg:flex-row gap-4 md:gap-7 xl:gap-10 my-10 lg:my-14">
           <GradientBackground
             radius={300}
             className="flex flex-col justify-center bg-taxi h-fit xl:h-auto px-8 lg:px-12 py-10 lg:py-12 xl:py-0  rounded-2xl basis-1/3"
@@ -142,7 +142,7 @@ export default async function Home() {
         </section>
 
         {/* Pricing */}
-        <section className="flex flex-col h-screen mt-10 lg:mt-4 border-y-[45px] lg:border-y-[80px] border-night rounded-[45px] lg:rounded-[80px]">
+        <section className="flex flex-col h-screen mt-4 lg:mt-10 border-y-[45px] lg:border-y-[80px] border-night rounded-[45px] lg:rounded-[80px]">
           <GradientBackground
             radius={200}
             className="flex justify-center items-center w-full h-screen"

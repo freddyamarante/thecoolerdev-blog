@@ -93,6 +93,7 @@ export async function getLandingPage(): Promise<LandingPage> {
             title,
             description,
             price,
+            button,
             included[],
             highlight,
           },

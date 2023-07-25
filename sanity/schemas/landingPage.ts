@@ -222,6 +222,11 @@ const landingPage = {
                   type: 'number',
                 },
                 {
+                  name: 'button',
+                  title: 'Button',
+                  type: 'string',
+                },
+                {
                   name: 'included',
                   title: 'Included',
                   type: 'array',
