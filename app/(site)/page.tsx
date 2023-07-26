@@ -170,7 +170,7 @@ export default async function Home() {
                   ))}
                 </div>
               )}
-              <span className="relative text-md lg:text-xl text-center px-6 lg:px-0 basis-1/4 z-10">
+              <span className="relative text-md lg:text-xl text-center px-8 lg:px-6 basis-1/4 z-10">
                 {data.pricing.disclaimer}
               </span>
             </div>
