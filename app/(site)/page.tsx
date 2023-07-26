@@ -148,9 +148,12 @@ export default async function Home() {
 
         {/* Pricing */}
         <section className="flex flex-col h-fit lg:mt-4 border-y-[30px] lg:border-y-[45px] border-night rounded-[30px] lg:rounded-[45px]">
-          <GradientBackground className="flex justify-center items-center w-full">
+          <GradientBackground
+            radius={300}
+            className="flex justify-center items-center w-full"
+          >
             <div className="flex flex-col my-16 max-w-lg lg:max-w-4xl">
-              <h2 className="relative text-4xl font-bold text-center basis-1/4 z-10">
+              <h2 className="relative text-4xl xl:text-5xl font-bold text-center px-6 lg:px-0 basis-1/4 z-10">
                 {data.pricing.title}
               </h2>
               {data.pricing.prices && (
@@ -167,7 +170,7 @@ export default async function Home() {
                   ))}
                 </div>
               )}
-              <span className="relative text-xl text-center basis-1/4 z-10">
+              <span className="relative text-md lg:text-xl text-center px-6 lg:px-0 basis-1/4 z-10">
                 {data.pricing.disclaimer}
               </span>
             </div>

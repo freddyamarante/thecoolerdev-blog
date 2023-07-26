@@ -25,7 +25,7 @@ const PricingCard = ({
     <GradientBackground
       backgroundColor={highlight ? '#242423' : '#CFDBD5'}
       gradientColor={highlight ? '#3E3E3D' : '#A5A5B6'}
-      radius={25}
+      radius={50}
       className={`col-span-1 rounded-2xl px-12 py-14   ${
         highlight ? 'text-white ' : 'text-night-dark '
       }`}
