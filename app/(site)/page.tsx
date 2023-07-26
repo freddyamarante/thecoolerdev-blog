@@ -127,13 +127,17 @@ export default async function Home() {
         <section className="flex flex-col lg:flex-row gap-4 md:gap-7 xl:gap-10 my-10 lg:my-14">
           <GradientBackground
             radius={300}
-            className="flex flex-col justify-center bg-taxi h-fit xl:h-auto px-8 lg:px-12 py-10 lg:py-12 xl:py-0  rounded-2xl basis-1/3"
+            className="flex flex-col justify-center bg-taxi h-auto px-8 lg:px-12 py-10 lg:py-12 xl:py-0  rounded-2xl basis-1/3"
           >
-            <div className="relative flex flex-col gap-8 z-10">
-              <h2 className="font-bold text-4xl">{data.process.title}</h2>
-              <p className="text-2xl">{data.process.body}</p>
+            <div className="relative flex flex-col gap-4 z-10">
+              <h2 className="font-bold text-4xl lg:text-3xl xl:text-4xl">
+                {data.process.title}
+              </h2>
+              <p className="text-2xl lg:text-xl xl:text-2xl">
+                {data.process.body}
+              </p>
             </div>
-            <div className="flex justify-start mt-12">
+            <div className="flex justify-start mt-8 lg:mt-2 xl:mt-12">
               <Button mode="contrast" label={data.process.button} />
             </div>
           </GradientBackground>
@@ -145,12 +149,12 @@ export default async function Home() {
         {/* Pricing */}
         <section className="flex flex-col h-fit lg:mt-4 border-y-[30px] lg:border-y-[45px] border-night rounded-[30px] lg:rounded-[45px]">
           <GradientBackground className="flex justify-center items-center w-full">
-            <div className="flex flex-col my-16 max-w-4xl">
+            <div className="flex flex-col my-16 max-w-lg lg:max-w-4xl">
               <h2 className="relative text-4xl font-bold text-center basis-1/4 z-10">
                 {data.pricing.title}
               </h2>
               {data.pricing.prices && (
-                <div className="grid grid-cols-2 col gap-x-4 my-12 px-8 basis-2/4 h-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-2 col gap-4 my-12 px-8 md:px-6 lg:px-8 basis-2/4 h-auto">
                   {data.pricing.prices.map((element) => (
                     <PricingCard
                       key={element.title}
