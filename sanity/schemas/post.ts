@@ -34,12 +34,17 @@ const post = {
       name: 'tagsArray',
       title: 'Tags',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'tags'}}],
+      of: [{ type: 'reference', to: { type: 'tags' } }],
     },
     {
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+    },
+    {
+      name: 'summary',
+      title: 'Summary',
+      type: 'text',
     },
   ],
 
@@ -50,8 +55,8 @@ const post = {
       media: 'mainImage',
     },
     prepare(selection: { author: any }) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
+      const { author } = selection
+      return { ...selection, subtitle: author && `by ${author}` }
     },
   },
 }
