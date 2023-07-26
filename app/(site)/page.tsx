@@ -143,28 +143,27 @@ export default async function Home() {
         </section>
 
         {/* Pricing */}
-        <section className="flex flex-col h-screen mt-4 lg:mt-10 border-y-[45px] lg:border-y-[80px] border-night rounded-[45px] lg:rounded-[80px]">
-          <GradientBackground className="flex justify-center items-center w-full h-screen">
-            <div className="flex flex-col justify-center px-80">
-              <h2 className="text-4xl font-bold text-center basis-1/4">
+        <section className="flex flex-col h-fit lg:mt-4 border-y-[30px] lg:border-y-[45px] border-night rounded-[30px] lg:rounded-[45px]">
+          <GradientBackground className="flex justify-center items-center w-full">
+            <div className="flex flex-col my-16 max-w-4xl">
+              <h2 className="relative text-4xl font-bold text-center basis-1/4 z-10">
                 {data.pricing.title}
               </h2>
               {data.pricing.prices && (
-                <div className="flex gap-x-4 mt-12 basis-2/4 ">
+                <div className="grid grid-cols-2 col gap-x-4 my-12 px-8 basis-2/4 h-auto">
                   {data.pricing.prices.map((element) => (
-                    <div key={element.title} className="basis-1/2 h-auto">
-                      <PricingCard
-                        title={element.title}
-                        price={element.price}
-                        description={element.description}
-                        included={element.included}
-                        highlight={element.highlight}
-                      />
-                    </div>
+                    <PricingCard
+                      key={element.title}
+                      title={element.title}
+                      price={element.price}
+                      description={element.description}
+                      included={element.included}
+                      highlight={element.highlight}
+                    />
                   ))}
                 </div>
               )}
-              <span className="text-xl text-center basis-1/4">
+              <span className="relative text-xl text-center basis-1/4 z-10">
                 {data.pricing.disclaimer}
               </span>
             </div>
