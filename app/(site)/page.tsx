@@ -1,22 +1,25 @@
 import '@/styles/globals.css'
 
-import GradientBackground from '@/stories/components/GradientBackground'
-import Experience from '@/stories/components/resources/Experience'
-import GrainOverlay from '@/stories/components/resources/GrainOverlay'
-import Navbar from '@/stories/components/Navbar/Navbar'
+import { getLandingPage, getPosts, getStatus } from '@/sanity/sanity-utils'
 
-import { getLandingPage, getStatus } from '@/sanity/sanity-utils'
+import GradientBackground from '@/stories/components/GradientBackground'
+import GrainOverlay from '@/stories/components/resources/GrainOverlay'
+import Experience from '@/stories/components/resources/Experience'
+import Navbar from '@/stories/components/Navbar/Navbar'
 import Button from '@/stories/components/Button'
-import Image from 'next/image'
+
 import Service from '@/stories/components/AboutMe/Service'
 import Skills from '@/stories/components/AboutMe/Skills'
 import Toolkit from '@/stories/components/Toolkit/Toolkit'
 import Steps from '@/stories/components/Process/Steps'
 import PricingCard from '@/stories/components/Pricing/PricingCard'
 
+import Image from 'next/image'
+
 export default async function Home() {
   const status = await getStatus()
   const data = await getLandingPage()
+  const post = await getPosts()
 
   return (
     <div className="overflow-hidden">
@@ -179,7 +182,13 @@ export default async function Home() {
 
         {/* Blog */}
         <section className="h-fit mt-10">
-          <div className="grid grid-cols-2 gap-10">
+          <div className="grid grid-cols-3 gap-10">
+            <GradientBackground
+              backgroundColor="#CFDBD5"
+              gradientColor="#A5A5B6"
+              radius={300}
+              className="flex rounded-2xl col-span-2 h-96"
+            ></GradientBackground>
             <GradientBackground
               backgroundColor="#CFDBD5"
               gradientColor="#A5A5B6"
