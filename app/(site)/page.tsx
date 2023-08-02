@@ -155,7 +155,7 @@ export default async function Home() {
             radius={300}
             className="flex justify-center items-center w-full"
           >
-            <div className="flex flex-col my-20 max-w-lg lg:max-w-4xl">
+            <div className="flex flex-col my-10 max-w-lg lg:max-w-4xl">
               <h2 className="relative text-4xl xl:text-5xl font-bold text-center px-6 lg:px-0 basis-1/4 z-10">
                 {data.pricing.title}
               </h2>
