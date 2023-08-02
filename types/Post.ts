@@ -5,7 +5,8 @@ export type Post = {
   title: string
   slug: string
   mainImage: string
-  publishedAt: Date
+  publishedAt: string
+  date: string
   tags: string[]
   body: PortableTextBlock
 }

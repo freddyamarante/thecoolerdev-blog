@@ -27,7 +27,7 @@ const PricingCard = ({
       gradientColor={highlight ? '#3E3E3D' : '#A5A5B6'}
       radius={50}
       className={`col-span-1 rounded-2xl px-12 py-14   ${
-        highlight ? 'text-white ' : 'text-night-dark '
+        highlight ? 'text-white' : 'text-night-dark '
       }`}
     >
       <div className="relative flex flex-col flex-start z-10">

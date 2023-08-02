@@ -31,6 +31,11 @@ const post = {
       type: 'datetime',
     },
     {
+      name: 'date',
+      title: 'Date',
+      type: 'date',
+    },
+    {
       name: 'tagsArray',
       title: 'Tags',
       type: 'array',
