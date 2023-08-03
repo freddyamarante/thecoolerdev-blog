@@ -8,7 +8,7 @@ const meta: Meta<typeof Post> = {
   tags: ['autodocs'],
   decorators: [
     (Story) => (
-      <div className="grid grid-cols-3 gap-10 h-96 bg-cloud justify-center my-12 mx-10">
+      <div className="grid grid-cols-3 gap-10 bg-cloud justify-center my-12 mx-10">
         <Story />
         <Story />
         <Story />
@@ -21,7 +21,7 @@ const meta: Meta<typeof Post> = {
 export default meta
 type Story = StoryObj<typeof Post>
 
-export const Primary: Story = {
+export const Default: Story = {
   args: {
     title: 'How React changed my way of thinking',
     publishedAt: '2017-02-12T09:15:00Z',
