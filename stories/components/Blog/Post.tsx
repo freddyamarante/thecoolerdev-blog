@@ -2,8 +2,9 @@
 
 import { motion, useAnimation } from 'framer-motion'
 
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import Image from 'next/image'
+import Button from '../Button'
 
 interface PostProps {
   title: string
@@ -25,13 +26,22 @@ const Post = ({
   tags,
   summary,
 }: PostProps) => {
+  // State variable to track hover state
+  const [isHovered, setIsHovered] = useState<boolean>(false)
+
+  // Animations
   const fadeOutAnimation = useAnimation()
   const infoSectionAnimation = useAnimation()
+  const fadeInAnimation = useAnimation()
 
+  // Refs
   const cardRef = useRef<HTMLDivElement>(null)
   const infoRef = useRef<HTMLDivElement>(null)
+  const summaryRef = useRef<HTMLDivElement>(null)
 
   const handleHoverStart = () => {
+    setIsHovered(true)
+
     fadeOutAnimation.start({
       opacity: 0,
       transition: { duration: 0.3, ease: 'easeInOut' },
@@ -57,22 +67,42 @@ const Post = ({
     // Handle go to top animation
     infoSectionAnimation.start({
       scale: 0.8,
-      x: -cardWidth + infoSectionWidth + padding * 0.2,
+      x: -cardWidth + infoSectionWidth,
       y: -cardHeight + infoSectionHeight + padding,
       transition: { duration: 0.3, ease: 'easeInOut' },
+    })
+
+    // Handle fade in animation
+    fadeInAnimation.start({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.75 },
     })
   }
 
   const handleHoverEnd = () => {
+    setIsHovered(false)
+
+    const cardHeight = cardRef.current
+      ? cardRef.current.getBoundingClientRect().height
+      : 0
+
     fadeOutAnimation.start({
       opacity: 1,
       transition: { duration: 0.1 },
     })
+
     infoSectionAnimation.start({
       scale: 1,
       x: 0,
       y: 0,
       transition: { duration: 0.1, ease: 'easeInOut' },
+    })
+
+    fadeInAnimation.start({
+      opacity: 0,
+      y: cardHeight,
+      transition: { duration: 0.1 },
     })
   }
 
@@ -84,6 +114,7 @@ const Post = ({
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
     >
+      {/* Background image */}
       <motion.div animate={fadeOutAnimation}>
         <Image
           src={mainImage ? mainImage : defaultImage}
@@ -97,6 +128,7 @@ const Post = ({
         <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-night/10" />
       </motion.div>
 
+      {/* Info section */}
       <motion.div
         ref={infoRef}
         animate={infoSectionAnimation}
@@ -117,6 +149,18 @@ const Post = ({
         <h3 className="text-xl font-semibold leading-6 text-white inset-0">
           {title}
         </h3>
+      </motion.div>
+
+      {/* Summary (only shows up on hover) */}
+      <motion.div
+        ref={summaryRef}
+        animate={fadeInAnimation}
+        className={`flex flex-col gap-y-4 absolute bottom-4 ${
+          isHovered ? 'visible' : 'hidden'
+        }`}
+      >
+        <p className="text-white text-lg leading-tight">{summary}</p>
+        <Button label="Read the full article" size="small" />
       </motion.div>
     </motion.article>
   )

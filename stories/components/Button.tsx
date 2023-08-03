@@ -32,7 +32,7 @@ const Button = ({
 
   switch (size) {
     case 'extralarge':
-      sizeClasses = 'text-xl md:text-2xl lg:text-3xl'
+      sizeClasses = 'text-xl md:text-2xl lg:text-3xl p-2 md:p-3'
       iconSize = 20
       break
     case 'large':
@@ -44,7 +44,7 @@ const Button = ({
       iconSize = 14
       break
     case 'small':
-      sizeClasses = 'text-sm'
+      sizeClasses = 'text-sm p-2'
       iconSize = 10
       break
   }
@@ -52,7 +52,7 @@ const Button = ({
   return (
     <button
       type="button"
-      className={`flex flex-row rounded-lg p-2 md:p-3 justify-center items-center leading-none gap-1 ${modeClasses} ${sizeClasses}`}
+      className={`flex flex-row w-fit rounded-lg justify-center items-center leading-none gap-1 ${modeClasses} ${sizeClasses}`}
       {...props}
     >
       {label}

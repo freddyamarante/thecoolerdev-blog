@@ -28,6 +28,6 @@ export const Default: Story = {
     date: 'Feb 12, 2017',
     tags: ['React'],
     summary:
-      "In this article, I share how React transformed my perspective on web development. Initially skeptical, I embraced React's component-based approach and one-way data flow, leading to more efficient and organized UIs. The experience changed the way I code and think about problem-solving.",
+      "In this article, I share how React transformed my perspective on web development. I embraced React's component-based approach and the experience changed the way I code and think about problem-solving.",
   },
 }
