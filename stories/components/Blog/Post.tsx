@@ -12,7 +12,9 @@ interface PostProps {
   mainImage: string
   publishedAt: string
   date: string
-  tags?: string[]
+  tag: {
+    title: string
+  }
   summary: string
 }
 
@@ -24,7 +26,7 @@ const Post = ({
   mainImage,
   publishedAt,
   date,
-  tags,
+  tag,
   summary,
 }: PostProps) => {
   // State variable to track hover state
@@ -132,7 +134,7 @@ const Post = ({
             className="absolute inset-0 -z-10 h-full w-full object-cover brightness-110"
           />
 
-          <div className="absolute inset-0 -z-10 bg-gradient-to-t from-night-dark/50 via-night/20" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-t from-night-dark/70 via-night/20" />
           <div className="absolute inset-0 -z-10 ring-1 ring-inset ring-night/10" />
         </motion.div>
 
@@ -145,14 +147,11 @@ const Post = ({
           <div className="flex items-center gap-y-1 gap-x-4 overflow-hidden text-md text-white">
             <time dateTime={publishedAt}>{date}</time>
             <div>/</div>
-            {tags?.map((tag) => (
-              <span
-                key={tag}
-                className="inline-flex items-center rounded-full bg-cloud px-2 py-1 text-xs font-medium text-black"
-              >
-                {tag}
+            {tag && (
+              <span className="inline-flex items-center rounded-full bg-cloud px-2 py-1 text-xs font-medium text-black">
+                {tag.title}
               </span>
-            ))}
+            )}
           </div>
           <h3 className="text-xl font-semibold leading-6 text-white inset-0">
             {title}

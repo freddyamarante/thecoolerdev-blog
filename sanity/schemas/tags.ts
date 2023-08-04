@@ -8,11 +8,6 @@ const tags = {
       title: 'Title',
       type: 'string',
     },
-    {
-      name: 'description',
-      title: 'Description',
-      type: 'text',
-    },
   ],
 }
 

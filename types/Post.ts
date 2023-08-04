@@ -8,6 +8,8 @@ export type Post = {
   mainImage: string
   publishedAt: string
   date: string
-  tags: string[]
+  tag: {
+    title: string
+  }
   body: PortableTextBlock
 }

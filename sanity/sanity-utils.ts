@@ -27,7 +27,7 @@ export async function getPosts(): Promise<Post[]> {
       "mainImage": mainImage.asset->url,
       publishedAt,
       date,
-      tags[]->,
+      tag->,
     }`
   )
 

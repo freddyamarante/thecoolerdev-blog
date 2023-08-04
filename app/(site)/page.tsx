@@ -191,12 +191,12 @@ export default async function Home() {
               className="flex rounded-2xl col-span-2 h-96"
             ></GradientBackground>
             {posts &&
-              posts.map((post) => (
+              posts.map((post, index) => (
                 <Post
-                  key={post._id}
+                  key={index}
                   title={post.title}
                   summary={post.summary}
-                  tags={post.tags}
+                  tag={post.tag}
                   mainImage={post.mainImage}
                   publishedAt={post.publishedAt}
                   date={post.date}
