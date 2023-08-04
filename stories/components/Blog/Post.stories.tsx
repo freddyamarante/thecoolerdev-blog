@@ -10,9 +10,6 @@ const meta: Meta<typeof Post> = {
     (Story) => (
       <div className="grid grid-cols-3 gap-10 bg-cloud justify-center my-12 mx-10">
         <Story />
-        <Story />
-        <Story />
-        <Story />
       </div>
     ),
   ],

@@ -7,9 +7,9 @@ import Image from 'next/image'
 import Button from '../Button'
 
 interface PostProps {
-  index: number
+  index?: number
   title: string
-  mainImage: string
+  mainImage: string | undefined
   publishedAt: string
   date: string
   tag: {
@@ -18,11 +18,10 @@ interface PostProps {
   summary: string
 }
 
-const defaultImage =
-  'https://images.unsplash.com/photo-1621252179027-94459d278660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+const defaultImage = '/javascriptImage.png'
 
 const Post = ({
-  index,
+  index = 1,
   title,
   mainImage,
   publishedAt,
@@ -51,13 +50,15 @@ const Post = ({
   }, [])
 
   // Function to calculate the col-span class for each item based on the index
-  const calculateColSpan = (index: number) => {
+  const calculateColSpan = (index: number | null) => {
     if (!isLgScreen) return 'col-span-1'
 
-    const isEven = index % 2 === 0
+    if (index) {
+      const isEven = index % 2 === 0
 
-    // Pattern for grid layout
-    return index % 4 < 2 ? 'col-span-1' : 'col-span-2'
+      // Pattern for grid layout
+      return index % 4 < 2 ? 'col-span-1' : 'col-span-2'
+    }
   }
 
   // Animations
