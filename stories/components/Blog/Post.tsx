@@ -153,7 +153,7 @@ const Post = ({
               </span>
             )}
           </div>
-          <h3 className="text-xl font-semibold leading-6 text-white inset-0">
+          <h3 className="text-xl font-semibold leading-6 text-white mt-2 inset-0">
             {title}
           </h3>
         </motion.div>
@@ -166,7 +166,7 @@ const Post = ({
             isHovered ? 'visible' : 'hidden'
           }`}
         >
-          <p className="text-white text-lg leading-tight">{summary}</p>
+          <p className="text-white text-lg pr-4 leading-tight">{summary}</p>
           <Button label="Read the full article" size="small" />
         </motion.div>
       </GradientBackground>

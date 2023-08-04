@@ -183,7 +183,7 @@ export default async function Home() {
 
         {/* Blog */}
         <section className="h-fit mt-10">
-          <div className="grid grid-cols-3 gap-10">
+          <div className="grid grid-cols-3 gap-4 lg:gap-5">
             <GradientBackground
               backgroundColor="#CFDBD5"
               gradientColor="#A5A5B6"
