@@ -13,9 +13,9 @@ import Skills from '@/stories/components/AboutMe/Skills'
 import Toolkit from '@/stories/components/Toolkit/Toolkit'
 import Steps from '@/stories/components/Process/Steps'
 import PricingCard from '@/stories/components/Pricing/PricingCard'
+import Posts from '@/stories/components/Blog/Posts'
 
 import Image from 'next/image'
-import Post from '@/stories/components/Blog/Post'
 
 export default async function Home() {
   const status = await getStatus()
@@ -183,37 +183,12 @@ export default async function Home() {
 
         {/* Blog */}
         <section className="h-fit my-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
-            <GradientBackground
-              backgroundColor="#CFDBD5"
-              gradientColor="#A5A5B6"
-              radius={50}
-              className="flex flex-col justify-center col-span-1 md:col-span-2 px-8 lg:px-12 py-10 lg:py-12 xl:py-0 rounded-2xl basis-1/3 h-96"
-            >
-              <div className="relative flex flex-col gap-4 z-10">
-                <h2 className="font-bold text-4xl lg:text-3xl xl:text-4xl">
-                  {data.blog.title}
-                </h2>
-                <p className="text-2xl lg:text-xl xl:text-2xl">
-                  {data.blog.description}
-                </p>
-                <Button mode="simple" label={data.blog.button} />
-              </div>
-            </GradientBackground>
-            {posts &&
-              posts.map((post, index) => (
-                <Post
-                  index={index}
-                  key={post._id}
-                  title={post.title}
-                  summary={post.summary}
-                  tag={post.tag}
-                  mainImage={post.mainImage}
-                  publishedAt={post.publishedAt}
-                  date={post.date}
-                />
-              ))}
-          </div>
+          <Posts
+            title={data.blog.title}
+            description={data.blog.description}
+            button={data.blog.button}
+            posts={posts}
+          />
         </section>
       </main>
     </div>

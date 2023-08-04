@@ -10,8 +10,6 @@ interface PostsProps {
   description: string
   button: string
   posts?: {
-    _id: number
-    index?: number
     title: string
     mainImage?: string
     publishedAt: string
@@ -44,7 +42,7 @@ const Posts = ({ title, description, button, posts }: PostsProps) => {
         posts.map((post, index) => (
           <Post
             index={index}
-            key={post._id}
+            key={index}
             title={post.title}
             summary={post.summary}
             tag={post.tag}
