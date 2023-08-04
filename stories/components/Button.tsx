@@ -36,11 +36,11 @@ const Button = ({
       iconSize = 20
       break
     case 'large':
-      sizeClasses = 'text-2xl'
+      sizeClasses = 'text-2xl p-2'
       iconSize = 18
       break
     case 'medium':
-      sizeClasses = 'text-md'
+      sizeClasses = 'text-md p-2'
       iconSize = 14
       break
     case 'small':

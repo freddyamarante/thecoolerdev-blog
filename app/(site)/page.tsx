@@ -15,11 +15,12 @@ import Steps from '@/stories/components/Process/Steps'
 import PricingCard from '@/stories/components/Pricing/PricingCard'
 
 import Image from 'next/image'
+import Post from '@/stories/components/Blog/Post'
 
 export default async function Home() {
   const status = await getStatus()
   const data = await getLandingPage()
-  const post = await getPosts()
+  const posts = await getPosts()
 
   return (
     <div className="overflow-hidden">
@@ -189,18 +190,18 @@ export default async function Home() {
               radius={300}
               className="flex rounded-2xl col-span-2 h-96"
             ></GradientBackground>
-            <GradientBackground
-              backgroundColor="#CFDBD5"
-              gradientColor="#A5A5B6"
-              radius={300}
-              className="rounded-2xl h-96"
-            ></GradientBackground>
-            <GradientBackground
-              backgroundColor="#CFDBD5"
-              gradientColor="#A5A5B6"
-              radius={300}
-              className="rounded-2xl h-96"
-            ></GradientBackground>
+            {posts &&
+              posts.map((post, index) => (
+                <Post
+                  key={index}
+                  title={post.title}
+                  summary={post.summary}
+                  tags={post.tags}
+                  mainImage={post.mainImage}
+                  publishedAt={post.publishedAt}
+                  date={post.date}
+                />
+              ))}
           </div>
         </section>
       </main>
