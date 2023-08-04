@@ -1,11 +1,10 @@
 'use client'
 
 import { motion, useAnimation } from 'framer-motion'
-
 import { useRef, useState } from 'react'
+
 import Image from 'next/image'
 import Button from '../Button'
-import GradientBackground from '../GradientBackground'
 
 interface PostProps {
   title: string
@@ -30,7 +29,7 @@ const Post = ({
   summary,
 }: PostProps) => {
   // State variable to track hover state
-  const [isHovered, setIsHovered] = useState<boolean>(false)
+  const [isOpen, setIsOpen] = useState<boolean>(true)
 
   // Animations
   const fadeOutAnimation = useAnimation()
@@ -42,9 +41,7 @@ const Post = ({
   const infoRef = useRef<HTMLDivElement>(null)
   const summaryRef = useRef<HTMLDivElement>(null)
 
-  const handleHoverStart = () => {
-    setIsHovered(true)
-
+  const animationStart = () => {
     fadeOutAnimation.start({
       opacity: 0,
       transition: { duration: 0.3, ease: 'easeInOut' },
@@ -57,7 +54,7 @@ const Post = ({
     const infoSectionHeight = infoRef.current
       ? infoRef.current.getBoundingClientRect().height
       : 0
-    const padding = 32
+    const padding = 46
 
     // Handle go to top animation
     infoSectionAnimation.start({
@@ -73,9 +70,7 @@ const Post = ({
     })
   }
 
-  const handleHoverEnd = () => {
-    setIsHovered(false)
-
+  const animationEnd = () => {
     const cardHeight = cardRef.current
       ? cardRef.current.getBoundingClientRect().height
       : 0
@@ -97,6 +92,30 @@ const Post = ({
     })
   }
 
+  const handleClick = () => {
+    if (window.innerWidth < 640) {
+      setIsOpen(!isOpen)
+
+      isOpen ? animationStart() : animationEnd()
+
+      console.log(isOpen, title)
+    }
+  }
+
+  const handleHoverStart = () => {
+    if (window.innerWidth > 640) {
+      setIsOpen(true)
+      animationStart()
+    }
+  }
+
+  const handleHoverEnd = () => {
+    if (window.innerWidth > 640) {
+      setIsOpen(false)
+      animationEnd()
+    }
+  }
+
   return (
     <motion.article
       ref={cardRef}
@@ -104,6 +123,7 @@ const Post = ({
       whileHover={{ scale: 1.05 }}
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
+      onClick={handleClick}
     >
       <div className="relative isolate bg-night overflow-hidden flex flex-col justify-end  rounded-2xl h-96 px-4 pb-4">
         {/* Background image */}
@@ -144,11 +164,12 @@ const Post = ({
         <motion.div
           ref={summaryRef}
           animate={fadeInAnimation}
-          className={`flex flex-col gap-y-4 absolute bottom-4 z-10 ${
-            isHovered ? 'visible' : 'hidden'
-          }`}
+          initial={{ opacity: 0 }}
+          className={`flex flex-col gap-y-4 absolute bottom-4 z-10 visible`}
         >
-          <p className="text-white text-xl pr-4 leading-tight">{summary}</p>
+          <p className="text-white text-lg sm:text-xl pr-4 leading-tight">
+            {summary}
+          </p>
           <Button label="Read the full article" size="medium" />
         </motion.div>
       </div>

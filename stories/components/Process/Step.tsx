@@ -3,7 +3,6 @@
 import { ChevronDown, ChevronUp } from '../resources/Icons'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
 
 interface StepProps {
   number?: number
