@@ -36,7 +36,7 @@ const post = {
       type: 'date',
     },
     {
-      name: 'tagsArray',
+      name: 'tags',
       title: 'Tags',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'tags' } }],

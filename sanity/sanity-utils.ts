@@ -22,12 +22,12 @@ export async function getPosts(): Promise<Post[]> {
     *[_type == "post"]{
       _id,
       title,
+      summary,
       "slug": slug.current,
       "mainImage": mainImage.asset->url,
       publishedAt,
       date,
-      tagsArray[]->,
-      body
+      tags[]->,
     }`
   )
 
