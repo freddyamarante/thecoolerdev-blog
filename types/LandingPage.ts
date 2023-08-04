@@ -67,6 +67,7 @@ export type LandingPage = {
   blog: {
     title: string
     description: string
+    button: string
   }
   contact: {
     title: string

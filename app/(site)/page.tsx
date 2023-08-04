@@ -188,8 +188,18 @@ export default async function Home() {
               backgroundColor="#CFDBD5"
               gradientColor="#A5A5B6"
               radius={300}
-              className="flex rounded-2xl col-span-1 md:col-span-2 h-96"
-            ></GradientBackground>
+              className="flex flex-col justify-center col-span-1 md:col-span-2 px-8 lg:px-12 py-10 lg:py-12 xl:py-0 rounded-2xl basis-1/3 h-96"
+            >
+              <div className="relative flex flex-col gap-4 z-10">
+                <h2 className="font-bold text-4xl lg:text-3xl xl:text-4xl">
+                  {data.blog.title}
+                </h2>
+                <p className="text-2xl lg:text-xl xl:text-2xl">
+                  {data.blog.description}
+                </p>
+                <Button mode="simple" label={data.blog.button} />
+              </div>
+            </GradientBackground>
             {posts &&
               posts.map((post, index) => (
                 <Post

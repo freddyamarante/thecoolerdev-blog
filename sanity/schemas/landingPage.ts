@@ -319,6 +319,11 @@ const landingPage = {
           title: 'Description',
           type: 'text',
         },
+        {
+          name: 'button',
+          title: 'Button',
+          type: 'string',
+        },
       ],
     },
     // Contact
