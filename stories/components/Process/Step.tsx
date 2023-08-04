@@ -27,7 +27,7 @@ const Step = ({
         onClick={onToggle}
       >
         <div className="flex flex-row justify-between items-center w-full">
-          <div className="relative flex flex-row text-2xl sm:text-3xl lg:text-4xl font-medium text-white leading-none gap-x-9 z-10">
+          <div className="relative flex flex-row text-2xl sm:text-3xl lg:text-4xl font-medium text-white leading-none gap-x-4 lg:gap-x-9 z-10">
             <div>{`0${(number + 1).toString()}`}</div>
             <div>{title}</div>
           </div>
@@ -53,7 +53,7 @@ const Step = ({
               }}
               className="overflow-hidden"
             >
-              <div className="relative px-4 py-6 rounded-2xl text-white text-lg sm:text-xl lg:text-2xl z-10">
+              <div className="relative px-4 py-4 md:py-6 rounded-2xl text-white text-lg sm:text-xl lg:text-2xl z-10">
                 {description}
               </div>
             </motion.div>
