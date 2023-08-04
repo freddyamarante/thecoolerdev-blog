@@ -120,7 +120,6 @@ const Post = ({
     <motion.article
       ref={cardRef}
       className="relative col-span-1 overflow-hidden cursor-pointer"
-      whileHover={{ scale: 1.05 }}
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
       onClick={handleClick}
