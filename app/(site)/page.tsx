@@ -182,12 +182,12 @@ export default async function Home() {
         </section>
 
         {/* Blog */}
-        <section className="h-fit mt-10">
+        <section className="h-fit my-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
             <GradientBackground
               backgroundColor="#CFDBD5"
               gradientColor="#A5A5B6"
-              radius={300}
+              radius={50}
               className="flex flex-col justify-center col-span-1 md:col-span-2 px-8 lg:px-12 py-10 lg:py-12 xl:py-0 rounded-2xl basis-1/3 h-96"
             >
               <div className="relative flex flex-col gap-4 z-10">

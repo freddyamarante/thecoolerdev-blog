@@ -52,7 +52,7 @@ const Post = ({
 
   // Function to calculate the col-span class for each item based on the index
   const calculateColSpan = (index: number) => {
-    if (!isLgScreen) return 'col-span-2'
+    if (!isLgScreen) return 'col-span-1'
 
     const isEven = index % 2 === 0
 
