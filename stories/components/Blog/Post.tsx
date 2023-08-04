@@ -59,18 +59,8 @@ const Post = ({
       : 0
     const padding = 32
 
-    // Get the total width of the card and the info section
-    const cardWidth = cardRef.current
-      ? cardRef.current.getBoundingClientRect().width
-      : 0
-    const infoSectionWidth = infoRef.current
-      ? infoRef.current.getBoundingClientRect().width
-      : 0
-
     // Handle go to top animation
     infoSectionAnimation.start({
-      scale: 0.8,
-      x: -cardWidth + infoSectionWidth,
       y: -cardHeight + infoSectionHeight + padding,
       transition: { duration: 0.3, ease: 'easeInOut' },
     })
@@ -96,8 +86,6 @@ const Post = ({
     })
 
     infoSectionAnimation.start({
-      scale: 1,
-      x: 0,
       y: 0,
       transition: { duration: 0.2, ease: 'easeInOut' },
     })
@@ -112,7 +100,7 @@ const Post = ({
   return (
     <motion.article
       ref={cardRef}
-      className="relative col-span-1 overflow-hidden"
+      className="relative col-span-1 overflow-hidden cursor-pointer"
       whileHover={{ scale: 1.05 }}
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
