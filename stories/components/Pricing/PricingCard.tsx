@@ -40,7 +40,7 @@ const PricingCard = ({
           Starting at <span className="font-bold">${price?.toString()}</span>
         </h2>
         <span className="text-lg mb-6 leading-none">{description}</span>
-        <Button label={button} mode={highlight ? 'primary' : 'contrast'} />
+        <Button label={button} mode={highlight ? 'primary' : 'simple'} />
         <span className="mt-6 mb-2 font-semibold">What&apos;s included</span>
         {included && (
           <ul className="leading-6">
