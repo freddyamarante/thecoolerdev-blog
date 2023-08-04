@@ -183,12 +183,12 @@ export default async function Home() {
 
         {/* Blog */}
         <section className="h-fit mt-10">
-          <div className="grid grid-cols-3 gap-4 lg:gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
             <GradientBackground
               backgroundColor="#CFDBD5"
               gradientColor="#A5A5B6"
               radius={300}
-              className="flex rounded-2xl col-span-2 h-96"
+              className="flex rounded-2xl col-span-1 md:col-span-2 h-96"
             ></GradientBackground>
             {posts &&
               posts.map((post, index) => (

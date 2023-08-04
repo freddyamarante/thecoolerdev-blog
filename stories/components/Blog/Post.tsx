@@ -105,13 +105,7 @@ const Post = ({
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
     >
-      <GradientBackground
-        backgroundColor="#242423"
-        gradientColor="#3E3E3D"
-        width={100}
-        height={80}
-        className="relative isolate overflow-hidden flex flex-col justify-end  rounded-2xl h-96 px-4 pb-4"
-      >
+      <div className="relative isolate bg-night overflow-hidden flex flex-col justify-end  rounded-2xl h-96 px-4 pb-4">
         {/* Background image */}
         <motion.div animate={fadeOutAnimation}>
           <Image
@@ -154,10 +148,10 @@ const Post = ({
             isHovered ? 'visible' : 'hidden'
           }`}
         >
-          <p className="text-white text-lg pr-4 leading-tight">{summary}</p>
-          <Button label="Read the full article" size="small" />
+          <p className="text-white text-xl pr-4 leading-tight">{summary}</p>
+          <Button label="Read the full article" size="medium" />
         </motion.div>
-      </GradientBackground>
+      </div>
     </motion.article>
   )
 }
