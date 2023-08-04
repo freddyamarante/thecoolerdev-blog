@@ -1,12 +1,13 @@
 'use client'
 
 import { motion, useAnimation } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 
 import Image from 'next/image'
 import Button from '../Button'
 
 interface PostProps {
+  index: number
   title: string
   mainImage: string
   publishedAt: string
@@ -21,6 +22,7 @@ const defaultImage =
   'https://images.unsplash.com/photo-1621252179027-94459d278660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
 
 const Post = ({
+  index,
   title,
   mainImage,
   publishedAt,
@@ -30,6 +32,33 @@ const Post = ({
 }: PostProps) => {
   // State variable to track hover state
   const [isOpen, setIsOpen] = useState<boolean>(true)
+
+  // Handling col-spans
+  const [isLgScreen, setIsLgScreen] = useState<boolean>(false)
+
+  // Return true if we're on Tailwind's lg: media min-width
+  const handleResize = () => {
+    setIsLgScreen(window.innerWidth >= 1024)
+  }
+
+  // Event listener for resizing
+  useEffect(() => {
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
+  // Function to calculate the col-span class for each item based on the index
+  const calculateColSpan = (index: number) => {
+    if (!isLgScreen) return 'col-span-2'
+
+    const isEven = index % 2 === 0
+
+    // Pattern for grid layout
+    return index % 4 < 2 ? 'col-span-1' : 'col-span-2'
+  }
 
   // Animations
   const fadeOutAnimation = useAnimation()
@@ -119,7 +148,7 @@ const Post = ({
   return (
     <motion.article
       ref={cardRef}
-      className="relative col-span-1 overflow-hidden cursor-pointer"
+      className={`relative ${calculateColSpan(index)} overflow-hidden`}
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
       onClick={handleClick}

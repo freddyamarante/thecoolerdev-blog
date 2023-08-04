@@ -203,7 +203,8 @@ export default async function Home() {
             {posts &&
               posts.map((post, index) => (
                 <Post
-                  key={index}
+                  index={index}
+                  key={post._id}
                   title={post.title}
                   summary={post.summary}
                   tag={post.tag}
