@@ -13,39 +13,23 @@ interface NavProps {
 }
 
 const Nav = ({ name, active, image, elements }: NavProps) => {
-  // Handling scrolling and hovering animations
-  // const [isVisible, setIsVisible] = useState<boolean>(true)
-  // const [isScrollingUp, setIsScrollingUp] = useState<boolean>(false)
-  // const controls = useAnimation()
-
-  // useEffect(() => {
-  //   let lastScrollTop = 0
-
-  //   const handleScroll = () => {
-  //     const currentScrollTop = window.scrollY
-  //     setIsScrollingUp(currentScrollTop < lastScrollTop)
-  //     lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop
-  //   }
-
-  //   window.addEventListener('scroll', handleScroll)
-  //   return () => window.removeEventListener('scroll', handleScroll)
-  // }, [])
-
-  // useEffect(() => {
-  //   controls.start({ y: isVisible ? 0 : -100 })
-  // }, [isVisible, controls])
-
+  // State for handling when it's hidden or visible
   const [isHidden, setIsHidden] = useState<boolean>(false)
+
+  // Save previous scroll value
   const [prevScrollY, setPrevScrollY] = useState<number>(0)
 
   const { scrollY } = useScroll()
 
+  // Update state whether is scrolling up or down
   const update = (latest: number) => {
     setPrevScrollY(latest)
 
     if (latest < prevScrollY) {
+      // Scrolling up
       setIsHidden(false)
     } else {
+      // Scrolling down
       setIsHidden(true)
     }
   }
