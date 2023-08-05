@@ -5,7 +5,7 @@ import { getLandingPage, getPosts, getStatus } from '@/sanity/sanity-utils'
 import GradientBackground from '@/stories/components/GradientBackground'
 import GrainOverlay from '@/stories/components/resources/GrainOverlay'
 import Experience from '@/stories/components/resources/Experience'
-import Navbar from '@/stories/components/Navbar/Navbar'
+import Nav from '@/stories/components/Navbar/Nav'
 import Button from '@/stories/components/Button'
 
 import Service from '@/stories/components/AboutMe/Service'
@@ -27,14 +27,12 @@ export default async function Home() {
       <GrainOverlay zIndex="z-10" />
 
       {/* Navbar */}
-      <div className="fixed w-full px-2 sm:px-6 lg:px-10 pt-6 left-0 z-50">
-        <Navbar
-          name={status.name}
-          active
-          image={status.image}
-          elements={['Who am I', 'Process', 'Projects', 'Blog', 'Contact']}
-        />
-      </div>
+      <Nav
+        name={status.name}
+        active={status.active}
+        image={status.image}
+        elements={['Who am I', 'Process', 'Projects', 'Blog', 'Contact']}
+      />
 
       <GradientBackground className="w-screen left-0 flex flex-col justify-center content-center h-screen">
         <Experience className="absolute h-full w-full top-0 left-0" />
