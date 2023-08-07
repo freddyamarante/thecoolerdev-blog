@@ -124,7 +124,7 @@ const Post = ({
 
   const handleClick = () => {
     if (window.innerWidth < 640) {
-      setIsOpen(!isOpen)
+      setIsOpen(!isOpen ? true : false)
 
       isOpen ? animationStart() : animationEnd()
 
