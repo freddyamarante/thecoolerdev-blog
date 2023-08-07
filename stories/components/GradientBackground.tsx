@@ -1,6 +1,7 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { motion, useSpring } from 'framer-motion'
+import { useEffect, useState, useRef } from 'react'
 
 interface GradientBackgroundProps {
   backgroundColor?: string
@@ -22,68 +23,76 @@ const GradientBackground = ({
   children,
   ...props
 }: GradientBackgroundProps) => {
-  const mainRef = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
+
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth)
 
   useEffect(() => {
-    mainRef.current?.style.setProperty('--mouse-x', '50%')
-    mainRef.current?.style.setProperty('--mouse-y', '50%')
+    const mousePosition = {
+      x: 50,
+      y: 50,
+    }
+
+    ref.current?.style.setProperty('--mouse-x', mousePosition.x + '%')
+    ref.current?.style.setProperty('--mouse-y', mousePosition.y + '%')
 
     const moveGradient = (event: MouseEvent) => {
-      if (mainRef.current) {
-        const containerRect = mainRef.current.getBoundingClientRect()
-        const containerWidth = containerRect.width
-        const containerHeight = containerRect.height
+      if (!ref.current) return
 
-        let mouseX = 50
-        let mouseY = 50
+      const containerRect = ref.current.getBoundingClientRect()
+      const containerWidth = containerRect.width
+      const containerHeight = containerRect.height
 
-        const windowWidth = window.innerWidth
-        if (windowWidth >= 1024) {
-          mouseX = Math.round(
-            ((event.clientX - containerRect.left) / containerWidth) * 100
-          )
-          mouseY = Math.round(
-            ((event.clientY - containerRect.top) / containerHeight) * 100
-          )
-        }
+      mousePosition.x = Math.round(
+        ((event.clientX - containerRect.left) / containerWidth) * 100
+      )
+      mousePosition.y = Math.round(
+        ((event.clientY - containerRect.top) / containerHeight) * 100
+      )
 
-        mainRef.current?.style.setProperty('--mouse-x', mouseX.toString() + '%')
-        mainRef.current?.style.setProperty('--mouse-y', mouseY.toString() + '%')
+      ref.current?.style.setProperty(
+        '--mouse-x',
+        mousePosition.x.toString() + '%'
+      )
+      ref.current?.style.setProperty(
+        '--mouse-y',
+        mousePosition.y.toString() + '%'
+      )
+    }
+
+    const handleResize = () => {
+      if (windowWidth >= 1024) {
+        moveGradient
+      } else if (windowWidth < 1024) {
+        ref.current?.style.setProperty('--mouse-x', '50%')
+        ref.current?.style.setProperty('--mouse-y', '50%')
       }
+
+      setWindowWidth(window.innerWidth)
+      console.log(windowWidth)
     }
 
-    const windowWidth = window.innerWidth
-    if (windowWidth >= 1024) {
-      document.addEventListener('mousemove', moveGradient)
-    } else {
-      mainRef.current?.style.setProperty('--mouse-x', '50%')
-      mainRef.current?.style.setProperty('--mouse-y', '50%')
-    }
+    handleResize()
+    document.addEventListener('mousemove', moveGradient)
+    document.addEventListener('resize', handleResize)
 
     return () => {
       document.removeEventListener('mousemove', moveGradient)
+      document.removeEventListener('resize', handleResize)
     }
-  }, [mainRef])
+  }, [ref, windowWidth])
 
   return (
     <div
-      ref={mainRef}
-      className={`gradient-animated ${className}`}
+      ref={ref}
+      className={className}
+      style={{
+        background: `radial-gradient(${width}% ${height}% at var(--mouse-x) var(--mouse-y), ${gradientColor} 0%, ${backgroundColor} ${radius}%)`,
+      }}
       data-scroll-container
       {...props}
     >
       {children}
-      <style jsx>
-        {`
-          .gradient-animated {
-            background: radial-gradient(
-              ${width}% ${height}% at var(--mouse-x) var(--mouse-y),
-              ${gradientColor} 0%,
-              ${backgroundColor} ${radius}%
-            );
-          }
-        `}
-      </style>
     </div>
   )
 }
