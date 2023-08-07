@@ -16,6 +16,7 @@ interface PostProps {
     title: string
   }
   summary: string
+  className?: React.ComponentProps<'div'>['className']
 }
 
 const defaultImage = '/javascriptImage.png'
@@ -28,6 +29,7 @@ const Post = ({
   date,
   tag,
   summary,
+  className,
 }: PostProps) => {
   // State variable to track hover state
   const [isOpen, setIsOpen] = useState<boolean>(true)
@@ -147,7 +149,9 @@ const Post = ({
   return (
     <motion.article
       ref={cardRef}
-      className={`relative ${calculateColSpan(index)} overflow-hidden`}
+      className={`relative ${calculateColSpan(
+        index
+      )} ${className} overflow-hidden`}
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
       onClick={handleClick}

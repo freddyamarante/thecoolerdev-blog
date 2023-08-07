@@ -65,6 +65,9 @@ const Posts = ({ title, description, button, posts = [] }: PostsProps) => {
               mainImage={post.mainImage}
               publishedAt={post.publishedAt}
               date={post.date}
+              className={
+                index === visiblePosts.length - 1 ? 'col-span-full' : ''
+              }
             />
           ))}
 
