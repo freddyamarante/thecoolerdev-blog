@@ -194,12 +194,14 @@ const Post = ({
           ref={summaryRef}
           animate={fadeInAnimation}
           initial={{ opacity: 0 }}
-          className={`flex flex-col gap-y-4 absolute bottom-4 z-10 visible`}
+          className={`absolute bottom-4 visible`}
         >
-          <p className="text-white text-lg sm:text-xl pr-4 leading-tight">
-            {summary}
-          </p>
-          <Button label="Read the full article" size="medium" />
+          <div className="relative flex flex-col gap-y-4 z-10">
+            <p className="text-white text-md sm:text-lg pr-4 leading-tight ">
+              {summary}
+            </p>
+            <Button label="Read the full article" size="medium" />
+          </div>
         </motion.div>
       </div>
     </motion.article>
