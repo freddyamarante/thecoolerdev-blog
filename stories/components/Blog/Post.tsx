@@ -84,7 +84,7 @@ const Post = ({
     const infoSectionHeight = infoRef.current
       ? infoRef.current.getBoundingClientRect().height
       : 0
-    const padding = 46
+    const padding = 32
 
     // Handle go to top animation
     infoSectionAnimation.start({
