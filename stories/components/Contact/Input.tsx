@@ -1,19 +1,22 @@
+'use client'
+
 import { motion } from 'framer-motion'
 
 import { findInputError, isFormInvalid } from './utils'
 import { useFormContext } from 'react-hook-form'
 
-interface InputsProps {
+interface InputProps {
   label: string
-  type: string
+  type?: string
   id: string
   name: string
   span: number
-  textarea: boolean
+  textarea?: boolean
   handleChange: () => void
+  value: string
 }
 
-const Inputs = ({
+const Input = ({
   label = 'label',
   type = 'text',
   id,
@@ -21,8 +24,9 @@ const Inputs = ({
   span = 3,
   textarea = false,
   handleChange,
+  value,
   ...props
-}: InputsProps) => {
+}: InputProps) => {
   const {
     register,
     formState: { errors },
@@ -99,4 +103,4 @@ const framerError = {
   transition: { duration: 0.2 },
 }
 
-export default Inputs
+export default Input
