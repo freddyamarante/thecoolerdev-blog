@@ -33,11 +33,11 @@ const Post = ({
   const [isOpen, setIsOpen] = useState<boolean>(true)
 
   // Handling col-spans
-  const [isLgScreen, setIsLgScreen] = useState<boolean>(false)
+  const [isXlScreen, setIsXlScreen] = useState<boolean>(false)
 
   // Return true if we're on Tailwind's lg: media min-width
   const handleResize = () => {
-    setIsLgScreen(window.innerWidth >= 1280)
+    setIsXlScreen(window.innerWidth >= 1280)
   }
 
   // Event listener for resizing
@@ -51,11 +51,9 @@ const Post = ({
 
   // Function to calculate the col-span class for each item based on the index
   const calculateColSpan = (index: number | null) => {
-    if (!isLgScreen) return 'col-span-1'
+    if (!isXlScreen) return 'col-span-1'
 
     if (index) {
-      const isEven = index % 2 === 0
-
       // Pattern for grid layout
       return index % 4 < 2 ? 'col-span-1' : 'col-span-2'
     }
@@ -154,7 +152,7 @@ const Post = ({
       onHoverEnd={handleHoverEnd}
       onClick={handleClick}
     >
-      <div className="relative isolate bg-night overflow-hidden flex flex-col justify-end  rounded-2xl h-96 px-4 pb-4">
+      <div className="relative isolate bg-night overflow-hidden flex flex-col shrink-0 justify-end  rounded-2xl h-96 px-4 pb-4">
         {/* Background image */}
         <motion.div animate={fadeOutAnimation}>
           <Image
@@ -197,7 +195,7 @@ const Post = ({
           className={`absolute bottom-4 visible`}
         >
           <div className="relative flex flex-col gap-y-4 z-10">
-            <p className="text-white text-md sm:text-lg pr-4 leading-tight ">
+            <p className="text-white text-md sm:text-lg line-clamp-5 pr-4 leading-tight ">
               {summary}
             </p>
             <Button label="Read the full article" size="medium" />
