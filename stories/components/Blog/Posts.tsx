@@ -68,7 +68,7 @@ const Posts = ({ title, description, button, posts = [] }: PostsProps) => {
               className={
                 index === visiblePosts.length - 1 &&
                 visiblePosts.length % 2 == 0
-                  ? 'col-span-full'
+                  ? 'xl:col-span-full'
                   : 'col-end-auto'
               }
             />
