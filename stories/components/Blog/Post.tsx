@@ -37,7 +37,7 @@ const Post = ({
 
   // Return true if we're on Tailwind's lg: media min-width
   const handleResize = () => {
-    setIsLgScreen(window.innerWidth >= 1024)
+    setIsLgScreen(window.innerWidth >= 1280)
   }
 
   // Event listener for resizing
