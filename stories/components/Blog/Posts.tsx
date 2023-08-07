@@ -66,7 +66,10 @@ const Posts = ({ title, description, button, posts = [] }: PostsProps) => {
               publishedAt={post.publishedAt}
               date={post.date}
               className={
-                index === visiblePosts.length - 1 ? 'col-span-full' : ''
+                index === visiblePosts.length - 1 &&
+                visiblePosts.length % 2 == 0
+                  ? 'col-span-full'
+                  : 'col-end-auto'
               }
             />
           ))}
