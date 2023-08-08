@@ -16,6 +16,7 @@ import PricingCard from '@/stories/components/Pricing/PricingCard'
 import Posts from '@/stories/components/Blog/Posts'
 
 import Image from 'next/image'
+import Form from '@/stories/components/Contact/Form'
 
 export default async function Home() {
   const status = await getStatus()
@@ -187,6 +188,11 @@ export default async function Home() {
             button={data.blog.button}
             posts={posts}
           />
+        </section>
+
+        {/* Form */}
+        <section className="my-10">
+          <Form />
         </section>
       </main>
     </div>
