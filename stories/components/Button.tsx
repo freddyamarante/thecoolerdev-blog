@@ -5,12 +5,16 @@ interface ButtonProps {
   size?: 'small' | 'medium' | 'large' | 'extralarge'
   label: string
   onClick?: () => void
+  type?: 'button' | 'submit' | 'reset' | undefined
+  disabled?: boolean
 }
 
 const Button = ({
   mode = 'primary',
   size = 'large',
   label,
+  type = 'button',
+  disabled = false,
   ...props
 }: ButtonProps) => {
   let modeClasses: string = mode
@@ -51,7 +55,8 @@ const Button = ({
 
   return (
     <button
-      type="button"
+      type={type}
+      disabled={disabled}
       className={`flex flex-row w-fit rounded-lg justify-center items-center leading-none gap-1 ${modeClasses} ${sizeClasses}`}
       {...props}
     >
