@@ -10,13 +10,13 @@ const Form = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mx-auto max-w-4xl">
-      <div className="grid grid-cols-3 gap-4">
+    <form onSubmit={handleSubmit} className="mx-auto">
+      <div className="relative grid grid-cols-3 gap-4">
         {/* Name */}
         <div className="flex flex-col col-span-full lg:col-span-1">
           <label
             htmlFor="name"
-            className="text-lg font-medium text-white leading-8 capitalize"
+            className="relative text-lg font-medium text-white leading-8 capitalize z-10"
           >
             Name
           </label>
@@ -33,7 +33,7 @@ const Form = () => {
         <div className="flex flex-col col-span-full lg:col-span-2">
           <label
             htmlFor="email"
-            className="text-lg font-medium text-white leading-8 capitalize"
+            className="relative text-lg font-medium text-white leading-8 capitalize z-10"
           >
             Email
           </label>
@@ -50,7 +50,7 @@ const Form = () => {
         <div className="flex flex-col col-span-full">
           <label
             htmlFor="subject"
-            className="text-lg font-medium text-white leading-8 capitalize"
+            className="relative text-lg font-medium text-white leading-8 capitalize z-10"
           >
             Subject
           </label>
@@ -71,7 +71,7 @@ const Form = () => {
         <div className="flex flex-col col-span-full">
           <label
             htmlFor="message"
-            className="text-lg font-medium text-white leading-8 capitalize"
+            className="relative text-lg font-medium text-white leading-8 capitalize z-10"
           >
             Message
           </label>
@@ -89,7 +89,7 @@ const Form = () => {
         </div>
 
         {/* Submit */}
-        <div className="flex justify-start col-start-1 mt-2">
+        <div className="flex justify-center col-start-2 mt-2">
           <Button
             label="Send message"
             mode="primary"

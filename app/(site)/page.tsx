@@ -191,16 +191,29 @@ export default async function Home() {
         </section>
 
         {/* Contact & Form */}
-        <section className="bg-night my-10 rounded-[45px]">
+        <section className="flex flex-row gap-6 my-10">
+          {/* Form */}
           <GradientBackground
             backgroundColor="#242423"
             gradientColor="#3E3E3D"
-            className="flex flex-col justify-center content-center py-16 w-full rounded-[45px]"
+            className="flex flex-col px-8 lg:px-12 py-10 lg:py-12 w-full rounded-[45px]"
           >
-            <div className="text-3xl lg:text-4xl xl:text-5xl font-bold text-center text-white mb-8">
+            <div className="relative text-3xl text-center lg:text-4xl xl:text-5xl font-bold text-white leading-normal mb-8 z-10">
               Let&apos;s get in touch
             </div>
             <Form />
+          </GradientBackground>
+
+          {/* Contact */}
+          <GradientBackground
+            backgroundColor="#CFDBD5"
+            gradientColor="#A5A5B6"
+            className="flex flex-col px-8 lg:px-12 py-10 lg:py-12 w-full rounded-[45px]"
+          >
+            <div className="relative text-3xl text-center lg:text-4xl xl:text-5xl font-bold leading-normal mb-8 z-10">
+              Check my socials
+            </div>
+            <Button label="Todo fino" mode="simple" />
           </GradientBackground>
         </section>
       </main>
