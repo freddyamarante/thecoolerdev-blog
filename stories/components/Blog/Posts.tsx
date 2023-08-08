@@ -45,7 +45,7 @@ const Posts = ({ title, description, button, posts = [] }: PostsProps) => {
           radius={50}
           className="flex flex-col justify-center col-span-1 md:col-span-2 px-8 lg:px-12 py-10 lg:py-12 xl:py-0 rounded-2xl h-auto md:h-96"
         >
-          <div className="relative flex flex-col gap-4 z-10">
+          <div className="relative flex flex-col gap-6 z-10">
             <h2 className="font-bold text-4xl lg:text-3xl xl:text-4xl">
               {title}
             </h2>

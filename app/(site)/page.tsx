@@ -132,16 +132,16 @@ export default async function Home() {
             radius={300}
             className="flex flex-col justify-center bg-taxi h-auto px-8 lg:px-12 py-10 lg:py-12 xl:py-0 rounded-2xl basis-1/3"
           >
-            <div className="relative flex flex-col gap-4 z-10">
+            <div className="relative flex flex-col gap-6 z-10">
               <h2 className="font-bold text-4xl lg:text-3xl xl:text-4xl">
                 {data.process.title}
               </h2>
               <p className="text-2xl lg:text-xl xl:text-2xl">
                 {data.process.body}
               </p>
-            </div>
-            <div className="flex justify-start mt-8 lg:mt-2 xl:mt-12">
-              <Button mode="contrast" label={data.process.button} />
+              <div className="flex justify-start">
+                <Button mode="contrast" label={data.process.button} />
+              </div>
             </div>
           </GradientBackground>
           <div className="basis-2/3 basis">

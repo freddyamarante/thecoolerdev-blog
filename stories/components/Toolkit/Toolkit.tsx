@@ -71,7 +71,7 @@ const Toolkit = ({
         ref={containerRef}
       >
         <div
-          className="relative flex flex-col gap-4 lg:pr-4 flex-shrink-0 basis-2/5 z-10"
+          className="relative flex flex-col gap-6 lg:pr-4 flex-shrink-0 basis-2/5 z-10"
           ref={infoRef}
         >
           <div className="text-4xl font-bold leading-normal">{subtitle}</div>
