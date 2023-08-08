@@ -190,9 +190,18 @@ export default async function Home() {
           />
         </section>
 
-        {/* Form */}
-        <section className="my-10">
-          <Form />
+        {/* Contact & Form */}
+        <section className="bg-night my-10 rounded-[45px]">
+          <GradientBackground
+            backgroundColor="#242423"
+            gradientColor="#3E3E3D"
+            className="flex flex-col justify-center content-center py-16 w-full rounded-[45px]"
+          >
+            <div className="text-3xl lg:text-4xl xl:text-5xl font-bold text-center text-white mb-8">
+              Let&apos;s get in touch
+            </div>
+            <Form />
+          </GradientBackground>
         </section>
       </main>
     </div>

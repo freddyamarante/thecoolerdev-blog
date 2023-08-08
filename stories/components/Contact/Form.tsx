@@ -1,3 +1,5 @@
+'use client'
+
 import { useForm, ValidationError } from '@formspree/react'
 import Button from '../Button'
 
@@ -8,11 +10,8 @@ const Form = () => {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="bg-night rounded-[45px] px-16 py-12"
-    >
-      <div className="grid grid-cols-3 gap-4 mx-auto">
+    <form onSubmit={handleSubmit} className="mx-auto max-w-4xl">
+      <div className="grid grid-cols-3 gap-4">
         {/* Name */}
         <div className="flex flex-col col-span-1">
           <label
@@ -25,7 +24,7 @@ const Form = () => {
             id="name"
             type="name"
             name="name"
-            className="block w-full border-2 border-white px-3.5 py-2 text-white bg-transparent rounded-lg mt-1"
+            className="block w-full border-2 border-night-dark px-3.5 py-2 text-white bg-night rounded-lg mt-1"
           />
           <ValidationError prefix="Name" field="name" errors={state.errors} />
         </div>
@@ -42,7 +41,7 @@ const Form = () => {
             id="email"
             type="email"
             name="email"
-            className="block w-full border-2 border-white px-3.5 py-2 text-white bg-transparent rounded-lg mt-1"
+            className="block w-full border-2 border-night-dark px-3.5 py-2 text-white bg-night rounded-lg mt-1"
           />
           <ValidationError prefix="Email" field="email" errors={state.errors} />
         </div>
@@ -59,7 +58,7 @@ const Form = () => {
             id="subject"
             type="subject"
             name="subject"
-            className="block w-full border-2 border-white px-3.5 py-2 text-white bg-transparent rounded-lg mt-1"
+            className="block w-full border-2 border-night-dark px-3.5 py-2 text-white bg-night rounded-lg mt-1"
           />
           <ValidationError
             prefix="Subject"
@@ -80,7 +79,7 @@ const Form = () => {
             id="message"
             name="message"
             rows={6}
-            className="block w-full border-2 border-white px-3.5 py-2 text-white bg-transparent rounded-lg mt-1"
+            className="block w-full border-2 border-night-dark px-3.5 py-2 text-white bg-night rounded-lg mt-1"
           />
           <ValidationError
             prefix="Message"
