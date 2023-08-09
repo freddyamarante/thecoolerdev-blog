@@ -10,7 +10,6 @@ interface SocialProps {
 
 const Social = ({ icon, link = '', label }: SocialProps) => {
   let chosenIcon: React.ReactNode
-  let title: string
 
   switch (icon) {
     case 'twitter':
@@ -34,10 +33,14 @@ const Social = ({ icon, link = '', label }: SocialProps) => {
   }
 
   return (
-    <div className="flex flex-row justify-between items-center gap-2 border-2 border-night bg-transparent py-3 px-5 w-full rounded-2xl">
+    <a
+      href={link}
+      target={icon === 'email' || icon === 'phone' ? '' : '_blank'}
+      className="flex flex-row justify-between items-center gap-2 border-2 border-night bg-transparent py-3 px-5 w-full rounded-2xl cursor-pointer"
+    >
       <span className="font-semibold text-2xl">{label}</span>
       {chosenIcon}
-    </div>
+    </a>
   )
 }
 

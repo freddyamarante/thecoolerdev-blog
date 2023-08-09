@@ -326,15 +326,20 @@ const landingPage = {
         },
       ],
     },
-    // Contact
+    // Footer
     {
       name: 'contact',
       title: 'Contact',
       type: 'object',
       fields: [
         {
-          name: 'title',
-          title: 'Title',
+          name: 'formTitle',
+          title: 'Form Title',
+          type: 'string',
+        },
+        {
+          name: 'contactTitle',
+          title: 'Contact Title',
           type: 'string',
         },
       ],

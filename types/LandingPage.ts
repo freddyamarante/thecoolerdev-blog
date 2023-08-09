@@ -70,6 +70,7 @@ export type LandingPage = {
     button: string
   }
   contact: {
-    title: string
+    formTitle: string
+    contactTitle: string
   }
 }
