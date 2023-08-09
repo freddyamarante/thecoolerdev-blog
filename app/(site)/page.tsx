@@ -212,11 +212,11 @@ export default async function Home() {
               Check my socials
             </div>
 
-            <div className="grid grid-cols-2 auto-cols-fr">
-              <Social icon="twitter" />
-              <Social icon="github" />
-              <Social icon="linkedin" />
-              <Social icon="cv" />
+            <div className="flex flex-col gap-4">
+              <Social icon="twitter" label="Follow me" />
+              <Social icon="github" label="Check my repositories" />
+              <Social icon="linkedin" label="Connect with me" />
+              <Social icon="cv" label="Read my CV" />
             </div>
           </GradientBackground>
         </section>
