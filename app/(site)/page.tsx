@@ -17,6 +17,7 @@ import Posts from '@/stories/components/Blog/Posts'
 
 import Image from 'next/image'
 import Form from '@/stories/components/Contact/Form'
+import Social from '@/stories/components/Contact/Social'
 
 export default async function Home() {
   const status = await getStatus()
@@ -213,7 +214,13 @@ export default async function Home() {
             <div className="relative text-3xl text-center lg:text-4xl xl:text-5xl font-bold leading-normal mb-8 z-10">
               Check my socials
             </div>
-            <Button label="Todo fino" mode="simple" />
+
+            <div className="grid grid-cols-2 auto-cols-fr">
+              <Social icon="twitter" />
+              <Social icon="github" />
+              <Social icon="linkedin" />
+              <Social icon="cv" />
+            </div>
           </GradientBackground>
         </section>
       </main>
