@@ -38,7 +38,7 @@ const Social = ({ icon, link = '', label }: SocialProps) => {
       target={icon === 'email' || icon === 'phone' ? '' : '_blank'}
       className="flex flex-row justify-between items-center gap-2 border-2 border-night bg-transparent py-3 px-5 w-full rounded-2xl cursor-pointer"
     >
-      <span className="font-semibold text-2xl">{label}</span>
+      <span className="font-semibold text-xl md:text-2xl">{label}</span>
       {chosenIcon}
     </a>
   )

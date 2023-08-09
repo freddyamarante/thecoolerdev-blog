@@ -189,7 +189,7 @@ export default async function Home() {
         </section>
 
         {/* Contact & Form */}
-        <section className="flex flex-col lg:flex-row gap-6 my-10">
+        <section className="flex flex-col lg:flex-row gap-6">
           {/* Form */}
           <GradientBackground
             backgroundColor="#242423"
