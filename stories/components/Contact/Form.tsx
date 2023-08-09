@@ -87,17 +87,16 @@ const Form = () => {
             errors={state.errors}
           />
         </div>
-
-        {/* Submit */}
-        <div className="flex justify-center col-start-2 mt-2">
-          <Button
-            label="Send message"
-            mode="primary"
-            size="large"
-            type="submit"
-            disabled={state.submitting}
-          />
-        </div>
+      </div>
+      {/* Submit */}
+      <div className="flex justify-center mx-auto mt-8">
+        <Button
+          label="Send message"
+          mode="primary"
+          size="large"
+          type="submit"
+          disabled={state.submitting}
+        />
       </div>
     </form>
   )

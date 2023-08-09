@@ -39,11 +39,8 @@ export default async function Home() {
       <GradientBackground className="w-screen left-0 flex flex-col justify-center content-center h-screen">
         <Experience className="absolute h-full w-full top-0 left-0" />
         <div className="flex flex-col mx-2 lg:mx-16 xl:mx-64 gap-1 text-center z-10">
-          <h1 className="font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none">
-            {data.hero.title}{' '}
-            <span className="text-border text-transparent">
-              {data.hero.highlight}
-            </span>
+          <h1 className="font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none">
+            {data.hero.title} <span className="">{data.hero.highlight}</span>
           </h1>
           <div className="flex gap-2 md:gap-6 justify-center mt-6">
             <Button
@@ -200,7 +197,7 @@ export default async function Home() {
             className="flex flex-col px-8 lg:px-12 py-10 lg:py-12 w-full rounded-[45px]"
           >
             <div className="relative text-3xl text-center lg:text-4xl xl:text-5xl font-bold text-white leading-normal mb-8 z-10">
-              Let&apos;s get in touch
+              Lets get in touch
             </div>
             <Form />
           </GradientBackground>

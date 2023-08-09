@@ -8,14 +8,6 @@
   }
 }
 
-.text-border {
-  --text-border-width: 2px;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: var(--text-border-width);
-  -webkit-text-stroke-color: #0a0a0a;
-}
-
-
 .grain-background {
   background-image: url("./noise.avif");
   opacity: 0.5;
