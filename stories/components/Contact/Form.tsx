@@ -93,7 +93,7 @@ const Form = () => {
         <Button
           label="Send message"
           mode="primary"
-          size="large"
+          size="extralarge"
           type="submit"
           disabled={state.submitting}
         />
