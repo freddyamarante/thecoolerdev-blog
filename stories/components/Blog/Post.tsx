@@ -127,8 +127,6 @@ const Post = ({
       setIsOpen(!isOpen ? true : false)
 
       isOpen ? animationStart() : animationEnd()
-
-      console.log(isOpen, title)
     }
   }
 

@@ -116,7 +116,10 @@ export async function getLandingPage(): Promise<LandingPage> {
           description,
           button,
         },
-        contact
+        contact {
+          formTitle,
+          contactTitle
+        },
       }
     `
   )

@@ -189,7 +189,7 @@ export default async function Home() {
         </section>
 
         {/* Contact & Form */}
-        <section className="flex flex-col lg:flex-row gap-6">
+        <section className="flex flex-col lg:flex-row gap-6 m-10">
           {/* Form */}
           <GradientBackground
             backgroundColor="#242423"
@@ -197,7 +197,7 @@ export default async function Home() {
             className="px-8 lg:px-12 py-10 lg:py-12 w-full rounded-[45px]"
           >
             <div className="relative text-3xl text-center lg:text-4xl xl:text-5xl font-bold text-white leading-normal mb-8 z-10">
-              Lets get in touch
+              {data.contact.formTitle}
             </div>
             <div className="my-auto">
               <Form />
@@ -211,7 +211,7 @@ export default async function Home() {
             className="px-8 lg:px-12 py-10 lg:py-12 w-full rounded-[45px]"
           >
             <div className="relative text-3xl text-center lg:text-4xl xl:text-5xl font-bold leading-normal mb-8 z-10">
-              Check my socials
+              {data.contact.contactTitle}
             </div>
 
             <div className="flex flex-col gap-4">
