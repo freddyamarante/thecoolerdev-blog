@@ -25,7 +25,7 @@ export default async function Home() {
   const posts = await getPosts()
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden bg-cloud">
       <GrainOverlay zIndex="z-10" />
 
       {/* Navbar */}
