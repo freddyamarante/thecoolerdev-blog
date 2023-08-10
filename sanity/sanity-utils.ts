@@ -16,6 +16,27 @@ const client = createClient({
   useCdn: true,
 })
 
+export async function getPost(slug: string): Promise<Post> {
+  const data = await client.fetch(
+    groq`
+    *[_type == "post" && slug.current == $slug][0]{
+      _id,
+      title,
+      summary,
+      "slug": slug.current,
+      "mainImage": mainImage.asset->url,
+      publishedAt,
+      date,
+      tag->,
+      body
+    }
+    `,
+    { slug }
+  )
+
+  return data
+}
+
 export async function getPosts(): Promise<Post[]> {
   const data = await client.fetch(
     groq`

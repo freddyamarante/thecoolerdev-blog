@@ -5,6 +5,7 @@ import { useRef, useState, useEffect } from 'react'
 
 import Image from 'next/image'
 import Button from '../Button'
+import Link from 'next/link'
 
 interface PostProps {
   index?: number
@@ -17,6 +18,7 @@ interface PostProps {
   }
   summary: string
   className?: React.ComponentProps<'div'>['className']
+  slug?: string
 }
 
 const defaultImage = '/javascriptImage.png'
@@ -30,6 +32,7 @@ const Post = ({
   tag,
   summary,
   className,
+  slug = '',
 }: PostProps) => {
   // State variable to track hover state
   const [isOpen, setIsOpen] = useState<boolean>(true)
@@ -200,7 +203,9 @@ const Post = ({
             <p className="text-white text-md sm:text-lg line-clamp-5 pr-4 leading-tight ">
               {summary}
             </p>
-            <Button label="Read the full article" size="medium" />
+            <Link href={`blog/${slug}`}>
+              <Button label="Read the full article" size="medium" />
+            </Link>
           </div>
         </motion.div>
       </div>

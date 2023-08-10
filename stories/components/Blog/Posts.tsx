@@ -14,6 +14,7 @@ interface PostsProps {
   posts?:
     | {
         title: string
+        slug: string
         mainImage?: string
         publishedAt: string
         date: string
@@ -65,6 +66,7 @@ const Posts = ({ title, description, button, posts = [] }: PostsProps) => {
               mainImage={post.mainImage}
               publishedAt={post.publishedAt}
               date={post.date}
+              slug={post.slug}
               className={
                 index === visiblePosts.length - 1 &&
                 visiblePosts.length % 2 == 0
