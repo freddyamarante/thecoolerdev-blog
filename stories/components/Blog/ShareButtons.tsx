@@ -5,6 +5,8 @@ import {
   TwitterShareButton,
   LinkedinShareButton,
 } from 'react-share'
+import { motion } from 'framer-motion'
+
 import { Facebook, LinkURL, LinkedIn, Twitter } from '../resources/Icons'
 
 interface ShareButtonsProps {
@@ -27,31 +29,58 @@ const ShareButtons = ({
 
   return (
     <div className="flex flex-row justify-center items-center border-2 border-night-dark divide-night-dark space-x-4 px-2 py-2 rounded-2xl">
-      <FacebookShareButton
-        url={window.location.href}
-        quote={`Read this article by Freddy Amarante: ${articleTitle}`}
-        hashtag="#TheCoolerDev"
+      <motion.div
+        initial={{ scale: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
       >
-        <Facebook />
-      </FacebookShareButton>
-      <TwitterShareButton
-        url={window.location.href}
-        title={`${articleTitle} by Freddy Amarante`}
-        hashtags={['#TheCoolerDev']}
-        via="thecoolerdev"
+        <FacebookShareButton
+          url={window.location.href}
+          quote={`Read this article by Freddy Amarante: ${articleTitle}`}
+          hashtag="#TheCoolerDev"
+        >
+          <Facebook />
+        </FacebookShareButton>
+      </motion.div>
+
+      <motion.div
+        initial={{ scale: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
       >
-        <Twitter />
-      </TwitterShareButton>
-      <LinkedinShareButton
-        url={window.location.href}
-        title={`${articleTitle} by Freddy Amarante`}
-        summary={summary ? summary : undefined}
+        <TwitterShareButton
+          url={window.location.href}
+          title={`${articleTitle} by Freddy Amarante`}
+          hashtags={['#TheCoolerDev']}
+          via="thecoolerdev"
+        >
+          <Twitter />
+        </TwitterShareButton>
+      </motion.div>
+
+      <motion.div
+        initial={{ scale: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
       >
-        <LinkedIn />
-      </LinkedinShareButton>
-      <div onClick={handleCopyToClipboard} className="cursor-pointer">
+        <LinkedinShareButton
+          url={window.location.href}
+          title={`${articleTitle} by Freddy Amarante`}
+          summary={summary ? summary : undefined}
+        >
+          <LinkedIn />
+        </LinkedinShareButton>
+      </motion.div>
+
+      <motion.div
+        initial={{ scale: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        onClick={handleCopyToClipboard}
+        className="cursor-pointer"
+      >
         <LinkURL />
-      </div>
+      </motion.div>
     </div>
   )
 }
