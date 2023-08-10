@@ -1,5 +1,6 @@
 import { getPost, getStatus } from '@/sanity/sanity-utils'
 import GoBack from '@/stories/components/Blog/GoBack'
+import ShareButtons from '@/stories/components/Blog/ShareButtons'
 import DarkModeToggler from '@/stories/components/DarkModeToggler'
 
 import GrainOverlay from '@/stories/components/resources/GrainOverlay'
@@ -41,7 +42,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
               {post.title}
             </h1>
             <div className="flex flex-col gap-4 md:flex-row md:gap-0 justify-between items-center">
-              <div className="flex flex-row gap-2 items-center mt-2">
+              <div className="flex flex-row gap-2 items-center">
                 <Image
                   src={status.image}
                   alt={status.name}
@@ -74,6 +75,13 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
           <div className="relative prose lg:prose-xl prose-neutral dark:prose-invert z-10">
             <PortableText value={post.body} />
+          </div>
+
+          <div className="flex flex-col mt-4">
+            <h2 className="text-xl lg:text-2xl xl:text-3xl font-bold text-center mb-4">
+              Share this article
+            </h2>
+            <ShareButtons articleTitle={post.title} summary={post.summary} />
           </div>
         </div>
       </main>
