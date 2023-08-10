@@ -19,6 +19,7 @@ module.exports = {
           dark: '#cfdbd5',
         },
         taxi: '#f5cb5c',
+        violet: '#a5a5b6',
       },
     },
   },

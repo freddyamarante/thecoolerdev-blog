@@ -1,4 +1,7 @@
+'use client'
+
 import { ArrowRight } from './resources/Icons'
+import { motion } from 'framer-motion'
 
 interface ButtonProps {
   mode?: 'primary' | 'contrast' | 'simple'
@@ -24,7 +27,7 @@ const Button = ({
       modeClasses = 'bg-taxi text-night-dark'
       break
     case 'contrast':
-      modeClasses = 'bg-night-dark text-white'
+      modeClasses = 'bg-night-dark hover:bg-night text-white'
       break
     case 'simple':
       modeClasses = 'bg-transparent text-night-dark border-2 border-night'
@@ -54,15 +57,18 @@ const Button = ({
   }
 
   return (
-    <button
+    <motion.button
       type={type}
+      initial={{ scale: 1 }}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
       disabled={disabled}
       className={`flex flex-row w-fit rounded-lg justify-center items-center leading-none gap-1 ${modeClasses} ${sizeClasses}`}
       {...props}
     >
       {label}
       <ArrowRight size={iconSize} />
-    </button>
+    </motion.button>
   )
 }
 

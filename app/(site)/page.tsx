@@ -129,7 +129,7 @@ export default async function Home() {
         {/* Process */}
         <section className="flex flex-col lg:flex-row gap-4 md:gap-7 xl:gap-10 mt-10 lg:mt-14">
           <GradientBackground
-            radius={300}
+            radius={200}
             className="flex flex-col justify-center bg-taxi h-auto px-8 lg:px-12 py-10 lg:py-12 rounded-2xl basis-1/3"
           >
             <div className="relative flex flex-col gap-6 z-10">
