@@ -21,7 +21,7 @@ const DarkModeToggler = () => {
       whileTap={{ scale: 0.9 }}
       type="button"
       onClick={toggleDarkMode}
-      className="flex items-center justify-center h-8 w-8 rounded-full font-bold border-2 border-night-dark dark:border-white dark:text-white text-night-dark"
+      className="flex items-center justify-center h-8 w-8 rounded-full font-bold text-night-dark dark:text-white hover:dark:text-night-dark bg-transparent hover:dark:bg-white border-2 border-night-dark dark:border-white"
     >
       {currentTheme === 'dark' ? <Moon /> : <Sun />}
     </motion.button>
