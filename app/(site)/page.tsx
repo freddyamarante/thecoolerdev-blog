@@ -14,10 +14,10 @@ import Toolkit from '@/stories/components/Toolkit/Toolkit'
 import Steps from '@/stories/components/Process/Steps'
 import PricingCard from '@/stories/components/Pricing/PricingCard'
 import Posts from '@/stories/components/Blog/Posts'
-
-import Image from 'next/image'
 import Form from '@/stories/components/Contact/Form'
 import Social from '@/stories/components/Contact/Social'
+
+import Image from 'next/image'
 
 export default async function Home() {
   const status = await getStatus()
