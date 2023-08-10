@@ -28,7 +28,8 @@ export async function getPost(slug: string): Promise<Post> {
       publishedAt,
       date,
       tag->,
-      body
+      body,
+      timeToRead,
     }
     `,
     { slug }

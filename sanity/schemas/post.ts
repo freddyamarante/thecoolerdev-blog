@@ -52,6 +52,11 @@ const post = {
       type: 'text',
       validation: (Rule) => Rule.max(255),
     },
+    {
+      name: 'timeToRead',
+      title: 'Time to read',
+      type: 'number',
+    },
   ],
 
   preview: {

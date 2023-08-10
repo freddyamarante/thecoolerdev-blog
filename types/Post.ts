@@ -12,4 +12,5 @@ export type Post = {
     title: string
   }
   body: PortableTextBlock
+  timeToRead: number
 }
