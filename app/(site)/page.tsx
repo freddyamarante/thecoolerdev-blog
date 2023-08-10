@@ -130,7 +130,7 @@ export default async function Home() {
         <section className="flex flex-col lg:flex-row gap-4 md:gap-7 xl:gap-10 mt-10 lg:mt-14">
           <GradientBackground
             radius={300}
-            className="flex flex-col justify-center bg-taxi h-auto px-8 lg:px-12 py-10 lg:py-12 xl:py-0 rounded-2xl basis-1/3"
+            className="flex flex-col justify-center bg-taxi h-auto px-8 lg:px-12 py-10 lg:py-12 rounded-2xl basis-1/3"
           >
             <div className="relative flex flex-col gap-6 z-10">
               <h2 className="font-bold text-4xl lg:text-3xl xl:text-4xl">
@@ -150,7 +150,7 @@ export default async function Home() {
         </section>
 
         {/* Pricing */}
-        <section className="flex flex-col h-fit mt-10 lg:mt-14 lg:mt-20 border-y-[30px] lg:border-y-[45px] border-night rounded-[30px] lg:rounded-[45px]">
+        <section className="flex flex-col h-fit mt-10 lg:mt-14 border-y-[30px] lg:border-y-[45px] border-night rounded-[30px] lg:rounded-[45px]">
           <GradientBackground
             radius={100}
             className="flex justify-center items-center w-full"
