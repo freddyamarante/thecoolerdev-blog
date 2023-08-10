@@ -4,11 +4,15 @@ import { motion } from 'framer-motion'
 
 import { ChevronLeft } from '../resources/Icons'
 
-const GoBack = ({ label: string = 'GoBack' }) => {
+const GoBack = () => {
   return (
-    <motion.div className="flex flex-row justify-center items-center gap-2 leading-none bg-transparent hover:bg-violet border-2 border-night w-fit p-3 rounded-lg">
+    <motion.div
+      initial={{ scale: 1 }}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      className="flex items-center justify-center self-center h-8 w-8 text-xl text-night-dark dark:text-white hover:dark:text-night-dark bg-transparent hover:dark:bg-white border-2 border-night-dark dark:border-white rounded-full"
+    >
       <ChevronLeft />
-      <span>All articles</span>
     </motion.div>
   )
 }
