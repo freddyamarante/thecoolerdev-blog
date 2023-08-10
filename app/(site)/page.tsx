@@ -18,6 +18,8 @@ import Form from '@/stories/components/Contact/Form'
 import Social from '@/stories/components/Contact/Social'
 
 import Image from 'next/image'
+import Socials from '@/stories/components/Contact/Socials'
+import Footer from '@/stories/components/Contact/Footer'
 
 export default async function Home() {
   const status = await getStatus()
@@ -191,64 +193,8 @@ export default async function Home() {
         </section>
 
         {/* Contact & Form */}
-        <section className="flex flex-col lg:flex-row gap-6 mt-10 lg:mt-14">
-          {/* Form */}
-          <GradientBackground
-            backgroundColor="#242423"
-            gradientColor="#3E3E3D"
-            className="px-8 lg:px-12 py-10 lg:py-12 w-full rounded-[45px]"
-          >
-            <div className="relative text-3xl text-center lg:text-4xl xl:text-5xl font-bold text-white leading-normal mb-8 z-10">
-              {data.contact.formTitle}
-            </div>
-            <div className="my-auto">
-              <Form />
-            </div>
-          </GradientBackground>
-
-          {/* Contact */}
-          <GradientBackground
-            backgroundColor="#CFDBD5"
-            gradientColor="#A5A5B6"
-            className="px-8 lg:px-12 py-10 lg:py-12 w-full rounded-[45px]"
-          >
-            <div className="relative text-3xl text-center lg:text-4xl xl:text-5xl font-bold leading-normal mb-8 z-10">
-              {data.contact.contactTitle}
-            </div>
-
-            <div className="flex flex-col gap-4">
-              <Social
-                icon="twitter"
-                label="Follow me"
-                link="https://twitter.com/thecoolerdev"
-              />
-              <Social
-                icon="github"
-                label="Check my repositories"
-                link="https://github.com/freddyamarante"
-              />
-              <Social
-                icon="linkedin"
-                label="Connect with me"
-                link="https://www.linkedin.com/in/freddy-amarante/"
-              />
-              <Social
-                icon="phone"
-                label="Give me a call"
-                link="tel:+51921331375"
-              />
-              <Social
-                icon="email"
-                label="Send me an email"
-                link="mailto:freddyamarante14@gmail.com"
-              />
-              <Social
-                icon="cv"
-                label="Read my CV"
-                link="https://drive.google.com/file/d/1OiGBCJnTgniK4pBsehECLIOlUYF09WGb/view?usp=sharing"
-              />
-            </div>
-          </GradientBackground>
+        <section className="mt-10 lg:mt-14">
+          <Footer />
         </section>
       </main>
     </div>
