@@ -42,7 +42,7 @@ export default async function Home() {
           <h1 className="font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none">
             {data.hero.title} <span className="">{data.hero.highlight}</span>
           </h1>
-          <div className="flex gap-2 md:gap-6 justify-center mt-6">
+          <div className="flex flex-col lg:flex-row gap-2 md:gap-6 justify-center items-center mt-6">
             <Button
               label={data.hero.callToAction}
               mode="contrast"
@@ -64,7 +64,7 @@ export default async function Home() {
 
       <main className="relative flex flex-col mx-2 sm:mx-6 lg:mx-10">
         {/* About me */}
-        <section className="flex flex-col xl:flex-row gap-10 lg:gap-16 justify-center items-center mt-10 lg:mt-20">
+        <section className="flex flex-col xl:flex-row gap-10 lg:gap-16 justify-center items-center mt-10 lg:mt-14">
           <div className="w-full xl:basis-1/3 h-[480px] xl:h-full flex-shrink-0 ">
             <Image
               src={data.aboutMe.image}
@@ -98,7 +98,7 @@ export default async function Home() {
         </section>
 
         {/* Skills divider */}
-        <div className="my-10 lg:my-14">
+        <div className="mt-10 lg:mt-14">
           {data && (
             <Skills
               skills={data.aboutMe.skills}
@@ -108,7 +108,7 @@ export default async function Home() {
         </div>
 
         {/* Toolkit */}
-        <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6 z-10 mb-10 lg:mb-14">
+        <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6 z-10 mt-10 lg:mt-14">
           <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold basis-1/3">
             {data.toolkit.title}
           </h2>
@@ -117,15 +117,17 @@ export default async function Home() {
           </p>
         </div>
 
-        <Toolkit
-          subtitle={data.toolkit.subtitle}
-          subBody={data.toolkit.subBody}
-          button={data.toolkit.button}
-          tools={data.toolkit.tools}
-        />
+        <div className="mt-10 lg:mt-14">
+          <Toolkit
+            subtitle={data.toolkit.subtitle}
+            subBody={data.toolkit.subBody}
+            button={data.toolkit.button}
+            tools={data.toolkit.tools}
+          />
+        </div>
 
         {/* Process */}
-        <section className="flex flex-col lg:flex-row gap-4 md:gap-7 xl:gap-10 my-10 lg:my-14">
+        <section className="flex flex-col lg:flex-row gap-4 md:gap-7 xl:gap-10 mt-10 lg:mt-14">
           <GradientBackground
             radius={300}
             className="flex flex-col justify-center bg-taxi h-auto px-8 lg:px-12 py-10 lg:py-12 xl:py-0 rounded-2xl basis-1/3"
@@ -148,7 +150,7 @@ export default async function Home() {
         </section>
 
         {/* Pricing */}
-        <section className="flex flex-col h-fit lg:my-4 border-y-[30px] lg:border-y-[45px] border-night rounded-[30px] lg:rounded-[45px]">
+        <section className="flex flex-col h-fit mt-10 lg:mt-14 lg:mt-20 border-y-[30px] lg:border-y-[45px] border-night rounded-[30px] lg:rounded-[45px]">
           <GradientBackground
             radius={100}
             className="flex justify-center items-center w-full"
@@ -179,7 +181,7 @@ export default async function Home() {
         </section>
 
         {/* Blog */}
-        <section className="h-fit my-10">
+        <section className="h-fit mt-10 lg:mt-14">
           <Posts
             title={data.blog.title}
             description={data.blog.description}
@@ -189,7 +191,7 @@ export default async function Home() {
         </section>
 
         {/* Contact & Form */}
-        <section className="flex flex-col lg:flex-row gap-6 mt-10">
+        <section className="flex flex-col lg:flex-row gap-6 mt-10 lg:mt-14">
           {/* Form */}
           <GradientBackground
             backgroundColor="#242423"
