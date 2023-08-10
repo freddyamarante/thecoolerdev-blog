@@ -150,7 +150,7 @@ export default async function Home() {
         {/* Pricing */}
         <section className="flex flex-col h-fit lg:my-4 border-y-[30px] lg:border-y-[45px] border-night rounded-[30px] lg:rounded-[45px]">
           <GradientBackground
-            radius={300}
+            radius={100}
             className="flex justify-center items-center w-full"
           >
             <div className="flex flex-col my-10 max-w-lg lg:max-w-4xl">
@@ -189,7 +189,7 @@ export default async function Home() {
         </section>
 
         {/* Contact & Form */}
-        <section className="flex flex-col lg:flex-row gap-6 m-10">
+        <section className="flex flex-col lg:flex-row gap-6 mt-10">
           {/* Form */}
           <GradientBackground
             backgroundColor="#242423"

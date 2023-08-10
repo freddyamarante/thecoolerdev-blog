@@ -5,9 +5,6 @@ import Button from '../Button'
 
 const Form = () => {
   const [state, handleSubmit] = useForm('mgejaeoe')
-  if (state.succeeded) {
-    return <p>Thanks for the message!</p>
-  }
 
   return (
     <form onSubmit={handleSubmit} className="mx-auto">
@@ -25,6 +22,7 @@ const Form = () => {
             type="name"
             name="name"
             className="block w-full border-2 border-night-dark px-3.5 py-2 text-white bg-night rounded-lg mt-1"
+            disabled={state.succeeded}
           />
           <ValidationError prefix="Name" field="name" errors={state.errors} />
         </div>
@@ -41,6 +39,7 @@ const Form = () => {
             id="email"
             type="email"
             name="email"
+            disabled={state.succeeded}
             className="block w-full border-2 border-night-dark px-3.5 py-2 text-white bg-night rounded-lg mt-1"
           />
           <ValidationError prefix="Email" field="email" errors={state.errors} />
@@ -58,6 +57,7 @@ const Form = () => {
             id="subject"
             type="subject"
             name="subject"
+            disabled={state.succeeded}
             className="block w-full border-2 border-night-dark px-3.5 py-2 text-white bg-night rounded-lg mt-1"
           />
           <ValidationError
@@ -79,7 +79,8 @@ const Form = () => {
             id="message"
             name="message"
             rows={6}
-            className="block w-full border-2 border-night-dark px-3.5 py-2 text-white bg-night rounded-lg mt-1"
+            disabled={state.succeeded}
+            className="block w-full border-2 border-night-dark px-3.5 py-2 text-white bg-night rounded-lg mt-1 resize-none"
           />
           <ValidationError
             prefix="Message"
@@ -88,8 +89,15 @@ const Form = () => {
           />
         </div>
       </div>
+
+      {state.succeeded && (
+        <p className="text-md font-semibold text-white mt-2">
+          message submitted successfully!
+        </p>
+      )}
+
       {/* Submit */}
-      <div className="flex justify-center mx-auto mt-8">
+      <div className="flex justify-center mx-auto mt-6">
         <Button
           label="Send message"
           mode="primary"
