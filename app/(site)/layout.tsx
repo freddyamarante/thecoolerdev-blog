@@ -25,7 +25,9 @@ export default function RootLayout({
       <GrainOverlay />
 
       <body className={`${IBMPlexSans.className} text-night-dark`}>
-        <Providers theme="light">{children}</Providers>
+        <Providers defaultTheme="system" enableSystem>
+          {children}
+        </Providers>
       </body>
     </html>
   )

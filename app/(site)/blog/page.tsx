@@ -2,7 +2,7 @@ import GoBack from '@/stories/components/Blog/GoBack'
 
 import Link from 'next/link'
 
-export default async function Blog() {
+const Blog = () => {
   return (
     <div className="overflow-hidden bg-cloud">
       <main className="px-2 sm:px-6 lg:px-10 py-8">
@@ -15,3 +15,7 @@ export default async function Blog() {
     </div>
   )
 }
+
+Blog.theme = 'light'
+
+export default Blog

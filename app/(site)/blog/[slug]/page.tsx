@@ -10,7 +10,7 @@ import { PortableText } from '@portabletext/react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default async function Post({ params }: { params: { slug: string } }) {
+const Post = async ({ params }: { params: { slug: string } }) => {
   const post = await getPost(params.slug)
   const status = await getStatus()
 
@@ -92,3 +92,5 @@ export default async function Post({ params }: { params: { slug: string } }) {
     </div>
   )
 }
+
+export default Post

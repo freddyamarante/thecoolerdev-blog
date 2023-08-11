@@ -3,7 +3,6 @@ import '@/styles/globals.css'
 import { getLandingPage, getPosts, getStatus } from '@/sanity/sanity-utils'
 
 import GradientBackground from '@/stories/components/GradientBackground'
-import GrainOverlay from '@/stories/components/resources/GrainOverlay'
 import Experience from '@/stories/components/resources/Experience'
 import Nav from '@/stories/components/Navbar/Nav'
 import Button from '@/stories/components/Button'
@@ -18,7 +17,7 @@ import Posts from '@/stories/components/Blog/Posts'
 import Image from 'next/image'
 import Footer from '@/stories/components/Contact/Footer'
 
-export default async function Home() {
+const Home = async () => {
   const status = await getStatus()
   const data = await getLandingPage()
   const posts = await getPosts()
@@ -195,3 +194,7 @@ export default async function Home() {
     </div>
   )
 }
+
+Home.theme = 'light'
+
+export default Home

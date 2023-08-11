@@ -1,25 +1,10 @@
 'use client'
 
-import React from 'react'
-import { ThemeProvider } from 'next-themes'
+import { ThemeProvider as NextThemeProvider } from 'next-themes'
+import { ThemeProviderProps } from 'next-themes/dist/types'
 
-const Providers = ({
-  children,
-  theme,
-  forceTheme = false,
-}: {
-  children: React.ReactNode
-  theme: 'light' | 'dark'
-  forceTheme?: boolean
-}) => {
-  return (
-    <ThemeProvider
-      defaultTheme={theme}
-      forcedTheme={forceTheme ? theme : undefined}
-    >
-      {children}
-    </ThemeProvider>
-  )
+const Providers = ({ children, ...props }: ThemeProviderProps) => {
+  return <NextThemeProvider {...props}>{children}</NextThemeProvider>
 }
 
 export default Providers
