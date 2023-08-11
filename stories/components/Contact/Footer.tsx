@@ -6,7 +6,7 @@ import Socials from './Socials'
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col lg:flex-row gap-6 ">
+    <>
       {/* Form */}
       <GradientBackground
         backgroundColor="#242423"
@@ -33,7 +33,7 @@ const Footer = () => {
 
         <Socials />
       </GradientBackground>
-    </footer>
+    </>
   )
 }
 
