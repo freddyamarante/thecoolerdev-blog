@@ -193,9 +193,9 @@ export default async function Home() {
         </section>
 
         {/* Contact & Form */}
-        <section className="mt-10 lg:mt-14">
+        <footer className="flex flex-col lg:flex-row gap-6 mt-10 lg:mt-14">
           <Footer />
-        </section>
+        </footer>
       </main>
     </div>
   )

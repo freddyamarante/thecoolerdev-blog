@@ -43,7 +43,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
               {post.title}
             </h1>
 
-            <div className="flex flex-col gap-4 xs:flex-row xs:gap-0 justify-between items-center px-8 lg:px-0">
+            <div className="flex flex-col gap-4 sm:flex-row sm:gap-0 justify-between items-center px-8 lg:px-0">
               <div className="flex flex-row gap-2 items-center">
                 <Image
                   src={status.image}
@@ -85,11 +85,11 @@ export default async function Post({ params }: { params: { slug: string } }) {
             </h2>
             <ShareButtons articleTitle={post.title} summary={post.summary} />
           </div>
-        </div>
 
-        <section className="mt-10 lg:mt-14">
-          <Footer />
-        </section>
+          <footer className="flex flex-col gap-6 mt-10 lg:mt-14">
+            <Footer />
+          </footer>
+        </div>
       </main>
     </div>
   )
