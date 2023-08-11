@@ -199,7 +199,7 @@ const Post = ({
           initial={{ opacity: 0 }}
           className={`absolute bottom-4 visible`}
         >
-          <div className="relative flex flex-col gap-y-4 z-10">
+          <div className="relative flex flex-col gap-y-4 z-20">
             <p className="text-white text-md sm:text-lg line-clamp-5 pr-4 leading-tight ">
               {summary}
             </p>

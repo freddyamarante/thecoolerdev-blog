@@ -25,8 +25,6 @@ export default async function Home() {
 
   return (
     <div className="overflow-hidden bg-cloud">
-      <GrainOverlay zIndex="z-10" />
-
       {/* Navbar */}
       <Nav
         name={status.name}

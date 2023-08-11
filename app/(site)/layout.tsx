@@ -2,6 +2,7 @@ import '@/styles/globals.css'
 
 import { IBM_Plex_Sans } from 'next/font/google'
 
+import GrainOverlay from '@/stories/components/resources/GrainOverlay'
 import Providers from './providers'
 
 const IBMPlexSans = IBM_Plex_Sans({
@@ -21,6 +22,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <GrainOverlay />
+
       <body className={`${IBMPlexSans.className} text-night-dark`}>
         <Providers theme="light">{children}</Providers>
       </body>

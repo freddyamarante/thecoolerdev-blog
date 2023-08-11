@@ -16,8 +16,6 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
   return (
     <div className="overflow-hidden">
-      <GrainOverlay zIndex="z-10" />
-
       <main className="px-2 sm:px-6 lg:px-10 py-8">
         <div className="flex flex-col items-center max-w-4xl mx-auto">
           <div className="flex justify-between items-center w-full mb-8">
