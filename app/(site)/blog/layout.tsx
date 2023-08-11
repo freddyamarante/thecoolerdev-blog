@@ -2,7 +2,7 @@ import '@/styles/globals.css'
 
 import { IBM_Plex_Sans } from 'next/font/google'
 
-import Providers from './providers'
+import Providers from '../providers'
 
 const IBMPlexSans = IBM_Plex_Sans({
   weight: ['100', '200', '300', '400', '700'],

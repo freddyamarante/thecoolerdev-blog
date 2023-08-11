@@ -24,12 +24,18 @@ interface PostsProps {
         summary: string
       }[]
     | undefined
+  initialCount?: number
 }
 
-const Posts = ({ title, description, button, posts = [] }: PostsProps) => {
+const Posts = ({
+  title,
+  description,
+  button,
+  posts = [],
+  initialCount = 5,
+}: PostsProps) => {
   const [showAllPosts, setShowAllPosts] = useState<boolean>(false)
-  const initialPostsCount: number = 5
-  const visiblePosts = showAllPosts ? posts : posts?.slice(0, initialPostsCount)
+  const visiblePosts = showAllPosts ? posts : posts?.slice(0, initialCount)
 
   const handleViewMoreClick = () => {
     setShowAllPosts(!showAllPosts)
@@ -83,7 +89,7 @@ const Posts = ({ title, description, button, posts = [] }: PostsProps) => {
         )}
       </div>
 
-      {posts?.length > initialPostsCount && (
+      {posts?.length > initialCount && (
         <div className="flex justify-center mx-auto mt-10">
           <Button
             label={!showAllPosts ? 'Show all' : 'Show less'}

@@ -3,8 +3,14 @@
 import React from 'react'
 import { ThemeProvider } from 'next-themes'
 
-const Providers = ({ children }: { children: React.ReactNode }) => {
-  return <ThemeProvider>{children}</ThemeProvider>
+const Providers = ({
+  children,
+  theme,
+}: {
+  children: React.ReactNode
+  theme: 'light' | 'dark'
+}) => {
+  return <ThemeProvider forcedTheme={theme}>{children}</ThemeProvider>
 }
 
 export default Providers
