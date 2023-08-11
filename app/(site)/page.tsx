@@ -14,11 +14,8 @@ import Toolkit from '@/stories/components/Toolkit/Toolkit'
 import Steps from '@/stories/components/Process/Steps'
 import PricingCard from '@/stories/components/Pricing/PricingCard'
 import Posts from '@/stories/components/Blog/Posts'
-import Form from '@/stories/components/Contact/Form'
-import Social from '@/stories/components/Contact/Social'
 
 import Image from 'next/image'
-import Socials from '@/stories/components/Contact/Socials'
 import Footer from '@/stories/components/Contact/Footer'
 
 export default async function Home() {
