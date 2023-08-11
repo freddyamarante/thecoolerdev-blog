@@ -28,7 +28,7 @@ const ShareButtons = ({
   }
 
   return (
-    <div className="flex flex-row justify-center items-center border-2 border-night-dark divide-night-dark space-x-4 px-2 py-2 rounded-2xl">
+    <div className="flex flex-row items-stretch border-2 border-night-dark divide-night-dark space-x-4 px-2 py-2 rounded-2xl">
       <motion.div
         initial={{ scale: 1 }}
         whileHover={{ scale: 1.1 }}
