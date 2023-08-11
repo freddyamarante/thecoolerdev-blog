@@ -79,7 +79,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
             <PortableText value={post.body} />
           </div>
 
-          <div className="flex flex-col mt-8">
+          <div className="flex flex-col mt-8 text-night-dark dark:text-white">
             <h2 className="text-xl lg:text-2xl xl:text-3xl font-bold text-center mb-4">
               Share this article
             </h2>
