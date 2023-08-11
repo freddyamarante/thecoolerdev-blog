@@ -8,9 +8,9 @@ import Post from './Post'
 import Button from '../Button'
 
 interface PostsProps {
-  title: string
-  description: string
-  button: string
+  title?: string
+  description?: string
+  button?: string
   posts?:
     | {
         title: string
@@ -57,7 +57,7 @@ const Posts = ({
               {title}
             </h2>
             <p className="text-2xl lg:text-xl xl:text-2xl">{description}</p>
-            <Button mode="simple" label={button} />
+            <Button mode="simple" label={button ? button : 'Button'} />
           </div>
         </GradientBackground>
 

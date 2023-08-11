@@ -22,10 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <GrainOverlay />
-
       <body className={`${IBMPlexSans.className} text-night-dark`}>
         <Providers defaultTheme="system" enableSystem>
+          <GrainOverlay />
           {children}
         </Providers>
       </body>

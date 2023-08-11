@@ -18,7 +18,7 @@ const Blog = async () => {
         <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-center mb-8">
           Read my blog
         </h1>
-        <Posts posts={posts} evenOddLayout />
+        <Posts posts={posts} />
       </main>
     </div>
   )
