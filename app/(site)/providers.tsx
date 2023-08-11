@@ -10,7 +10,7 @@ const Providers = ({
   children: React.ReactNode
   theme: 'light' | 'dark'
 }) => {
-  return <ThemeProvider forcedTheme={theme}>{children}</ThemeProvider>
+  return <ThemeProvider defaultTheme={theme}>{children}</ThemeProvider>
 }
 
 export default Providers
