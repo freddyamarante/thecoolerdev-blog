@@ -4,8 +4,6 @@ import ShareButtons from '@/stories/components/Blog/ShareButtons'
 import Footer from '@/stories/components/Contact/Footer'
 import DarkModeToggler from '@/stories/components/DarkModeToggler'
 
-import GrainOverlay from '@/stories/components/resources/GrainOverlay'
-
 import { PortableText } from '@portabletext/react'
 import Image from 'next/image'
 import Link from 'next/link'
