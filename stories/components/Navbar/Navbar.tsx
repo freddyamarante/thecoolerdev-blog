@@ -41,7 +41,7 @@ const Navbar = ({ name, active, image, elements }: NavbarProps) => {
               </Disclosure.Button>
 
               {/* Desktop navigation elements */}
-              <a className="hidden md:flex gap-5 py-5">{listElements}</a>
+              <div className="hidden md:flex gap-5 py-5">{listElements}</div>
             </div>
 
             {/* Dropdown */}
