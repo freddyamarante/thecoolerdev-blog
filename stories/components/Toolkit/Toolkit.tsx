@@ -76,9 +76,11 @@ const Toolkit = ({
         >
           <div className="text-4xl font-bold leading-normal">{subtitle}</div>
           <div className="text-2xl">{subBody}</div>
-          <div className="flex justify-start">
+
+          {/* Removed until further pages implementation */}
+          {/* <div className="flex justify-start">
             <Button mode="primary" label={button} />
-          </div>
+          </div> */}
         </div>
 
         {/* Desktop carousel */}

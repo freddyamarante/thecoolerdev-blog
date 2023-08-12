@@ -136,9 +136,11 @@ const Home = async () => {
               <p className="text-2xl lg:text-xl xl:text-2xl">
                 {data.process.body}
               </p>
-              <div className="flex justify-start">
+
+              {/* Removed until further Pages implementation */}
+              {/* <div className="flex justify-start">
                 <Button mode="contrast" label={data.process.button} />
-              </div>
+              </div> */}
             </div>
           </GradientBackground>
           <div className="basis-2/3 basis">
