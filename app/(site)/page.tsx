@@ -20,15 +20,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const Home = async () => {
-  const statuslandingPage = await getStatus()
-  const landingPagelandingPage = await getLandingPage()
-  const postslandingPage = await getPosts()
-
-  const [status, landingPage, posts] = await Promise.all([
-    statuslandingPage,
-    landingPagelandingPage,
-    postslandingPage,
-  ])
+  const status = await getStatus()
+  const landingPage = await getLandingPage()
+  const posts = await getPosts()
 
   return (
     <div className="overflow-hidden bg-cloud">
