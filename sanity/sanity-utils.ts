@@ -33,7 +33,7 @@ export async function getPost(slug: string): Promise<Post> {
   }
   `
 
-  const data = await client.fetch(query)
+  const data = await client.fetch(query, { slug })
 
   return data
 }
