@@ -9,7 +9,7 @@ const config = defineConfig({
 
   projectId: '7eiqcloi',
   dataset: 'production',
-  useCdn: true,
+  useCdn: false,
 
   basePath: '/admin',
   plugins: [deskTool(), visionTool(), vercelDeployTool()],
