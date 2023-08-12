@@ -21,6 +21,7 @@ type Story = StoryObj<typeof Post>
 export const Default: Story = {
   args: {
     title: 'How React changed my way of thinking',
+    slug: 'how-react-changed-my-way-of-thinking',
     publishedAt: '2017-02-12T09:15:00Z',
     date: 'Feb 12, 2017',
     tag: { title: 'React' },

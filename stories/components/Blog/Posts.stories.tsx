@@ -26,8 +26,9 @@ export const Default: Story = {
     button: 'All articles',
     posts: [
       {
-        _id: 1,
         title: 'How React changed my way of thinking',
+        slug: 'how-react-changed-my-way-of-thinking',
+
         publishedAt: '2017-02-12T09:15:00Z',
         date: 'Feb 12, 2017',
         tag: { title: 'React' },
@@ -35,8 +36,9 @@ export const Default: Story = {
           "In this article, I share how React transformed my perspective on web development. I embraced React's component-based approach and the experience changed the way I code and think about problem-solving.",
       },
       {
-        _id: 1,
         title: 'How React changed my way of thinking',
+        slug: 'how-react-changed-my-way-of-thinking',
+
         publishedAt: '2017-02-12T09:15:00Z',
         date: 'Feb 12, 2017',
         tag: { title: 'React' },
@@ -44,8 +46,9 @@ export const Default: Story = {
           "In this article, I share how React transformed my perspective on web development. I embraced React's component-based approach and the experience changed the way I code and think about problem-solving.",
       },
       {
-        _id: 1,
         title: 'How React changed my way of thinking',
+        slug: 'how-react-changed-my-way-of-thinking',
+
         publishedAt: '2017-02-12T09:15:00Z',
         date: 'Feb 12, 2017',
         tag: { title: 'React' },
@@ -53,8 +56,9 @@ export const Default: Story = {
           "In this article, I share how React transformed my perspective on web development. I embraced React's component-based approach and the experience changed the way I code and think about problem-solving.",
       },
       {
-        _id: 1,
         title: 'How React changed my way of thinking',
+        slug: 'how-react-changed-my-way-of-thinking',
+
         publishedAt: '2017-02-12T09:15:00Z',
         date: 'Feb 12, 2017',
         tag: { title: 'React' },
@@ -62,8 +66,9 @@ export const Default: Story = {
           "In this article, I share how React transformed my perspective on web development. I embraced React's component-based approach and the experience changed the way I code and think about problem-solving.",
       },
       {
-        _id: 1,
         title: 'How React changed my way of thinking',
+        slug: 'how-react-changed-my-way-of-thinking',
+
         publishedAt: '2017-02-12T09:15:00Z',
         date: 'Feb 12, 2017',
         tag: { title: 'React' },
