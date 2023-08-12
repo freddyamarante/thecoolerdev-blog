@@ -52,7 +52,7 @@ export async function getPosts(): Promise<Post[]> {
     tag->,
   }`
 
-  const data = await client.fetch(query)
+  const data = await client.fetch(query, { next: revalidate })
 
   return data
 }
