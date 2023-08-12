@@ -6,6 +6,7 @@ import GradientBackground from '../GradientBackground'
 import Post from './Post'
 
 import Button from '../Button'
+import Link from 'next/link'
 
 interface PostsProps {
   title?: string
@@ -60,7 +61,9 @@ const Posts = ({
                 {title}
               </h2>
               <p className="text-2xl lg:text-xl xl:text-2xl">{description}</p>
-              <Button mode="simple" label={button ? button : 'Button'} />
+              <Link href="/blog">
+                <Button mode="simple" label={button ? button : 'Button'} />
+              </Link>
             </div>
           </GradientBackground>
         )}
