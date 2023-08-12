@@ -22,6 +22,25 @@ export const Default: Story = {
   args: {
     name: 'Freddy Amarante',
     active: true,
-    elements: ['Who am I', 'Process', 'Projects', 'Blog', 'Contact'],
+    elements: [
+      {
+        title: 'Who am I',
+        id: 'aboutMe',
+      },
+
+      {
+        title: 'Process',
+        id: 'process',
+      },
+
+      {
+        title: 'Blog',
+        id: 'blog',
+      },
+      {
+        title: 'Contact',
+        id: 'contact',
+      },
+    ],
   },
 }
