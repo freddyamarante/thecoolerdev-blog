@@ -37,6 +37,20 @@ const GradientBackground = ({
   const [currentX, setCurrentX] = useState(x.get())
   const [currentY, setCurrentY] = useState(y.get())
 
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth)
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       if (mainRef.current) {
@@ -45,13 +59,21 @@ const GradientBackground = ({
         const containerWidth = containerRect.width
         const containerHeight = containerRect.height
 
-        // Calculate the position in a percentage within the container
-        const mousePositionInContainerX = Math.round(
-          ((event.clientX - containerRect.left) / containerWidth) * 100
-        )
-        const mousePositionInContainerY = Math.round(
-          ((event.clientY - containerRect.top) / containerHeight) * 100
-        )
+        let mousePositionInContainerX = 50
+        let mousePositionInContainerY = 50
+
+        if (screenWidth > 1024) {
+          // Calculate the position in a percentage within the container
+          mousePositionInContainerX = Math.round(
+            ((event.clientX - containerRect.left) / containerWidth) * 100
+          )
+          mousePositionInContainerY = Math.round(
+            ((event.clientY - containerRect.top) / containerHeight) * 100
+          )
+        } else {
+          mousePositionInContainerX = 50
+          mousePositionInContainerX = 50
+        }
 
         // Set the position
         x.set(mousePositionInContainerX)
@@ -64,7 +86,7 @@ const GradientBackground = ({
     return () => {
       document.removeEventListener('mousemove', handleMouseMove)
     }
-  }, [mainRef, x, y])
+  }, [mainRef, x, y, screenWidth])
 
   useEffect(() => x.on('change', (latest) => setCurrentX(latest)), [x])
   useEffect(() => y.on('change', (latest) => setCurrentY(latest)), [y])
