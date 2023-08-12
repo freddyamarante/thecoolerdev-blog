@@ -44,6 +44,7 @@ const GradientBackground = ({
       setScreenWidth(window.innerWidth)
     }
 
+    handleResize()
     window.addEventListener('resize', handleResize)
 
     return () => {
