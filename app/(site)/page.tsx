@@ -17,6 +17,7 @@ import Footer from '@/stories/components/Contact/Footer'
 
 import { Suspense } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Home = async () => {
   const statuslandingPage = await getStatus()
@@ -30,7 +31,7 @@ const Home = async () => {
   ])
 
   return (
-    <div className="overflow-hidden bg-cloud">
+    <div className="overflow-hidden bg-cloud scroll-smooth">
       {/* Navbar */}
       <Nav name={status.name} active={status.active} image={status.image} />
 
@@ -44,16 +45,20 @@ const Home = async () => {
             <span className="">{landingPage.hero.highlight}</span>
           </h1>
           <div className="flex flex-col lg:flex-row gap-2 md:gap-6 justify-center items-center mt-6">
-            <Button
-              label={landingPage.hero.callToAction}
-              mode="contrast"
-              size="extralarge"
-            />
-            <Button
-              label={landingPage.hero.secondButton}
-              mode="simple"
-              size="extralarge"
-            />
+            <Link href="#contact">
+              <Button
+                label={landingPage.hero.callToAction}
+                mode="contrast"
+                size="extralarge"
+              />
+            </Link>
+            <Link href="/blog">
+              <Button
+                label={landingPage.hero.secondButton}
+                mode="simple"
+                size="extralarge"
+              />
+            </Link>
           </div>
         </div>
       </GradientBackground>
