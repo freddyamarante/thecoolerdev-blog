@@ -31,7 +31,7 @@ const Home = async () => {
   ])
 
   return (
-    <div className="overflow-hidden bg-cloud scroll-smooth">
+    <div className="overflow-hidden bg-cloud">
       {/* Navbar */}
       <Nav name={status.name} active={status.active} image={status.image} />
 
@@ -45,13 +45,13 @@ const Home = async () => {
             <span className="">{landingPage.hero.highlight}</span>
           </h1>
           <div className="flex flex-col lg:flex-row gap-2 md:gap-6 justify-center items-center mt-6">
-            <Link href="#contact">
+            <a href="#contact">
               <Button
                 label={landingPage.hero.callToAction}
                 mode="contrast"
                 size="extralarge"
               />
-            </Link>
+            </a>
             <Link href="/blog">
               <Button
                 label={landingPage.hero.secondButton}
@@ -70,10 +70,7 @@ const Home = async () => {
 
       <main className="relative flex flex-col mx-2 sm:mx-6 lg:mx-10">
         {/* About me */}
-        <section
-          id="aboutMe"
-          className="flex flex-col xl:flex-row gap-10 lg:gap-16 justify-center items-center mt-10 lg:mt-14"
-        >
+        <section className="flex flex-col xl:flex-row gap-10 lg:gap-16 justify-center items-center mt-10 lg:mt-14">
           <div className="w-full xl:basis-1/3 h-[480px] xl:h-full flex-shrink-0 ">
             <Image
               src={landingPage.aboutMe.image}
@@ -85,7 +82,10 @@ const Home = async () => {
           </div>
           <div className="relative flex flex-col lg:basis-2/3 justify-center gap-10 lg:gap-16 z-10">
             <div className="flex flex-col gap-3 text-start lg:pr-32">
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold">
+              <h2
+                id="aboutMe"
+                className="text-3xl lg:text-4xl xl:text-5xl font-bold"
+              >
                 {landingPage.aboutMe.title}
               </h2>
               <p className="text-xl lg:text-2xl xl:text-3xl font-normal">
