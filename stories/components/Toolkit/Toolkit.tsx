@@ -33,7 +33,7 @@ const Toolkit = ({
   const [boxWidth, setBoxWidth] = useState<number>(0)
   const [offset, setOffset] = useState<number>(0)
 
-  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth)
+  const [windowWidth, setWindowWidth] = useState<number>(0)
 
   useLayoutEffect(() => {
     const handleResize = () => {
