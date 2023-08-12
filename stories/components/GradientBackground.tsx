@@ -37,7 +37,7 @@ const GradientBackground = ({
   const [currentX, setCurrentX] = useState(x.get())
   const [currentY, setCurrentY] = useState(y.get())
 
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+  const [screenWidth, setScreenWidth] = useState(0)
 
   useEffect(() => {
     const handleResize = () => {
