@@ -26,8 +26,8 @@ const GradientBackground = ({
   const mainRef = useRef<HTMLDivElement>(null)
 
   const springConfig = {
-    duration: 0.5,
-    damping: 12,
+    duration: 0.2,
+    damping: 8,
   }
 
   // Initialize position of gradient
@@ -66,8 +66,8 @@ const GradientBackground = ({
     }
   }, [mainRef, x, y])
 
-  useEffect(() => x.on('change', (latest) => setCurrentX(latest)))
-  useEffect(() => y.on('change', (latest) => setCurrentY(latest)))
+  useEffect(() => x.on('change', (latest) => setCurrentX(latest)), [x])
+  useEffect(() => y.on('change', (latest) => setCurrentY(latest)), [y])
 
   return (
     <div
