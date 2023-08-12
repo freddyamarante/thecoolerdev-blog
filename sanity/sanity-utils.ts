@@ -66,7 +66,7 @@ export async function getStatus(): Promise<Status> {
         "image": image.asset->url,
       }
     `,
-    { next: { revalidate: 60 } }
+    { cache: 'no-store' }
   )
 
   return data
