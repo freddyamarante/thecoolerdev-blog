@@ -18,7 +18,7 @@ const GradientBackground = ({
   gradientColor = '#f5cb5c',
   height = 200,
   width = 200,
-  radius = 100,
+  radius = 75,
   className,
   children,
   ...props

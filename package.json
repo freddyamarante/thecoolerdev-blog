@@ -38,6 +38,8 @@
     "react-hook-form": "^7.45.4",
     "react-share": "^4.4.1",
     "sanity": "^3.14.1",
+    "sanity-plugin-vercel-deploy": "^3.3.4",
+    "styled-components": "^5.3.11",
     "tailwindcss": "3.3.2",
     "three": "^0.154.0",
     "typescript": "5.0.4",
