@@ -10,7 +10,7 @@ interface NavbarProps {
   name: string
   active: boolean
   image?: string
-  elements?: string[]
+  elements?: { title: string; id: string }[]
 }
 
 const Navbar = ({ name, active, image, elements }: NavbarProps) => {
@@ -18,7 +18,7 @@ const Navbar = ({ name, active, image, elements }: NavbarProps) => {
 
   if (elements) {
     listElements = elements.map((element) => (
-      <NavElement label={element} key={element} />
+      <NavElement label={element.title} key={element.id} id={element.id} />
     ))
   }
 

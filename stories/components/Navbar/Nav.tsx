@@ -9,10 +9,9 @@ interface NavProps {
   name: string
   active: boolean
   image?: string
-  elements?: string[]
 }
 
-const Nav = ({ name, active, image, elements }: NavProps) => {
+const Nav = ({ name, active, image }: NavProps) => {
   // State for handling when it's hidden or visible
   const [isHidden, setIsHidden] = useState<boolean>(false)
 
@@ -42,6 +41,27 @@ const Nav = ({ name, active, image, elements }: NavProps) => {
     visible: { opacity: 1, y: 0 },
     hidden: { opacity: 0, y: -100 },
   }
+
+  const elements = [
+    {
+      title: 'Who am I',
+      id: 'aboutMe',
+    },
+
+    {
+      title: 'Process',
+      id: 'process',
+    },
+
+    {
+      title: 'Blog',
+      id: 'blog',
+    },
+    {
+      title: 'Contact',
+      id: 'contact',
+    },
+  ]
 
   return (
     <motion.div

@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={`${IBMPlexSans.className} text-night-dark`}>
         <GrainOverlay zIndex="z-10" />
         <Providers defaultTheme="system" enableSystem>

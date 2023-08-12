@@ -25,12 +25,7 @@ const Home = async () => {
   return (
     <div className="overflow-hidden bg-cloud">
       {/* Navbar */}
-      <Nav
-        name={status.name}
-        active={status.active}
-        image={status.image}
-        elements={['Who am I', 'Process', 'Projects', 'Blog', 'Contact']}
-      />
+      <Nav name={status.name} active={status.active} image={status.image} />
 
       <GradientBackground className="w-screen left-0 flex flex-col justify-center content-center h-screen">
         <Experience className="absolute h-full w-full top-0 left-0" />
@@ -60,7 +55,10 @@ const Home = async () => {
 
       <main className="relative flex flex-col mx-2 sm:mx-6 lg:mx-10">
         {/* About me */}
-        <section className="flex flex-col xl:flex-row gap-10 lg:gap-16 justify-center items-center mt-10 lg:mt-14">
+        <section
+          id="aboutMe"
+          className="flex flex-col xl:flex-row gap-10 lg:gap-16 justify-center items-center mt-10 lg:mt-14"
+        >
           <div className="w-full xl:basis-1/3 h-[480px] xl:h-full flex-shrink-0 ">
             <Image
               src={data.aboutMe.image}
@@ -123,7 +121,10 @@ const Home = async () => {
         </div>
 
         {/* Process */}
-        <section className="flex flex-col lg:flex-row gap-4 md:gap-7 xl:gap-10 mt-10 lg:mt-14">
+        <section
+          id="process"
+          className="flex flex-col lg:flex-row gap-4 md:gap-7 xl:gap-10 mt-10 lg:mt-14"
+        >
           <GradientBackground
             radius={200}
             className="flex flex-col justify-center bg-taxi h-auto px-8 lg:px-12 py-10 lg:py-12 rounded-2xl basis-1/3"
@@ -146,7 +147,10 @@ const Home = async () => {
         </section>
 
         {/* Pricing */}
-        <section className="flex flex-col h-fit mt-10 lg:mt-14 border-y-[30px] lg:border-y-[45px] border-night rounded-[30px] lg:rounded-[45px]">
+        <section
+          id="process"
+          className="flex flex-col h-fit mt-10 lg:mt-14 border-y-[30px] lg:border-y-[45px] border-night rounded-[30px] lg:rounded-[45px]"
+        >
           <GradientBackground
             radius={100}
             className="flex justify-center items-center w-full"
@@ -177,7 +181,7 @@ const Home = async () => {
         </section>
 
         {/* Blog */}
-        <section className="h-fit mt-10 lg:mt-14">
+        <section id="blog" className="h-fit mt-10 lg:mt-14">
           <Posts
             title={data.blog.title}
             description={data.blog.description}
@@ -187,7 +191,10 @@ const Home = async () => {
         </section>
 
         {/* Contact & Form */}
-        <footer className="flex flex-col lg:flex-row gap-6 mt-10 lg:mt-14">
+        <footer
+          id="contact"
+          className="flex flex-col lg:flex-row gap-6 mt-10 lg:mt-14"
+        >
           <Footer />
         </footer>
       </main>
