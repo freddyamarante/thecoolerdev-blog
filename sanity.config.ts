@@ -8,6 +8,7 @@ const config = defineConfig({
 
   projectId: '7eiqcloi',
   dataset: 'production',
+  useCdn: true,
 
   basePath: '/admin',
   plugins: [deskTool(), visionTool()],
