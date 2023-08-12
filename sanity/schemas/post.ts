@@ -50,7 +50,6 @@ const post = {
       name: 'summary',
       title: 'Summary',
       type: 'text',
-      validation: (Rule) => Rule.max(255),
     },
     {
       name: 'timeToRead',
