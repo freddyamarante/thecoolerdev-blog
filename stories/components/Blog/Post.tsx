@@ -19,6 +19,7 @@ interface PostProps {
   summary: string
   className?: React.ComponentProps<'div'>['className']
   slug?: string
+  isDescriptionHidden?: boolean
 }
 
 const defaultImage = '/javascriptImage.png'
@@ -33,6 +34,7 @@ const Post = ({
   summary,
   className,
   slug = '',
+  isDescriptionHidden = false,
 }: PostProps) => {
   // State variable to track hover state
   const [isOpen, setIsOpen] = useState<boolean>(true)
@@ -56,12 +58,14 @@ const Post = ({
 
   // Function to calculate the col-span class for each item based on the index
   const calculateColSpan = (index: number | null) => {
+    if (!index) return
+
     if (!isXlScreen) return 'col-span-1'
 
-    if (index) {
-      // Pattern for grid layout
-      return index % 4 < 2 ? 'col-span-1' : 'col-span-2'
-    }
+    if (isDescriptionHidden) return 'col-span-1'
+
+    // Pattern for grid layout
+    return index % 4 < 2 ? 'col-span-1' : 'col-span-2'
   }
 
   // Animations
