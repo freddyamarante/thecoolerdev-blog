@@ -30,6 +30,7 @@ const Post = async ({ params }: { params: { slug: string } }) => {
               alt={params.slug}
               width={500}
               height={600}
+              priority
               className="object-cover w-full rounded-[45px]"
             />
           </div>
