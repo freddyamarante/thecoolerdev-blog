@@ -33,7 +33,7 @@ export async function getPost(slug: string): Promise<Post> {
   }
   `
 
-  const data = await client.fetch(query, { slug })
+  const data = await client.fetch(query, { slug, next: { revalidate } })
 
   return data
 }
@@ -68,7 +68,7 @@ export async function getStatus(): Promise<Status> {
   }
 `
 
-  const data = await client.fetch(query)
+  const data = await client.fetch(query, { next: { revalidate } })
 
   return data
 }
@@ -147,7 +147,7 @@ export async function getLandingPage(): Promise<LandingPage> {
   }
 `
 
-  const data = await client.fetch(query)
+  const data = await client.fetch(query, { next: { revalidate } })
 
   return data
 }
