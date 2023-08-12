@@ -65,7 +65,8 @@ export async function getStatus(): Promise<Status> {
         active,
         "image": image.asset->url,
       }
-    `
+    `,
+    { next: { revalidate: 60 } }
   )
 
   return data
@@ -143,7 +144,8 @@ export async function getLandingPage(): Promise<LandingPage> {
           contactTitle
         },
       }
-    `
+    `,
+    { next: { revalidate: 60 } }
   )
 
   return data
