@@ -68,7 +68,7 @@ const Nav = ({ name, active, image }: NavProps) => {
       variants={variants}
       animate={isHidden ? 'hidden' : 'visible'}
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.2 }}
-      className="fixed w-full px-2 sm:px-6 lg:px-10 pt-2 lg:pt-6 left-0 z-50"
+      className="fixed w-full px-2 sm:px-6 lg:px-10 pt-2 sm:pt-6 left-0 z-50"
     >
       <Navbar name={name} active={active} image={image} elements={elements} />
     </motion.div>
