@@ -4,7 +4,7 @@ import { ChevronDown, ChevronUp } from '../resources/Icons'
 
 import { motion, AnimatePresence } from 'framer-motion'
 
-interface StepProps {
+type StepProps = {
   number?: number
   title: string
   description: string

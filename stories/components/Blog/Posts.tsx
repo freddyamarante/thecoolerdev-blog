@@ -8,7 +8,7 @@ import Post from './Post'
 import Button from '../Button'
 import Link from 'next/link'
 
-interface PostsProps {
+type PostsProps = {
   title?: string
   description?: string
   button?: string

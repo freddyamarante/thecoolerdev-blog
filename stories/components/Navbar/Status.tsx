@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-interface StatusProps {
+type StatusProps = {
   name: string
   active: boolean
   image?: string

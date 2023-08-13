@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 import { CV, Email, Github, LinkedIn, Phone, Twitter } from '../resources/Icons'
 
-interface SocialProps {
+type SocialProps = {
   icon: 'twitter' | 'github' | 'linkedin' | 'cv' | 'email' | 'phone'
   label: string
   link?: string

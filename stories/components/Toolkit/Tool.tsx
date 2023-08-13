@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-interface ToolProps {
+type ToolProps = {
   title: string
   description?: string
   image?: string

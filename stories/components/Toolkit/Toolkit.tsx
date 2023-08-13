@@ -4,10 +4,9 @@ import { motion } from 'framer-motion'
 import { useRef, useLayoutEffect, useState } from 'react'
 
 import GradientBackground from '../GradientBackground'
-import Button from '../Button'
 import Tool from './Tool'
 
-interface ToolkitProps {
+type ToolkitProps = {
   subtitle?: string
   subBody?: string
   button?: string

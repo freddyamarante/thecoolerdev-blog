@@ -6,7 +6,7 @@ import NavElement from './NavElement'
 import Status from './Status'
 import { Bars3, XMark } from '../resources/Icons'
 
-interface NavbarProps {
+type NavbarProps = {
   name: string
   active: boolean
   image?: string

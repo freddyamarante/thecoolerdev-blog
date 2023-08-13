@@ -7,7 +7,7 @@ import Image from 'next/image'
 import Button from '../Button'
 import Link from 'next/link'
 
-interface PostProps {
+type PostProps = {
   index?: number
   title: string
   mainImage: string | undefined

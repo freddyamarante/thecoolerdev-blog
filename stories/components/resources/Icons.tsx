@@ -28,7 +28,7 @@ export const Sun = () => {
   )
 }
 
-interface ArrowRightProps {
+type ArrowRightProps = {
   size: number
 }
 

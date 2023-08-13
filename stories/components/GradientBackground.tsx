@@ -1,9 +1,9 @@
 'use client'
 
-import { spring, useSpring } from 'framer-motion'
+import { useSpring } from 'framer-motion'
 import { useEffect, useState, useRef } from 'react'
 
-interface GradientBackgroundProps {
+type GradientBackgroundProps = {
   backgroundColor?: string
   gradientColor?: string
   children?: React.ReactNode

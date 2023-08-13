@@ -4,7 +4,7 @@ import Step from './Step'
 
 import { useState } from 'react'
 
-interface StepsProps {
+type StepsProps = {
   steps?: {
     number?: number
     title: string

@@ -9,7 +9,7 @@ import { motion } from 'framer-motion'
 
 import { Facebook, LinkURL, LinkedIn, Twitter } from '../resources/Icons'
 
-interface ShareButtonsProps {
+type ShareButtonsProps = {
   articleTitle: string
   summary?: string
 }

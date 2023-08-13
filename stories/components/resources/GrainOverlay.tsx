@@ -1,6 +1,6 @@
 import '@/styles/globals.css'
 
-interface GrainOverlayProps {
+type GrainOverlayProps = {
   zIndex?: string
 }
 

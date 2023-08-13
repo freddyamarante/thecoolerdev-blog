@@ -1,4 +1,4 @@
-interface NavElementProps {
+type NavElementProps = {
   label: string
   active?: boolean
   id: string

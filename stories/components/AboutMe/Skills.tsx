@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 
-interface SkillsProps {
+type SkillsProps = {
   skills: string[]
   calibration: number
 }

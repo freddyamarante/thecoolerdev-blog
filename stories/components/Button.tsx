@@ -3,7 +3,7 @@
 import { ArrowRight } from './resources/Icons'
 import { motion } from 'framer-motion'
 
-interface ButtonProps {
+type ButtonProps = {
   mode?: 'primary' | 'contrast' | 'simple'
   size?: 'small' | 'medium' | 'large' | 'extralarge'
   label: string

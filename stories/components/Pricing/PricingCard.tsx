@@ -4,7 +4,7 @@ import Button from '../Button'
 import GradientBackground from '../GradientBackground'
 import { Check } from '../resources/Icons'
 
-interface PricingCardProps {
+type PricingCardProps = {
   title?: string
   description?: string
   price?: number

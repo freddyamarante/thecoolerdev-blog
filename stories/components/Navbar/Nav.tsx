@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 import Navbar from './Navbar'
 
-interface NavProps {
+type NavProps = {
   name: string
   active: boolean
   image?: string
