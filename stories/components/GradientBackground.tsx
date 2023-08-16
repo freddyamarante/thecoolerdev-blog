@@ -26,8 +26,8 @@ const GradientBackground = ({
   const mainRef = useRef<HTMLDivElement>(null)
 
   const springConfig = {
-    duration: 0.2,
-    damping: 8,
+    duration: 0.1,
+    damping: 18,
   }
 
   // Initialize position of gradient
