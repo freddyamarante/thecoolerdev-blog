@@ -60,7 +60,15 @@ const Navbar = ({ name, active, image, elements = [] }: NavbarProps) => {
               }}
               className="md:hidden"
             >
-              <div className="py-4">{listElements}</div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.1 }}
+                className="py-4"
+              >
+                {listElements}
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
