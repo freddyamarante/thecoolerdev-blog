@@ -25,6 +25,41 @@ const Navbar = ({ name, active, image, elements = [] }: NavbarProps) => {
     <NavElement label={element.title} key={element.id} id={element.id} />
   ))
 
+  const renderIcon = () => {
+    if (isOpen) {
+      return <XMark aria-hidden="true" />
+    } else {
+      return <Bars3 aria-hidden="true" />
+    }
+  }
+
+  const renderDropdownElements = () => {
+    if (!isOpen) return
+
+    return (
+      <motion.div
+        initial={{ height: 0 }}
+        animate={{ height: 'auto' }}
+        exit={{ height: 0 }}
+        transition={{
+          duration: 0.15,
+          ease: 'easeInOut',
+        }}
+        className="md:hidden"
+      >
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.1 }}
+          className="py-4"
+        >
+          {listElements}
+        </motion.div>
+      </motion.div>
+    )
+  }
+
   return (
     <nav className="bg-night w-full rounded-2xl px-3">
       <div className="flex flex-col justify-start">
@@ -37,41 +72,14 @@ const Navbar = ({ name, active, image, elements = [] }: NavbarProps) => {
             className="flex md:hidden rounded-2xl p-2 my-3 text-white hover:bg-night-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
           >
             <span className="sr-only">Open main menu</span>
-            {isOpen ? (
-              <XMark aria-hidden="true" />
-            ) : (
-              <Bars3 aria-hidden="true" />
-            )}
+            {renderIcon()}
           </button>
 
           {/* Desktop navigation elements */}
           <div className="hidden md:flex gap-5 py-5">{listElements}</div>
         </div>
 
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ height: 0 }}
-              animate={{ height: 'auto' }}
-              exit={{ height: 0 }}
-              transition={{
-                duration: 0.15,
-                ease: 'easeInOut',
-              }}
-              className="md:hidden"
-            >
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.1 }}
-                className="py-4"
-              >
-                {listElements}
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <AnimatePresence>{renderDropdownElements()}</AnimatePresence>
       </div>
     </nav>
   )
