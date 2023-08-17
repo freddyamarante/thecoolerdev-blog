@@ -1,10 +1,11 @@
 'use client'
 
-import { Disclosure } from '@headlessui/react'
-
 import NavElement from './NavElement'
 import Status from './Status'
 import { Bars3, XMark } from '../resources/Icons'
+
+import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 
 type NavbarProps = {
   name: string
@@ -13,45 +14,58 @@ type NavbarProps = {
   elements?: { title: string; id: string }[]
 }
 
-const Navbar = ({ name, active, image, elements }: NavbarProps) => {
-  let listElements: JSX.Element[]
+const Navbar = ({ name, active, image, elements = [] }: NavbarProps) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false)
 
-  if (elements) {
-    listElements = elements.map((element) => (
-      <NavElement label={element.title} key={element.id} id={element.id} />
-    ))
+  const handleToggle = () => {
+    setIsOpen(!isOpen)
   }
 
+  const listElements = elements.map((element) => (
+    <NavElement label={element.title} key={element.id} id={element.id} />
+  ))
+
   return (
-    <Disclosure as="nav" className="bg-night w-full rounded-2xl px-3">
-      {({ open }) => (
-        <>
-          <div className="flex flex-col justify-start">
-            <div className="flex flex-row justify-between">
-              <Status name={name} active={active} image={image} />
+    <nav className="bg-night w-full rounded-2xl px-3">
+      <div className="flex flex-col justify-start">
+        <div className="flex flex-row justify-between">
+          <Status name={name} active={active} image={image} />
 
-              {/* Mobile navigation elements */}
-              <Disclosure.Button className="flex md:hidden rounded-2xl p-2 my-3 text-white hover:bg-night-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                <span className="sr-only">Open main menu</span>
-                {open ? (
-                  <XMark aria-hidden="true" />
-                ) : (
-                  <Bars3 aria-hidden="true" />
-                )}
-              </Disclosure.Button>
+          {/* Mobile navigation elements */}
+          <button
+            onClick={handleToggle}
+            className="flex md:hidden rounded-2xl p-2 my-3 text-white hover:bg-night-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+          >
+            <span className="sr-only">Open main menu</span>
+            {isOpen ? (
+              <XMark aria-hidden="true" />
+            ) : (
+              <Bars3 aria-hidden="true" />
+            )}
+          </button>
 
-              {/* Desktop navigation elements */}
-              <div className="hidden md:flex gap-5 py-5">{listElements}</div>
-            </div>
+          {/* Desktop navigation elements */}
+          <div className="hidden md:flex gap-5 py-5">{listElements}</div>
+        </div>
 
-            {/* Dropdown */}
-            <Disclosure.Panel className="md:hidden">
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ height: 0 }}
+              animate={{ height: 'auto' }}
+              exit={{ height: 0 }}
+              transition={{
+                duration: 0.15,
+                ease: 'easeInOut',
+              }}
+              className="md:hidden"
+            >
               <div className="py-4">{listElements}</div>
-            </Disclosure.Panel>
-          </div>
-        </>
-      )}
-    </Disclosure>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </nav>
   )
 }
 
