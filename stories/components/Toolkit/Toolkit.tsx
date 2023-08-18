@@ -27,9 +27,13 @@ const Toolkit = ({
   const containerRef = useRef<HTMLDivElement>(null)
   const infoRef = useRef<HTMLDivElement>(null)
   const boxRef = useRef<HTMLDivElement>(null)
+  const mobileBoxRef = useRef<HTMLDivElement>(null)
 
   // For calculating the size of the drag constraints
   const [boxWidth, setBoxWidth] = useState<number>(0)
+  const [mobileBoxWidth, setMobileBoxWidth] = useState<number>(0)
+  const [containerWidth, setContainerWidth] = useState<number>(0)
+
   const [offset, setOffset] = useState<number>(0)
 
   const [windowWidth, setWindowWidth] = useState<number>(0)
@@ -44,6 +48,14 @@ const Toolkit = ({
           containerRef.current.getBoundingClientRect().width -
             infoRef.current.getBoundingClientRect().width
         )
+
+      if (mobileBoxRef.current) {
+        setMobileBoxWidth(mobileBoxRef.current.getBoundingClientRect().width)
+      }
+
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.getBoundingClientRect().width)
+      }
 
       setWindowWidth(window.innerWidth) // Force re-render on window resize
     }
@@ -66,7 +78,7 @@ const Toolkit = ({
       key={windowWidth.toString()}
     >
       <div
-        className="flex flex-col lg:flex-row items-center"
+        className="flex flex-col lg:flex-row lg:items-center"
         ref={containerRef}
       >
         <div
@@ -103,24 +115,21 @@ const Toolkit = ({
         </div>
 
         {/* Mobile carousel */}
-        <div className="relative flex lg:hidden top-0 overflow-hidden mt-12">
-          <motion.div
-            drag="x"
-            dragConstraints={{
-              right: 700,
-              left: -700,
-            }}
-            className="flex items-center gap-8 ml-20 text-night"
-          >
-            {tools.map((tool, index) => (
-              <Tool
-                title={tool.title}
-                description={tool.description}
-                key={index}
-              />
-            ))}
-          </motion.div>
-        </div>
+
+        <motion.div
+          ref={mobileBoxRef}
+          drag="x"
+          dragConstraints={{ left: -mobileBoxWidth + containerWidth, right: 0 }}
+          className="flex lg:hidden items-center gap-8 text-night mt-12 w-fit"
+        >
+          {tools.map((tool, index) => (
+            <Tool
+              title={tool.title}
+              description={tool.description}
+              key={index}
+            />
+          ))}
+        </motion.div>
       </div>
     </GradientBackground>
   )
