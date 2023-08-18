@@ -120,7 +120,7 @@ const Toolkit = ({
           ref={mobileBoxRef}
           drag="x"
           dragConstraints={{ left: -mobileBoxWidth + containerWidth, right: 0 }}
-          className="flex lg:hidden items-center gap-8 text-night mt-12 w-fit"
+          className="flex lg:hidden items-center gap-4 md:gap-8 text-night mt-12 w-fit"
         >
           {tools.map((tool, index) => (
             <Tool
