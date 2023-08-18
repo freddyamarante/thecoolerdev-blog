@@ -39,7 +39,7 @@ const Post = async ({ params }: { params: { slug: string } }) => {
           </div>
 
           <div className="relative flex flex-col gap-6 text-night-dark dark:text-white my-4 sm:my-8 md:my-12 z-10 max-w-3xl">
-            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-center">
+            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-center leading-8">
               {post.title}
             </h1>
 
