@@ -5,12 +5,15 @@ import Footer from '@/stories/components/Contact/Footer'
 import DarkModeToggler from '@/stories/components/DarkModeToggler'
 
 import { PortableText } from '@portabletext/react'
+import moment from 'moment'
 import Image from 'next/image'
 import Link from 'next/link'
 
 const Post = async ({ params }: { params: { slug: string } }) => {
   const post = await getPost(params.slug)
   const status = await getStatus()
+
+  const formattedDate = moment(post.date).format('LL')
 
   return (
     <div className="overflow-hidden">
@@ -66,7 +69,7 @@ const Post = async ({ params }: { params: { slug: string } }) => {
                   <h3 className="text-sm lg:text-md xl:text-lg font-medium">
                     Published
                   </h3>
-                  <p className="text-sm">{post.date}</p>
+                  <p className="text-sm">{formattedDate}</p>
                 </div>
               </div>
             </div>

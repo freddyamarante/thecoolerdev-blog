@@ -1,6 +1,7 @@
 'use client'
 
 import { motion, useAnimation } from 'framer-motion'
+import moment from 'moment'
 import { useRef, useState, useEffect } from 'react'
 
 import Image from 'next/image'
@@ -77,6 +78,9 @@ const Post = ({
   const cardRef = useRef<HTMLDivElement>(null)
   const infoRef = useRef<HTMLDivElement>(null)
   const summaryRef = useRef<HTMLDivElement>(null)
+
+  // Date formatting
+  const formattedDate = moment(date).format('LL')
 
   const animationStart = () => {
     fadeOutAnimation.start({
@@ -183,7 +187,7 @@ const Post = ({
           className="relative flex flex-col z-10"
         >
           <div className="flex items-center gap-y-1 gap-x-4 overflow-hidden text-md text-white">
-            <time dateTime={publishedAt}>{date}</time>
+            <time dateTime={publishedAt}>{formattedDate}</time>
             <div>/</div>
             {tag && (
               <span className="inline-flex items-center rounded-full bg-cloud px-2 py-1 text-xs font-medium text-black">
