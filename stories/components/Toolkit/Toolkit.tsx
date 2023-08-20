@@ -126,6 +126,7 @@ const Toolkit = ({
             <Tool
               title={tool.title}
               description={tool.description}
+              image={tool.image ? tool.image : undefined}
               key={index}
             />
           ))}
