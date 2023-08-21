@@ -21,13 +21,13 @@ const Status = ({ name, active = true, image }: StatusProps) => {
           height={600}
         />
       </div>
-      <div className="hidden md:flex flex-col gap-1">
-        <div className="text-xl font-bold leading-none">{name}</div>
+      <div className="flex flex-col gap-1">
+        <div className="text-lg sm:text-xl font-bold leading-none">{name}</div>
         <div className="flex gap-2 items-center">
           <div
             className={`w-2 h-2 ${active ? 'bg-taxi' : 'bg-cloud-dark'}`}
           ></div>
-          <div className="text-sm leading-none">{message}</div>
+          <div className="text-xs sm:text-sm leading-none">{message}</div>
         </div>
       </div>
     </div>
