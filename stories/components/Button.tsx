@@ -39,19 +39,19 @@ const Button = ({
 
   switch (size) {
     case 'extralarge':
-      sizeClasses = 'text-2xl lg:text-3xl p-2 md:p-3'
+      sizeClasses = 'text-xl sm:text-2xl lg:text-3xl p-2 md:p-3'
       iconSize = 20
       break
     case 'large':
-      sizeClasses = 'text-xl lg:text-2xl p-2'
+      sizeClasses = 'text-lg sm:text-xl lg:text-2xl p-2'
       iconSize = 18
       break
     case 'medium':
-      sizeClasses = 'ttext-lg lg:text-xl p-2'
+      sizeClasses = 'text-md sm:text-lg lg:text-xl p-2'
       iconSize = 14
       break
     case 'small':
-      sizeClasses = 'text-md lg:text-lg p-2'
+      sizeClasses = 'text-sm sm:text-md lg:text-lg p-2'
       iconSize = 10
       break
   }

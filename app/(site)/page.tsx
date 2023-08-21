@@ -38,7 +38,7 @@ const Home = async () => {
             {landingPage.hero.title}{' '}
             <span className="">{landingPage.hero.highlight}</span>
           </h1>
-          <div className="flex flex-col lg:flex-row gap-2 md:gap-6 justify-center items-center mt-6">
+          <div className="flex flex-row gap-2 md:gap-6 justify-center items-center mt-6">
             <a href="#contact">
               <Button
                 label={landingPage.hero.callToAction}
