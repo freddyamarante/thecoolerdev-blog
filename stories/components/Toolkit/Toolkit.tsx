@@ -98,6 +98,7 @@ const Toolkit = ({
         <div className="hidden lg:flex cursor-grab">
           <div className="relative overflow-x-hidden" ref={boxRef}>
             <motion.div
+              layoutScroll
               drag="x"
               dragConstraints={{ left: -boxWidth + offset, right: 0 }}
               className="flex items-center gap-8 ml-20 text-night"
@@ -117,6 +118,7 @@ const Toolkit = ({
         {/* Mobile carousel */}
 
         <motion.div
+          layoutScroll
           ref={mobileBoxRef}
           drag="x"
           dragConstraints={{ left: -mobileBoxWidth + containerWidth, right: 0 }}
