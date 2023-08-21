@@ -25,14 +25,9 @@ const GradientBackground = ({
 }: GradientBackgroundProps) => {
   const mainRef = useRef<HTMLDivElement>(null)
 
-  const springConfig = {
-    duration: 0.1,
-    damping: 18,
-  }
-
   // Initialize position of gradient
-  const x = useSpring(50, springConfig)
-  const y = useSpring(50, springConfig)
+  const x = useSpring(50)
+  const y = useSpring(50)
 
   const [currentX, setCurrentX] = useState(x.get())
   const [currentY, setCurrentY] = useState(y.get())
