@@ -8,7 +8,7 @@ const Blog = async () => {
   const posts = await getPosts()
 
   return (
-    <div className="overflow-hidden bg-cloud">
+    <div className="overflow-hidden bg-cloud min-h-screen">
       <main className="px-2 sm:px-6 lg:px-10 py-8">
         <div className="flex justify-between items-center w-full mb-8">
           <Link href="/">
