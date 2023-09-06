@@ -37,19 +37,31 @@ const Experience = ({ className }: ExperienceProps) => {
 
         {screenWidth > 920 ? (
           <>
-            <Float rotationIntensity={2} position={[6, 3, 0]}>
+            <Float
+              rotationIntensity={2}
+              position={[screenWidth > 1300 ? 5.5 : 4.2, 2.8, 0]}
+            >
               <mesh geometry={geometry} material={material} />
             </Float>
 
-            <Float rotationIntensity={2} position={[-6, 3, 0]}>
+            <Float
+              rotationIntensity={2}
+              position={[screenWidth > 1300 ? -5.5 : -4.2, 2.8, 0]}
+            >
               <mesh geometry={geometry} material={material} />
             </Float>
 
-            <Float rotationIntensity={2} position={[6, -3, 0]}>
+            <Float
+              rotationIntensity={2}
+              position={[screenWidth > 1300 ? 5.5 : 4.2, -3, 0]}
+            >
               <mesh geometry={geometry} material={material} />
             </Float>
 
-            <Float rotationIntensity={2} position={[-6, -3, 0]}>
+            <Float
+              rotationIntensity={2}
+              position={[screenWidth > 1300 ? -5.5 : -4.2, -3, 0]}
+            >
               <mesh geometry={geometry} material={material} />
             </Float>
           </>
