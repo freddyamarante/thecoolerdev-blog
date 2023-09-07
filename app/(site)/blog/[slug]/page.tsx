@@ -18,7 +18,7 @@ const Post = async ({ params }: { params: { slug: string } }) => {
   return (
     <div className="overflow-hidden">
       <main className="px-2 sm:px-6 lg:px-10 py-8">
-        <div className="flex flex-col items-center max-w-4xl mx-auto">
+        <div className="flex flex-col items-center max-w-3xl md:max-w-4xl mx-auto">
           <div className="flex justify-between items-center w-full mb-8">
             <Link href="/blog">
               <GoBack />
@@ -75,7 +75,7 @@ const Post = async ({ params }: { params: { slug: string } }) => {
             </div>
           </div>
 
-          <div className="relative prose lg:prose-xl prose-neutral dark:prose-invert z-10">
+          <div className="prose prose-md lg:prose-xl prose-neutral dark:prose-invert w-full z-10">
             <PortableText value={post.body} />
           </div>
 
