@@ -67,18 +67,6 @@ const blockContent = {
     {
       type: 'code',
       title: 'Code Block',
-      language: 'javascript',
-      languageAlternatives: [
-        { title: 'Javascript', value: 'javascript' },
-        { title: 'HTML', value: 'html' },
-        { title: 'CSS', value: 'css' },
-        { title: 'JSON', value: 'json' },
-      ],
-      options: {
-        marks: {
-          component: CodeBlock,
-        },
-      },
     },
   ],
 }

@@ -11,19 +11,16 @@ import moment from 'moment'
 import Image from 'next/image'
 import Link from 'next/link'
 
-type Node = {
-  code: string
-  language?: string
-}
-
-const serializers = ({ node }: { node: Node }) => {
-  const code = node.code // Assuming your code block content is in the 'code' field
-
-  return (
-    <SyntaxHighlighter language={node.language || 'javascript'} style={dark}>
-      {code}
-    </SyntaxHighlighter>
-  )
+const serializers = {
+  types: {
+    code: (props: any) => (
+      <div className="my-2">
+        <SyntaxHighlighter language="javascript" style={dark}>
+          {props.node.code}
+        </SyntaxHighlighter>
+      </div>
+    ),
+  },
 }
 
 const Post = async ({ params }: { params: { slug: string } }) => {
