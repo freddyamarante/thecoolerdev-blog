@@ -4,10 +4,27 @@ import ShareButtons from '@/stories/components/Blog/ShareButtons'
 import Footer from '@/stories/components/Contact/Footer'
 import DarkModeToggler from '@/stories/components/DarkModeToggler'
 
-import { PortableText } from '@portabletext/react'
+const BlockContent = require('@sanity/block-content-to-react')
+import { dark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight'
 import moment from 'moment'
 import Image from 'next/image'
 import Link from 'next/link'
+
+type Node = {
+  code: string
+  language?: string
+}
+
+const serializers = ({ node }: { node: Node }) => {
+  const code = node.code // Assuming your code block content is in the 'code' field
+
+  return (
+    <SyntaxHighlighter language={node.language || 'javascript'} style={dark}>
+      {code}
+    </SyntaxHighlighter>
+  )
+}
 
 const Post = async ({ params }: { params: { slug: string } }) => {
   const post = await getPost(params.slug)
@@ -76,7 +93,12 @@ const Post = async ({ params }: { params: { slug: string } }) => {
           </div>
 
           <div className="prose prose-md lg:prose-xl prose-neutral dark:prose-invert w-full z-10">
-            <PortableText value={post.body} />
+            <BlockContent
+              blocks={post.body}
+              projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+              dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+              serializers={serializers}
+            />
           </div>
 
           <div className="flex flex-col mt-8 text-night-dark dark:text-white">

@@ -9,6 +9,8 @@
  *  }
  */
 
+import CodeBlock from '@/stories/components/resources/CodeBlock'
+
 const blockContent = {
   title: 'Block Content',
   name: 'blockContent',
@@ -64,6 +66,7 @@ const blockContent = {
     },
     {
       type: 'code',
+      title: 'Code Block',
       language: 'javascript',
       languageAlternatives: [
         { title: 'Javascript', value: 'javascript' },
@@ -71,6 +74,11 @@ const blockContent = {
         { title: 'CSS', value: 'css' },
         { title: 'JSON', value: 'json' },
       ],
+      options: {
+        marks: {
+          component: CodeBlock,
+        },
+      },
     },
   ],
 }
