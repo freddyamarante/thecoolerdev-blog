@@ -17,7 +17,7 @@ const client = createClient({
 })
 
 export async function getPost(slug: string): Promise<Post> {
-  const revalidate = 60
+  const revalidate = 0
   const query = groq`
   *[_type == "post" && slug.current == $slug][0]{
     _id,
@@ -43,7 +43,7 @@ export async function getPost(slug: string): Promise<Post> {
 }
 
 export async function getPosts(): Promise<Post[]> {
-  const revalidate = 60
+  const revalidate = 0
   const query = groq`
   *[_type == "post"]{
     _id,
@@ -65,7 +65,7 @@ export async function getPosts(): Promise<Post[]> {
 }
 
 export async function getStatus(): Promise<Status> {
-  const revalidate = 60
+  const revalidate = 0
   const query = groq`
   *[_type == "status"][0]{
     _id,
@@ -84,7 +84,7 @@ export async function getStatus(): Promise<Status> {
 }
 
 export async function getLandingPage(): Promise<LandingPage> {
-  const revalidate = 60
+  const revalidate = 0
   const query = groq`
   *[_type == "landingPage"][0]{
     _id,
