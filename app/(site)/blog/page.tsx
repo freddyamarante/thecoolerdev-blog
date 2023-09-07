@@ -16,7 +16,7 @@ const Blog = async () => {
           </Link>
         </div>
         <h1 className="relative text-4xl lg:text-5xl xl:text-6xl font-bold text-center mb-16 z-10">
-          Read my blog
+          My articles
         </h1>
         <Posts posts={posts} initialCount={10} hideDescription />
       </main>
