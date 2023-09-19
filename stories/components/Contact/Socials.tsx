@@ -20,7 +20,7 @@ const Socials = () => {
         label="Connect with me"
         link="https://www.linkedin.com/in/freddy-amarante/"
       />
-      <Social icon="phone" label="Give me a call" link="tel:+51921331375" />
+      <Social icon="phone" label="Give me a call" link="tel:+584125498540" />
       <Social
         icon="email"
         label="Send me an email"
