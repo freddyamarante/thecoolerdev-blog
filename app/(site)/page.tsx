@@ -11,7 +11,6 @@ import Service from '@/stories/components/AboutMe/Service'
 import Skills from '@/stories/components/AboutMe/Skills'
 import Toolkit from '@/stories/components/Toolkit/Toolkit'
 import Steps from '@/stories/components/Process/Steps'
-import PricingCard from '@/stories/components/Pricing/PricingCard'
 import Posts from '@/stories/components/Blog/Posts'
 import Footer from '@/stories/components/Contact/Footer'
 
@@ -155,40 +154,6 @@ const Home = async () => {
           <div className="basis-2/3 basis">
             <Steps steps={landingPage.process.steps} />
           </div>
-        </section>
-
-        {/* Pricing */}
-        <section
-          id="process"
-          className="flex flex-col h-fit mt-10 lg:mt-14 border-y-[30px] lg:border-y-[45px] border-night rounded-[30px] lg:rounded-[45px]"
-        >
-          <GradientBackground
-            radius={100}
-            className="flex justify-center items-center w-full"
-          >
-            <div className="flex flex-col my-10 max-w-lg lg:max-w-4xl">
-              <h2 className="relative text-4xl xl:text-5xl font-bold text-center px-6 lg:px-0 basis-1/4 z-10">
-                {landingPage.pricing.title}
-              </h2>
-              {landingPage.pricing.prices && (
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-12 px-8 md:px-6 lg:px-8 basis-2/4 h-auto">
-                  {landingPage.pricing.prices.map((element) => (
-                    <PricingCard
-                      key={element.title}
-                      title={element.title}
-                      price={element.price}
-                      description={element.description}
-                      included={element.included}
-                      highlight={element.highlight}
-                    />
-                  ))}
-                </div>
-              )}
-              <span className="relative text-md lg:text-xl text-center px-8 lg:px-6 basis-1/4 z-10">
-                {landingPage.pricing.disclaimer}
-              </span>
-            </div>
-          </GradientBackground>
         </section>
 
         {/* Blog */}
